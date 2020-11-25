@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ABD15D97256E724700E3409B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD15D96256E724700E3409B /* AppDelegate.swift */; };
+		ABD15D99256E724700E3409B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD15D98256E724700E3409B /* SceneDelegate.swift */; };
+		ABD15D9B256E724700E3409B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD15D9A256E724700E3409B /* ViewController.swift */; };
+		ABD15D9E256E724700E3409B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD15D9C256E724700E3409B /* Main.storyboard */; };
+		ABD15DA1256E724700E3409B /* Self_Yoga.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABD15D9F256E724700E3409B /* Self_Yoga.xcdatamodeld */; };
+		ABD15DA3256E724C00E3409B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD15DA2256E724C00E3409B /* Assets.xcassets */; };
+		ABD15DA6256E724C00E3409B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD15DA4256E724C00E3409B /* LaunchScreen.storyboard */; };
+		ABD15DB1256E724D00E3409B /* Self_YogaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD15DB0256E724D00E3409B /* Self_YogaTests.swift */; };
+		ABD15DBC256E724D00E3409B /* Self_YogaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD15DBB256E724D00E3409B /* Self_YogaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ABD15DAD256E724D00E3409B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABD15D8B256E724700E3409B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABD15D92256E724700E3409B;
+			remoteInfo = "Self-Yoga";
+		};
+		ABD15DB8256E724D00E3409B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABD15D8B256E724700E3409B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABD15D92256E724700E3409B;
+			remoteInfo = "Self-Yoga";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ABD15D93256E724700E3409B /* Self-Yoga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Self-Yoga.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABD15D96256E724700E3409B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ABD15D98256E724700E3409B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ABD15D9A256E724700E3409B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ABD15D9D256E724700E3409B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ABD15DA0256E724700E3409B /* Self_Yoga.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Self_Yoga.xcdatamodel; sourceTree = "<group>"; };
+		ABD15DA2256E724C00E3409B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ABD15DA5256E724C00E3409B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ABD15DA7256E724C00E3409B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABD15DAC256E724D00E3409B /* Self-YogaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Self-YogaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABD15DB0256E724D00E3409B /* Self_YogaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Self_YogaTests.swift; sourceTree = "<group>"; };
+		ABD15DB2256E724D00E3409B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABD15DB7256E724D00E3409B /* Self-YogaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Self-YogaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABD15DBB256E724D00E3409B /* Self_YogaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Self_YogaUITests.swift; sourceTree = "<group>"; };
+		ABD15DBD256E724D00E3409B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ABD15D90256E724700E3409B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD15DA9256E724D00E3409B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD15DB4256E724D00E3409B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ABD15D8A256E724700E3409B = {
+			isa = PBXGroup;
+			children = (
+				ABD15D95256E724700E3409B /* Self-Yoga */,
+				ABD15DAF256E724D00E3409B /* Self-YogaTests */,
+				ABD15DBA256E724D00E3409B /* Self-YogaUITests */,
+				ABD15D94256E724700E3409B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ABD15D94256E724700E3409B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ABD15D93256E724700E3409B /* Self-Yoga.app */,
+				ABD15DAC256E724D00E3409B /* Self-YogaTests.xctest */,
+				ABD15DB7256E724D00E3409B /* Self-YogaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ABD15D95256E724700E3409B /* Self-Yoga */ = {
+			isa = PBXGroup;
+			children = (
+				ABD15D96256E724700E3409B /* AppDelegate.swift */,
+				ABD15D98256E724700E3409B /* SceneDelegate.swift */,
+				ABD15D9A256E724700E3409B /* ViewController.swift */,
+				ABD15D9C256E724700E3409B /* Main.storyboard */,
+				ABD15DA2256E724C00E3409B /* Assets.xcassets */,
+				ABD15DA4256E724C00E3409B /* LaunchScreen.storyboard */,
+				ABD15DA7256E724C00E3409B /* Info.plist */,
+				ABD15D9F256E724700E3409B /* Self_Yoga.xcdatamodeld */,
+			);
+			path = "Self-Yoga";
+			sourceTree = "<group>";
+		};
+		ABD15DAF256E724D00E3409B /* Self-YogaTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABD15DB0256E724D00E3409B /* Self_YogaTests.swift */,
+				ABD15DB2256E724D00E3409B /* Info.plist */,
+			);
+			path = "Self-YogaTests";
+			sourceTree = "<group>";
+		};
+		ABD15DBA256E724D00E3409B /* Self-YogaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ABD15DBB256E724D00E3409B /* Self_YogaUITests.swift */,
+				ABD15DBD256E724D00E3409B /* Info.plist */,
+			);
+			path = "Self-YogaUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ABD15D92256E724700E3409B /* Self-Yoga */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABD15DC0256E724D00E3409B /* Build configuration list for PBXNativeTarget "Self-Yoga" */;
+			buildPhases = (
+				ABD15D8F256E724700E3409B /* Sources */,
+				ABD15D90256E724700E3409B /* Frameworks */,
+				ABD15D91256E724700E3409B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Self-Yoga";
+			productName = "Self-Yoga";
+			productReference = ABD15D93256E724700E3409B /* Self-Yoga.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ABD15DAB256E724D00E3409B /* Self-YogaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABD15DC3256E724D00E3409B /* Build configuration list for PBXNativeTarget "Self-YogaTests" */;
+			buildPhases = (
+				ABD15DA8256E724D00E3409B /* Sources */,
+				ABD15DA9256E724D00E3409B /* Frameworks */,
+				ABD15DAA256E724D00E3409B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABD15DAE256E724D00E3409B /* PBXTargetDependency */,
+			);
+			name = "Self-YogaTests";
+			productName = "Self-YogaTests";
+			productReference = ABD15DAC256E724D00E3409B /* Self-YogaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ABD15DB6256E724D00E3409B /* Self-YogaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABD15DC6256E724D00E3409B /* Build configuration list for PBXNativeTarget "Self-YogaUITests" */;
+			buildPhases = (
+				ABD15DB3256E724D00E3409B /* Sources */,
+				ABD15DB4256E724D00E3409B /* Frameworks */,
+				ABD15DB5256E724D00E3409B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABD15DB9256E724D00E3409B /* PBXTargetDependency */,
+			);
+			name = "Self-YogaUITests";
+			productName = "Self-YogaUITests";
+			productReference = ABD15DB7256E724D00E3409B /* Self-YogaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ABD15D8B256E724700E3409B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					ABD15D92256E724700E3409B = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					ABD15DAB256E724D00E3409B = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = ABD15D92256E724700E3409B;
+					};
+					ABD15DB6256E724D00E3409B = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = ABD15D92256E724700E3409B;
+					};
+				};
+			};
+			buildConfigurationList = ABD15D8E256E724700E3409B /* Build configuration list for PBXProject "Self-Yoga" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ABD15D8A256E724700E3409B;
+			productRefGroup = ABD15D94256E724700E3409B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ABD15D92256E724700E3409B /* Self-Yoga */,
+				ABD15DAB256E724D00E3409B /* Self-YogaTests */,
+				ABD15DB6256E724D00E3409B /* Self-YogaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ABD15D91256E724700E3409B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD15DA6256E724C00E3409B /* LaunchScreen.storyboard in Resources */,
+				ABD15DA3256E724C00E3409B /* Assets.xcassets in Resources */,
+				ABD15D9E256E724700E3409B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD15DAA256E724D00E3409B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD15DB5256E724D00E3409B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ABD15D8F256E724700E3409B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD15D9B256E724700E3409B /* ViewController.swift in Sources */,
+				ABD15D97256E724700E3409B /* AppDelegate.swift in Sources */,
+				ABD15D99256E724700E3409B /* SceneDelegate.swift in Sources */,
+				ABD15DA1256E724700E3409B /* Self_Yoga.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD15DA8256E724D00E3409B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD15DB1256E724D00E3409B /* Self_YogaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD15DB3256E724D00E3409B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD15DBC256E724D00E3409B /* Self_YogaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABD15DAE256E724D00E3409B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABD15D92256E724700E3409B /* Self-Yoga */;
+			targetProxy = ABD15DAD256E724D00E3409B /* PBXContainerItemProxy */;
+		};
+		ABD15DB9256E724D00E3409B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABD15D92256E724700E3409B /* Self-Yoga */;
+			targetProxy = ABD15DB8256E724D00E3409B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ABD15D9C256E724700E3409B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABD15D9D256E724700E3409B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ABD15DA4256E724C00E3409B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABD15DA5256E724C00E3409B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ABD15DBE256E724D00E3409B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ABD15DBF256E724D00E3409B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ABD15DC1256E724D00E3409B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5JS8HUQALB;
+				INFOPLIST_FILE = "Self-Yoga/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Self-Yoga";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ABD15DC2256E724D00E3409B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5JS8HUQALB;
+				INFOPLIST_FILE = "Self-Yoga/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Self-Yoga";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ABD15DC4256E724D00E3409B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5JS8HUQALB;
+				INFOPLIST_FILE = "Self-YogaTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Self-YogaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Self-Yoga.app/Self-Yoga";
+			};
+			name = Debug;
+		};
+		ABD15DC5256E724D00E3409B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5JS8HUQALB;
+				INFOPLIST_FILE = "Self-YogaTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Self-YogaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Self-Yoga.app/Self-Yoga";
+			};
+			name = Release;
+		};
+		ABD15DC7256E724D00E3409B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5JS8HUQALB;
+				INFOPLIST_FILE = "Self-YogaUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Self-YogaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Self-Yoga";
+			};
+			name = Debug;
+		};
+		ABD15DC8256E724D00E3409B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5JS8HUQALB;
+				INFOPLIST_FILE = "Self-YogaUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Self-YogaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Self-Yoga";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ABD15D8E256E724700E3409B /* Build configuration list for PBXProject "Self-Yoga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABD15DBE256E724D00E3409B /* Debug */,
+				ABD15DBF256E724D00E3409B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABD15DC0256E724D00E3409B /* Build configuration list for PBXNativeTarget "Self-Yoga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABD15DC1256E724D00E3409B /* Debug */,
+				ABD15DC2256E724D00E3409B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABD15DC3256E724D00E3409B /* Build configuration list for PBXNativeTarget "Self-YogaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABD15DC4256E724D00E3409B /* Debug */,
+				ABD15DC5256E724D00E3409B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABD15DC6256E724D00E3409B /* Build configuration list for PBXNativeTarget "Self-YogaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABD15DC7256E724D00E3409B /* Debug */,
+				ABD15DC8256E724D00E3409B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ABD15D9F256E724700E3409B /* Self_Yoga.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ABD15DA0256E724700E3409B /* Self_Yoga.xcdatamodel */,
+			);
+			currentVersion = ABD15DA0256E724700E3409B /* Self_Yoga.xcdatamodel */;
+			path = Self_Yoga.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = ABD15D8B256E724700E3409B /* Project object */;
+}
