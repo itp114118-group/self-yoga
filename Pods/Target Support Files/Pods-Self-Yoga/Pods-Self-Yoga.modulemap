@@ -1,0 +1,6 @@
+framework module Pods_Self_Yoga {
+  umbrella header "Pods-Self-Yoga-umbrella.h"
+
+  export *
+  module * { export * }
+}
