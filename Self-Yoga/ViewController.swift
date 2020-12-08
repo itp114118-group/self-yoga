@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Self-Yoga
 //
-//  Created by itst on 25/11/2020.
+//  Created by Jack on 8/12/2020.
 //
 
 import UIKit
