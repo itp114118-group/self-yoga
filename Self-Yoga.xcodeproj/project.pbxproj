@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,15 @@
 		10095103257F970800B26728 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10095101257F970800B26728 /* LaunchScreen.storyboard */; };
 		1009510C257F976C00B26728 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1009510B257F976C00B26728 /* GoogleService-Info.plist */; };
 		42E15DDFA4C36667E8A6488F /* Pods_Self_Yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */; };
+		AB7135DB25853879003A8C99 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7135DA25853879003A8C99 /* SplashViewController.swift */; };
+		AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E3258A776200B1DC52 /* ResigerViewController.swift */; };
+		AB9521E7258A7D8400B1DC52 /* ForgotpwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E6258A7D8400B1DC52 /* ForgotpwViewController.swift */; };
+		AB9521F9258BD13B00B1DC52 /* CoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521F8258BD13B00B1DC52 /* CoverViewController.swift */; };
+		ABC240D4258CDBA900554848 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC240D3258CDBA900554848 /* GoalsViewController.swift */; };
+		ABD1AC422590061500126FF7 /* CoverTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD1AC412590061500126FF7 /* CoverTabBarViewController.swift */; };
+		ABD80996259024480086DDC4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD80995259024480086DDC4 /* SettingViewController.swift */; };
+		ABDE65BD25857F8200B7696C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE65BC25857F8200B7696C /* LoginViewController.swift */; };
+		ABEEDFA4258FD759008AC092 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEEDFA3258FD759008AC092 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +40,15 @@
 		1009510B257F976C00B26728 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18AE7A0D05B319B7827DC4A0 /* Pods-Self-Yoga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self-Yoga.release.xcconfig"; path = "Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga.release.xcconfig"; sourceTree = "<group>"; };
 		A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Self_Yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB7135DA25853879003A8C99 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		AB9521E3258A776200B1DC52 /* ResigerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResigerViewController.swift; sourceTree = "<group>"; };
+		AB9521E6258A7D8400B1DC52 /* ForgotpwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotpwViewController.swift; sourceTree = "<group>"; };
+		AB9521F8258BD13B00B1DC52 /* CoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverViewController.swift; sourceTree = "<group>"; };
+		ABC240D3258CDBA900554848 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
+		ABD1AC412590061500126FF7 /* CoverTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverTabBarViewController.swift; sourceTree = "<group>"; };
+		ABD80995259024480086DDC4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		ABDE65BC25857F8200B7696C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ABEEDFA3258FD759008AC092 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		B43C52DA1B3C387C834BEF2D /* Pods-Self-Yoga.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self-Yoga.debug.xcconfig"; path = "Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,15 +85,16 @@
 		100950F2257F970800B26728 /* Self-Yoga */ = {
 			isa = PBXGroup;
 			children = (
+				ABEEDFA1258FD6EE008AC092 /* View Controller */,
 				100950F3257F970800B26728 /* AppDelegate.swift */,
 				100950F5257F970800B26728 /* SceneDelegate.swift */,
-				100950F7257F970800B26728 /* ViewController.swift */,
 				100950F9257F970800B26728 /* Main.storyboard */,
 				100950FF257F970800B26728 /* Assets.xcassets */,
 				10095101257F970800B26728 /* LaunchScreen.storyboard */,
 				10095104257F970800B26728 /* Info.plist */,
 				1009510B257F976C00B26728 /* GoogleService-Info.plist */,
 				100950FC257F970800B26728 /* Self_Yoga.xcdatamodeld */,
+				ABEEDFA3258FD759008AC092 /* Utilities.swift */,
 			);
 			path = "Self-Yoga";
 			sourceTree = "<group>";
@@ -88,13 +107,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ABEEDFA1258FD6EE008AC092 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB7135DA25853879003A8C99 /* SplashViewController.swift */,
+				ABDE65BC25857F8200B7696C /* LoginViewController.swift */,
+				AB9521E3258A776200B1DC52 /* ResigerViewController.swift */,
+				AB9521E6258A7D8400B1DC52 /* ForgotpwViewController.swift */,
+				AB9521F8258BD13B00B1DC52 /* CoverViewController.swift */,
+				ABC240D3258CDBA900554848 /* GoalsViewController.swift */,
+				100950F7257F970800B26728 /* ViewController.swift */,
+				ABD1AC412590061500126FF7 /* CoverTabBarViewController.swift */,
+				ABD80995259024480086DDC4 /* SettingViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
 		AFE2C9695A4D6A13F2972E66 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				B43C52DA1B3C387C834BEF2D /* Pods-Self-Yoga.debug.xcconfig */,
 				18AE7A0D05B319B7827DC4A0 /* Pods-Self-Yoga.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,10 +247,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB9521E7258A7D8400B1DC52 /* ForgotpwViewController.swift in Sources */,
+				ABDE65BD25857F8200B7696C /* LoginViewController.swift in Sources */,
+				ABEEDFA4258FD759008AC092 /* Utilities.swift in Sources */,
+				ABD80996259024480086DDC4 /* SettingViewController.swift in Sources */,
+				ABD1AC422590061500126FF7 /* CoverTabBarViewController.swift in Sources */,
 				100950F8257F970800B26728 /* ViewController.swift in Sources */,
 				100950F4257F970800B26728 /* AppDelegate.swift in Sources */,
 				100950F6257F970800B26728 /* SceneDelegate.swift in Sources */,
 				100950FE257F970800B26728 /* Self_Yoga.xcdatamodeld in Sources */,
+				AB9521F9258BD13B00B1DC52 /* CoverViewController.swift in Sources */,
+				AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */,
+				ABC240D4258CDBA900554848 /* GoalsViewController.swift in Sources */,
+				AB7135DB25853879003A8C99 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
