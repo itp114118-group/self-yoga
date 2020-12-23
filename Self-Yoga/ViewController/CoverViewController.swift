@@ -70,6 +70,7 @@ class CoverViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.textLabel!.text = myArray[indexPath.row]
         return cell
     }
+    
     /*
     // MARK: - Navigation
 

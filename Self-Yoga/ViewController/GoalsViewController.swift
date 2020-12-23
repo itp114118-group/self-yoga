@@ -45,7 +45,11 @@ class GoalsViewController: UIViewController, ChartViewDelegate {
         let colors = [UIColor(named:"B6E9C1")]
         let set = BarChartDataSet(entries: entries)
         set.colors = colors as! [NSUIColor]
-        barChart.data = BarChartData(dataSet: set)
+        var data = BarChartData(dataSet: set)
+        data.barWidth = 0.2
+        barChart.data = data
+        
+        // Don't show data
         barChart.data?.setDrawValues(false)
         
         barChartView.backgroundColor = UIColor(named: "003659")
@@ -82,11 +86,12 @@ class GoalsViewController: UIViewController, ChartViewDelegate {
         
         pieChart.animate(xAxisDuration: 2.0)
         
-//        pieChartView.backgroundColor = UIColor(named: "003659")
+        pieChartView.backgroundColor = UIColor(named: "003659")
         
         pieChartView.layer.cornerRadius = 20
         pieChartView.layer.masksToBounds = true
         
+        // pie chart no gap
         pieChart.holeRadiusPercent = 0.0
         pieChart.transparentCircleRadiusPercent = 0.0
         pieChart.drawHoleEnabled = false
