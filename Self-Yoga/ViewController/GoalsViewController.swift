@@ -42,12 +42,17 @@ class GoalsViewController: UIViewController, ChartViewDelegate {
             entries.append(BarChartDataEntry(x: Double(i), y: Double(i)))
         }
         
-        let colors = [UIColor(named:"B6E9C1"), UIColor(named:"003659")]
+        let colors = [UIColor(named:"B6E9C1")]
         let set = BarChartDataSet(entries: entries)
         set.colors = colors as! [NSUIColor]
         barChart.data = BarChartData(dataSet: set)
+        barChart.data?.setDrawValues(false)
         
         barChartView.backgroundColor = UIColor(named: "003659")
+        
+        barChart.xAxis.labelPosition = .bottom
+        barChart.xAxis.labelTextColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        barChart.leftAxis.labelTextColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         barChart.animate(xAxisDuration: 2.0)
         
@@ -72,6 +77,8 @@ class GoalsViewController: UIViewController, ChartViewDelegate {
         let set = PieChartDataSet(entries: entries)
         set.colors = colors as! [NSUIColor]
         pieChart.data = PieChartData(dataSet: set)
+        
+//        pieChart.data?.setDrawValues(false)
         
         pieChart.animate(xAxisDuration: 2.0)
         
