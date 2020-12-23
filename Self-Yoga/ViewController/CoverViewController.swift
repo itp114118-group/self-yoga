@@ -21,6 +21,22 @@ class CoverViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        initUI()
+        
+        popularTableView.dataSource = self
+        popularTableView.delegate = self
+        
+        begTableView.dataSource = self
+        begTableView.delegate = self
+        
+        MasterTableView.dataSource = self
+        popularTableView.delegate = self
+
+        // Do any additional setup after loading the view.
+    }
+    
+    func initUI() {
         
         popularView.layer.cornerRadius = 20
         popularView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
@@ -33,20 +49,12 @@ class CoverViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         popularTableView.layer.cornerRadius = 20
         popularTableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        popularTableView.dataSource = self
-        popularTableView.delegate = self
         
         begTableView.layer.cornerRadius = 20
         begTableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        begTableView.dataSource = self
-        begTableView.delegate = self
         
         MasterTableView.layer.cornerRadius = 20
         MasterTableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        MasterTableView.dataSource = self
-        popularTableView.delegate = self
-
-        // Do any additional setup after loading the view.
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

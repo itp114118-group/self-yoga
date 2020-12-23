@@ -470,34 +470,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fms-xT-Gxz">
-                                <rect key="frame" x="30" y="103" width="114" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="868-TK-Yfa">
-                                <rect key="frame" x="319" y="103" width="65" height="33"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <state key="normal" title="Show all">
-                                    <color key="titleColor" name="Color"/>
-                                </state>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lk-JF-xBG" userLabel="BarChartView" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="25" y="141" width="364" height="240"/>
+                                <color key="backgroundColor" name="003659"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMe-ey-Otw" userLabel="PieChartView" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="25" y="391" width="364" height="412"/>
+                                <color key="backgroundColor" name="1AA88E"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="175" translatesAutoresizingMaskIntoConstraints="NO" id="mJL-mL-ZI7">
+                                <rect key="frame" x="25" y="98" width="364" height="33"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fms-xT-Gxz">
+                                        <rect key="frame" x="0.0" y="0.0" width="114" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="868-TK-Yfa">
+                                        <rect key="frame" x="289" y="0.0" width="75" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <state key="normal" title="Show all">
+                                            <color key="titleColor" name="Color"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g4S-wJ-xqE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="g4S-wJ-xqE" firstAttribute="trailing" secondItem="868-TK-Yfa" secondAttribute="trailing" constant="30" id="BGr-mj-i1H"/>
-                            <constraint firstItem="868-TK-Yfa" firstAttribute="top" secondItem="g4S-wJ-xqE" secondAttribute="top" constant="15" id="Gr9-p2-Gqf"/>
-                            <constraint firstItem="fms-xT-Gxz" firstAttribute="top" secondItem="g4S-wJ-xqE" secondAttribute="top" constant="15" id="SHN-HN-jfY"/>
-                            <constraint firstItem="fms-xT-Gxz" firstAttribute="leading" secondItem="g4S-wJ-xqE" secondAttribute="leading" constant="30" id="ppq-rH-J0B"/>
+                            <constraint firstItem="4lk-JF-xBG" firstAttribute="top" secondItem="mJL-mL-ZI7" secondAttribute="bottom" constant="10" id="2li-6T-WOT"/>
+                            <constraint firstItem="4lk-JF-xBG" firstAttribute="leading" secondItem="g4S-wJ-xqE" secondAttribute="leading" constant="25" id="7UC-VJ-VeY"/>
+                            <constraint firstItem="mJL-mL-ZI7" firstAttribute="leading" secondItem="g4S-wJ-xqE" secondAttribute="leading" constant="25" id="9cT-9E-f5M"/>
+                            <constraint firstItem="kMe-ey-Otw" firstAttribute="top" secondItem="4lk-JF-xBG" secondAttribute="bottom" constant="10" id="EdL-rE-oUw"/>
+                            <constraint firstItem="kMe-ey-Otw" firstAttribute="leading" secondItem="g4S-wJ-xqE" secondAttribute="leading" constant="25" id="MKK-bT-tZT"/>
+                            <constraint firstItem="kMe-ey-Otw" firstAttribute="centerY" secondItem="VpL-q5-jq5" secondAttribute="centerY" constant="149" id="QzK-yG-PdF"/>
+                            <constraint firstItem="kMe-ey-Otw" firstAttribute="top" secondItem="4lk-JF-xBG" secondAttribute="bottom" constant="10" id="VQp-f7-ecf"/>
+                            <constraint firstItem="mJL-mL-ZI7" firstAttribute="top" secondItem="g4S-wJ-xqE" secondAttribute="top" constant="10" id="gEQ-BT-ljW"/>
+                            <constraint firstItem="g4S-wJ-xqE" firstAttribute="bottom" secondItem="kMe-ey-Otw" secondAttribute="bottom" constant="10" id="guW-gG-ige"/>
+                            <constraint firstItem="g4S-wJ-xqE" firstAttribute="trailing" secondItem="kMe-ey-Otw" secondAttribute="trailing" constant="25" id="iVh-6O-Tdq"/>
+                            <constraint firstItem="g4S-wJ-xqE" firstAttribute="trailing" secondItem="mJL-mL-ZI7" secondAttribute="trailing" constant="25" id="lXW-02-zzq"/>
+                            <constraint firstItem="g4S-wJ-xqE" firstAttribute="trailing" secondItem="4lk-JF-xBG" secondAttribute="trailing" constant="25" id="ocC-jT-yxw"/>
+                            <constraint firstItem="4lk-JF-xBG" firstAttribute="top" secondItem="mJL-mL-ZI7" secondAttribute="bottom" constant="10" id="vIQ-eZ-eRx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Goals" id="MUE-pn-7In"/>
+                    <connections>
+                        <outlet property="barChartView" destination="4lk-JF-xBG" id="bSy-Ug-pHJ"/>
+                        <outlet property="pieChartView" destination="kMe-ey-Otw" id="qA1-Yq-UGu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTh-ic-Ko3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="999" y="-1504"/>
+            <point key="canvasLocation" x="998.55072463768124" y="-1504.0178571428571"/>
         </scene>
         <!--Profile Page-->
         <scene sceneID="t2Z-Lc-8cI">
@@ -785,6 +811,9 @@
                                                         </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <segue destination="Tk4-kz-UGx" kind="show" id="XJa-Zn-ZQJ"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -962,7 +991,6 @@
                         <outlet property="masterView" destination="1Hh-4P-zty" id="sFG-fZ-wuh"/>
                         <outlet property="popularTableView" destination="ua6-42-Igf" id="rQH-rF-xZo"/>
                         <outlet property="popularView" destination="PTL-ku-VPQ" id="Ytq-zb-gbe"/>
-                        <segue destination="Tk4-kz-UGx" kind="show" id="qGa-tE-L3I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmk-Db-azZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1005,6 +1033,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="LqX-7T-JG1" kind="show" id="OsE-dI-qN2"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="QZL-mk-0j4" detailTextLabel="U2Z-pV-BSe" style="IBUITableViewCellStyleSubtitle" id="w6i-SB-h96">
                                         <rect key="frame" x="0.0" y="83.5" width="374" height="55.5"/>
@@ -1131,7 +1162,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beginner Full Body Flexibility" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjv-qo-3yb">
-                                <rect key="frame" x="20" y="69" width="343" height="78"/>
+                                <rect key="frame" x="20" y="113" width="343" height="78"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="SlV-2W-TK9"/>
                                     <constraint firstAttribute="height" constant="78" id="cmE-9M-Bs2"/>
@@ -1141,7 +1172,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="109" translatesAutoresizingMaskIntoConstraints="NO" id="gHK-cW-sWQ">
-                                <rect key="frame" x="20" y="167" width="344.5" height="17"/>
+                                <rect key="frame" x="20" y="211" width="344.5" height="17"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZm-y3-isq">
                                         <rect key="frame" x="0.0" y="0.0" width="55.5" height="17"/>
@@ -1233,7 +1264,7 @@
                                 <sections/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kS-fa-v9s">
-                                <rect key="frame" x="66.5" y="802" width="281" height="60"/>
+                                <rect key="frame" x="66.5" y="753" width="281" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="mRe-Ot-tdI"/>
                                     <constraint firstAttribute="width" constant="281" id="sL6-B0-4V2"/>
