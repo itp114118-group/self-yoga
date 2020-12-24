@@ -17,6 +17,7 @@
 		1009510C257F976C00B26728 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1009510B257F976C00B26728 /* GoogleService-Info.plist */; };
 		10822901259476C000F9104C /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10822900259476C000F9104C /* Auth.storyboard */; };
 		1082290F2594774400F9104C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1082290E2594774400F9104C /* Profile.storyboard */; };
+		10822912259477E100F9104C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10822911259477E100F9104C /* Home.storyboard */; };
 		42E15DDFA4C36667E8A6488F /* Pods_Self_Yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */; };
 		AB7135DB25853879003A8C99 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7135DA25853879003A8C99 /* SplashViewController.swift */; };
 		AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E3258A776200B1DC52 /* ResigerViewController.swift */; };
@@ -42,6 +43,7 @@
 		1009510B257F976C00B26728 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10822900259476C000F9104C /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		1082290E2594774400F9104C /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		10822911259477E100F9104C /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		18AE7A0D05B319B7827DC4A0 /* Pods-Self-Yoga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self-Yoga.release.xcconfig"; path = "Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga.release.xcconfig"; sourceTree = "<group>"; };
 		A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Self_Yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7135DA25853879003A8C99 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				10095101257F970800B26728 /* LaunchScreen.storyboard */,
 				10822900259476C000F9104C /* Auth.storyboard */,
 				1082290E2594774400F9104C /* Profile.storyboard */,
+				10822911259477E100F9104C /* Home.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10822912259477E100F9104C /* Home.storyboard in Resources */,
 				1082290F2594774400F9104C /* Profile.storyboard in Resources */,
 				10095103257F970800B26728 /* LaunchScreen.storyboard in Resources */,
 				1009510C257F976C00B26728 /* GoogleService-Info.plist in Resources */,
