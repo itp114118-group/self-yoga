@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:YogaSet+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:YogaSet+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:Self-Yoga.xcodeproj">
    </FileRef>
    <FileRef

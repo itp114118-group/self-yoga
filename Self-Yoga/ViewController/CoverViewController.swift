@@ -1,32 +1,32 @@
  //
-//  CoverViewController.swift
-//  Self-Yoga
-//
-//  Created by itst on 18/12/2020.
-//
-
-import UIKit
-
-class CoverViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+ //  CoverViewController.swift
+ //  Self-Yoga
+ //
+ //  Created by itst on 18/12/2020.
+ //
+ 
+ import UIKit
+ import CoreData
+ 
+ class CoverViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var begTableView: UITableView!
     @IBOutlet weak var MasterTableView: UITableView!
-
+    
     @IBOutlet weak var begView: UIView!
     @IBOutlet weak var masterView: UIView!
-    
-    let myArray = ["Cat", "Dog", "Snake", "Spider", "Horse"]
-    let myArray2 = ["Mouse"]
     
     var yoga: YogaSet?
     var dataController = DataController()
     
     var yogaTitle: String?
     var yogaSubtitle: String?
-        
+    
+    var yogasets : [YogaSet]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         initUI()
         
         begTableView.dataSource = self
@@ -52,35 +52,49 @@ class CoverViewController: UIViewController, UITableViewDelegate, UITableViewDat
         MasterTableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
     
+    var managedObjectContext : NSManagedObjectContext? {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            return appDelegate.persistentContainer.viewContext
+        }
+        return nil;
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataController.dataArray.count
+        if let yogasets = self.yogasets {
+            return yogasets.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
-//        cell.textLabel!.text = myArray[indexPath.row]
         
-        if dataController.dataArray.count > 0 {
-            let begCollections = dataController.dataArray[indexPath.row]
-            cell.textLabel?.text = begCollections.title
-            cell.detailTextLabel?.text = begCollections.subtitle
+        //        if dataController.dataArray.count > 0 {
+        //            let begCollections = dataController.dataArray[indexPath.row]
+        //            cell.textLabel?.text = begCollections.title
+        //            cell.detailTextLabel?.text = begCollections.subtitle
+        //        }
+        
+        if let yogaset = self.yogasets?[indexPath.row] {
+            cell.textLabel?.text = yogaset.title
+            cell.detailTextLabel?.text = "\(yogaset.subtitle)"
         }
         
         return cell
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+ }
