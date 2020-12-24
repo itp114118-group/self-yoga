@@ -9,46 +9,41 @@ import UIKit
 
 class CoverViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var popularTableView: UITableView!
     @IBOutlet weak var begTableView: UITableView!
     @IBOutlet weak var MasterTableView: UITableView!
 
-    @IBOutlet weak var popularView: UIView!
     @IBOutlet weak var begView: UIView!
     @IBOutlet weak var masterView: UIView!
     
-    let myArray = ["Cat", "Dog", "Snake", "Spider", "Horse", "Mouse"]
+    let myArray = ["Cat", "Dog", "Snake", "Spider", "Horse"]
+    let myArray2 = ["Mouse"]
     
+    var yoga: YogaSet?
+    var dataController = DataController()
+    
+    var yogaTitle: String?
+    var yogaSubtitle: String?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initUI()
         
-        popularTableView.dataSource = self
-        popularTableView.delegate = self
-        
         begTableView.dataSource = self
         begTableView.delegate = self
         
         MasterTableView.dataSource = self
-        popularTableView.delegate = self
-
+        
         // Do any additional setup after loading the view.
     }
     
     func initUI() {
-        
-        popularView.layer.cornerRadius = 20
-        popularView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
         begView.layer.cornerRadius = 20
         begView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
         masterView.layer.cornerRadius = 20
         masterView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        
-        popularTableView.layer.cornerRadius = 20
-        popularTableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
         begTableView.layer.cornerRadius = 20
         begTableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
