@@ -8,7 +8,7 @@
  import UIKit
  import CoreData
  
- class CoverViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+ class CoverViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var begTableView: UITableView!
     @IBOutlet weak var MasterTableView: UITableView!
@@ -16,25 +16,9 @@
     @IBOutlet weak var begView: UIView!
     @IBOutlet weak var masterView: UIView!
     
-    var yogasets : [YogaSet]?
+    @IBOutlet weak var searchBar: UISearchBar!
     
-    func searchAndReloadTable(query:String) {
-        if let managedObjectContext = self.managedObjectContext {
-            let fetchRequest = NSFetchRequest<YogaSet>(entityName: "YogaSet")
-            if query.count > 0 {
-                let predicate = NSPredicate(format: "name contains[cd] %@", query)
-                fetchRequest.predicate = predicate
-            }
-            do {
-                let theDevices = try managedObjectContext.fetch(fetchRequest)
-                self.yogasets = theDevices
-                self.begTableView.reloadData()
-                self.MasterTableView.reloadData()
-            } catch {
-                
-            }
-        }
-    }
+    var yogasets : [YogaSet]?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -69,12 +53,42 @@
         MasterTableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
     
+    func searchAndReloadTable(query:String) {
+        if let managedObjectContext = self.managedObjectContext {
+            let fetchRequest = NSFetchRequest<YogaSet>(entityName: "YogaSet")
+            if query.count > 0 {
+                let predicate = NSPredicate(format: "name contains[cd] %@", query)
+                fetchRequest.predicate = predicate
+            }
+            do {
+                let theDevices = try managedObjectContext.fetch(fetchRequest)
+                self.yogasets = theDevices
+                self.begTableView.reloadData()
+                self.MasterTableView.reloadData()
+            } catch {
+                
+            }
+        }
+    }
+    
     var managedObjectContext : NSManagedObjectContext? {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             return appDelegate.persistentContainer.viewContext
         }
         return nil;
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
+              // filterdata  = searchText.isEmpty ? data : data.filter {(item : String) -> Bool in
+        
+        searchAndReloadTable(query: searchBar.text!)
+
+              //return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+
+        self.begTableView.reloadData()
+        self.MasterTableView.reloadData()
+      }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

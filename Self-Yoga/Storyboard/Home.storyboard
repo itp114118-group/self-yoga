@@ -189,6 +189,7 @@
                         <outlet property="begTableView" destination="ioV-BV-xzc" id="29o-oa-kjV"/>
                         <outlet property="begView" destination="t4c-Ab-gDn" id="803-YC-p1H"/>
                         <outlet property="masterView" destination="zf6-Zf-JJ6" id="K3u-9V-Eha"/>
+                        <outlet property="searchBar" destination="stF-bl-JZu" id="Bqn-3X-sbs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkd-Mm-xoG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
