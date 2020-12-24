@@ -17,7 +17,7 @@ class DataController {
         dataArray.append(yogaSet1)
         dataArray.append(yogaSet2)
     }
-    
+   
     func count() -> Int {
         return dataArray.count
     }

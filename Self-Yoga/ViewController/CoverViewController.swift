@@ -57,12 +57,19 @@ class CoverViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myArray.count
+        return dataController.dataArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
-        cell.textLabel!.text = myArray[indexPath.row]
+//        cell.textLabel!.text = myArray[indexPath.row]
+        
+        if dataController.dataArray.count > 0 {
+            let begCollections = dataController.dataArray[indexPath.row]
+            cell.textLabel?.text = begCollections.title
+            cell.detailTextLabel?.text = begCollections.subtitle
+        }
+        
         return cell
     }
     
