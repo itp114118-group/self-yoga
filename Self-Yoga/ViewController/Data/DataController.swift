@@ -12,10 +12,7 @@ class DataController {
     var dataArray = [YogaSet]()
     
     init() {
-        let yogaSet1 = YogaSet(title: "Beginner Full Body Flexibility", subtitle: "6 Workout")
-        let yogaSet2 = YogaSet(title: "Beginner Full Body Vinyasa Flow", subtitle: "6 Workout")
-        dataArray.append(yogaSet1)
-        dataArray.append(yogaSet2)
+        
     }
    
     func count() -> Int {

@@ -16,13 +16,30 @@
     @IBOutlet weak var begView: UIView!
     @IBOutlet weak var masterView: UIView!
     
-    var yoga: YogaSet?
-    var dataController = DataController()
-    
-    var yogaTitle: String?
-    var yogaSubtitle: String?
-    
     var yogasets : [YogaSet]?
+    
+    func searchAndReloadTable(query:String) {
+        if let managedObjectContext = self.managedObjectContext {
+            let fetchRequest = NSFetchRequest<YogaSet>(entityName: "YogaSet")
+            if query.count > 0 {
+                let predicate = NSPredicate(format: "name contains[cd] %@", query)
+                fetchRequest.predicate = predicate
+            }
+            do {
+                let theDevices = try managedObjectContext.fetch(fetchRequest)
+                self.yogasets = theDevices
+                self.begTableView.reloadData()
+                self.MasterTableView.reloadData()
+            } catch {
+                
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.searchAndReloadTable(query: "")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
