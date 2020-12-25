@@ -12,7 +12,7 @@
         <!--Cover Page-->
         <scene sceneID="L84-G6-qc5">
             <objects>
-                <viewController title="Cover Page" modalPresentationStyle="overFullScreen" id="d8D-tZ-KAn" customClass="CoverViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Cover Page" modalPresentationStyle="overFullScreen" id="d8D-tZ-KAn" customClass="HomeViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zqt-Jy-h4e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,7 +45,7 @@
                                                 </constraints>
                                                 <state key="normal" image="btnarrow"/>
                                                 <connections>
-                                                    <segue destination="Iyr-dD-3W5" kind="show" id="1z5-5H-60x"/>
+                                                    <segue destination="Iyr-dD-3W5" kind="show" identifier="showMasterCollection" id="WLa-oh-kHo"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -116,7 +116,7 @@
                                                 </constraints>
                                                 <state key="normal" image="btnarrow"/>
                                                 <connections>
-                                                    <segue destination="Iyr-dD-3W5" kind="show" id="0eV-a0-WeJ"/>
+                                                    <segue destination="Iyr-dD-3W5" kind="show" identifier="showBeginnerCollection" id="fze-3n-gTx"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -196,10 +196,10 @@
             </objects>
             <point key="canvasLocation" x="997" y="-2377"/>
         </scene>
-        <!--View Controller-->
+        <!--Home List View Controller-->
         <scene sceneID="3Nb-wB-2fx">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Iyr-dD-3W5" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Iyr-dD-3W5" customClass="HomeListViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9BY-8g-SHp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -339,15 +339,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="yOu-Im-Fdb"/>
+                    <connections>
+                        <outlet property="tableView" destination="2NS-jN-nsG" id="xda-7v-9af"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Us-19-oNU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1935" y="-2377"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Detail View Controller-->
         <scene sceneID="NYs-bA-gUk">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="4QK-2j-DRy" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="4QK-2j-DRy" customClass="HomeDetailViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uTP-bs-t4F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -496,7 +499,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0eV-a0-WeJ"/>
+        <segue reference="WLa-oh-kHo"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="btnarrow" width="20" height="20"/>

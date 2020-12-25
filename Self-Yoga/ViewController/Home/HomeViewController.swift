@@ -9,7 +9,7 @@
  import CoreData
  import FirebaseFirestore
  
- class CoverViewController: UIViewController, UISearchBarDelegate {
+ class HomeViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var begTableView: UITableView!
     @IBOutlet weak var MasterTableView: UITableView!
@@ -18,13 +18,8 @@
     @IBOutlet weak var masterView: UIView!
     
     @IBOutlet weak var searchBar: UISearchBar!
-
-    var dataController = DataController()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
+    var dataController = DataController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +39,7 @@
         
         // Do any additional setup after loading the view.
     }
-
+    
     func initUI() {
         
         begView.layer.cornerRadius = 20
@@ -58,11 +53,12 @@
         
         MasterTableView.layer.cornerRadius = 20
         MasterTableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        
     }
     
  }
  
- extension CoverViewController: UITableViewDelegate, UITableViewDataSource {
+ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -80,6 +76,7 @@
             print("Error")
         }
         return numberOfRow
+    
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -100,24 +97,32 @@
             print("Error")
         }
         
-//
-//        if dataController.beginnerDataArray.count > 0 {
-//            let begCollections = dataController.beginnerDataArray[indexPath.row]
-//            cell.textLabel?.text = begCollections.title
-//            cell.detailTextLabel?.text = begCollections.subtitle
-//        }
-        
         return cell
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "showBeginnerCollection" {
+            if let controller = segue.destination as? HomeListViewController {
+
+                    controller.bool = 
+                
+            }
+        }
+        
+        if segue.identifier == "showMasterCollection" {
+            if let controller = segue.destination as? HomeListViewController {
+
+                    controller.bool = "MasterCollection"
+                
+            }
+        }
+    }
+    
     
  }

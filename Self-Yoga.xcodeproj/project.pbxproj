@@ -20,11 +20,13 @@
 		10822912259477E100F9104C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10822911259477E100F9104C /* Home.storyboard */; };
 		1082291A2594805E00F9104C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108229192594805E00F9104C /* DataController.swift */; };
 		10C664712595CB4500E2D378 /* YogaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C664702595CB4500E2D378 /* YogaSet.swift */; };
+		10C664842595F6D600E2D378 /* HomeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C664832595F6D600E2D378 /* HomeListViewController.swift */; };
+		10C664872595F75A00E2D378 /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C664862595F75A00E2D378 /* HomeDetailViewController.swift */; };
 		42E15DDFA4C36667E8A6488F /* Pods_Self_Yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */; };
 		AB7135DB25853879003A8C99 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7135DA25853879003A8C99 /* SplashViewController.swift */; };
 		AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E3258A776200B1DC52 /* ResigerViewController.swift */; };
 		AB9521E7258A7D8400B1DC52 /* ForgotpwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E6258A7D8400B1DC52 /* ForgotpwViewController.swift */; };
-		AB9521F9258BD13B00B1DC52 /* CoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521F8258BD13B00B1DC52 /* CoverViewController.swift */; };
+		AB9521F9258BD13B00B1DC52 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521F8258BD13B00B1DC52 /* HomeViewController.swift */; };
 		ABC240D4258CDBA900554848 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC240D3258CDBA900554848 /* GoalsViewController.swift */; };
 		ABD1AC422590061500126FF7 /* CoverTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD1AC412590061500126FF7 /* CoverTabBarViewController.swift */; };
 		ABD80996259024480086DDC4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD80995259024480086DDC4 /* SettingsViewController.swift */; };
@@ -48,12 +50,14 @@
 		10822911259477E100F9104C /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		108229192594805E00F9104C /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		10C664702595CB4500E2D378 /* YogaSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaSet.swift; sourceTree = "<group>"; };
+		10C664832595F6D600E2D378 /* HomeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListViewController.swift; sourceTree = "<group>"; };
+		10C664862595F75A00E2D378 /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
 		18AE7A0D05B319B7827DC4A0 /* Pods-Self-Yoga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self-Yoga.release.xcconfig"; path = "Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga.release.xcconfig"; sourceTree = "<group>"; };
 		A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Self_Yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7135DA25853879003A8C99 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		AB9521E3258A776200B1DC52 /* ResigerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResigerViewController.swift; sourceTree = "<group>"; };
 		AB9521E6258A7D8400B1DC52 /* ForgotpwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotpwViewController.swift; sourceTree = "<group>"; };
-		AB9521F8258BD13B00B1DC52 /* CoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverViewController.swift; sourceTree = "<group>"; };
+		AB9521F8258BD13B00B1DC52 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ABC240D3258CDBA900554848 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
 		ABD1AC412590061500126FF7 /* CoverTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverTabBarViewController.swift; sourceTree = "<group>"; };
 		ABD80995259024480086DDC4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -135,14 +139,24 @@
 		10C664762595F3A400E2D378 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				10C6647A2595F5AF00E2D378 /* Home */,
 				105F63772591F887008CE3BD /* Auth */,
 				AB7135DA25853879003A8C99 /* SplashViewController.swift */,
-				AB9521F8258BD13B00B1DC52 /* CoverViewController.swift */,
 				ABC240D3258CDBA900554848 /* GoalsViewController.swift */,
 				ABD1AC412590061500126FF7 /* CoverTabBarViewController.swift */,
 				ABD80995259024480086DDC4 /* SettingsViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		10C6647A2595F5AF00E2D378 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AB9521F8258BD13B00B1DC52 /* HomeViewController.swift */,
+				10C664832595F6D600E2D378 /* HomeListViewController.swift */,
+				10C664862595F75A00E2D378 /* HomeDetailViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		70470032A2A287FC845799B1 /* Frameworks */ = {
@@ -300,7 +314,9 @@
 				10C664712595CB4500E2D378 /* YogaSet.swift in Sources */,
 				100950FE257F970800B26728 /* Self_Yoga.xcdatamodeld in Sources */,
 				1082291A2594805E00F9104C /* DataController.swift in Sources */,
-				AB9521F9258BD13B00B1DC52 /* CoverViewController.swift in Sources */,
+				10C664842595F6D600E2D378 /* HomeListViewController.swift in Sources */,
+				10C664872595F75A00E2D378 /* HomeDetailViewController.swift in Sources */,
+				AB9521F9258BD13B00B1DC52 /* HomeViewController.swift in Sources */,
 				AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */,
 				ABC240D4258CDBA900554848 /* GoalsViewController.swift in Sources */,
 				AB7135DB25853879003A8C99 /* SplashViewController.swift in Sources */,

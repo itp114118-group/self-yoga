@@ -17,6 +17,12 @@ class DataController {
     
     init() {
         
+        fetchData() { title, subtitle in
+            let yogaSet = YogaSet(title: title, subtitle: subtitle)
+            self.beginnerDataArray.append(yogaSet)
+            self.masterDataArray.append(yogaSet)
+        }
+        
     }
     
     func fetchData(completionHandler:@escaping(String, String)->()) {
@@ -28,9 +34,6 @@ class DataController {
                     let data = document.data()
                     let title = data["title"] as? String ?? "Empty"
                     let subtitle = data["subtitle"] as? String ?? "Empty"
-                    
-                    let yogaSet = YogaSet(title: title, subtitle: subtitle)
-                    self.beginnerDataArray.append(yogaSet)
                     
                     completionHandler (title, subtitle)
                 }
@@ -45,10 +48,7 @@ class DataController {
                     let data = document.data()
                     let title = data["title"] as? String ?? "Empty"
                     let subtitle = data["subtitle"] as? String ?? "Empty"
-                    
-                    let yogaSet = YogaSet(title: title, subtitle: subtitle)
-                    self.masterDataArray.append(yogaSet)
-                    
+    
                     completionHandler (title, subtitle)
                 }
             }
