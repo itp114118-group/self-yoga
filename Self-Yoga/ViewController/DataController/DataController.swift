@@ -15,13 +15,6 @@ class DataController {
     var dataArray = [YogaSet]()
     
     init() {
-
-        fetchData() { title, subtitle in
-            print(title)
-            print(subtitle)
-            let yogaSet = YogaSet(title: title, subtitle: subtitle)
-            self.dataArray.append(yogaSet)
-        }
         
     }
     

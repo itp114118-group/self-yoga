@@ -21,8 +21,6 @@
     
     var yogasets : [YogaSet]?
     
-    var db: Firestore!
-    
     var dataController = DataController()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,11 +31,11 @@
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        db = Firestore.firestore()
-        
         initUI()
         
-        fetchData()
+        dataController.fetchData() { title, subtitle in
+            self.begTableView.reloadData()
+        }
         
         begTableView.dataSource = self
         begTableView.delegate = self
@@ -47,29 +45,7 @@
         
         // Do any additional setup after loading the view.
     }
-    
-    func fetchData() {
-        db.collection("YogaSet").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    let data = document.data()
-                    let title = data["title"] as? String ?? ""
-                    let subtitle = data["subtitle"] as? String ?? ""
-                    
-                    let yogaSet = YogaSet(title: title, subtitle: subtitle)
-                    self.dataController.dataArray.append(yogaSet)
-                    
-                    self.begTableView.reloadData()
-                }
-                self.begTableView.reloadData()
-            }
-            self.begTableView.reloadData()
-        }
-        self.begTableView.reloadData()
-    }
-    
+
     func initUI() {
         
         begView.layer.cornerRadius = 20
