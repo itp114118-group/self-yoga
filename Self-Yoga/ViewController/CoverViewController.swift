@@ -7,8 +7,9 @@
  
  import UIKit
  import CoreData
+ import FirebaseFirestore
  
- class CoverViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+ class CoverViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var begTableView: UITableView!
     @IBOutlet weak var MasterTableView: UITableView!
@@ -18,11 +19,14 @@
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var ref: DocumentReference? = nil
+    var db: Firestore!
+    
     var yogasets : [YogaSet]?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.searchAndReloadTable(query: "")
+//        self.searchAndReloadTable(query: "")
     }
     
     override func viewDidLoad() {
@@ -30,12 +34,35 @@
         
         initUI()
         
+        db = Firestore.firestore()
+         
+        initData()
+        
         begTableView.dataSource = self
         begTableView.delegate = self
         
         MasterTableView.dataSource = self
+        MasterTableView.delegate = self
         
         // Do any additional setup after loading the view.
+    }
+    
+    func initData() {
+        db.collection("YogaSet").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    let data = document.data()
+                    let title = data["title"] as? String ?? ""
+                    let subtitle = data["subtitle"] as? String ?? ""
+                    
+                    print(title)
+                    print(subtitle)
+                }
+            }
+        }
     }
     
     func initUI() {
@@ -89,6 +116,9 @@
         self.begTableView.reloadData()
         self.MasterTableView.reloadData()
       }
+ }
+ 
+ extension CoverViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
