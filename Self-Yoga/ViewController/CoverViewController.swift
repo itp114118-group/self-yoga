@@ -19,24 +19,25 @@
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var ref: DocumentReference? = nil
+    var yogasets : [YogaSet]?
+    
     var db: Firestore!
     
-    var yogasets : [YogaSet]?
+    var dataController = DataController()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.searchAndReloadTable(query: "")
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        db = Firestore.firestore()
+        
         initUI()
         
-        db = Firestore.firestore()
-         
-        initData()
+        fetchData()
         
         begTableView.dataSource = self
         begTableView.delegate = self
@@ -47,22 +48,26 @@
         // Do any additional setup after loading the view.
     }
     
-    func initData() {
+    func fetchData() {
         db.collection("YogaSet").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
                     let data = document.data()
                     let title = data["title"] as? String ?? ""
                     let subtitle = data["subtitle"] as? String ?? ""
                     
-                    print(title)
-                    print(subtitle)
+                    let yogaSet = YogaSet(title: title, subtitle: subtitle)
+                    self.dataController.dataArray.append(yogaSet)
+                    
+                    self.begTableView.reloadData()
                 }
+                self.begTableView.reloadData()
             }
+            self.begTableView.reloadData()
         }
+        self.begTableView.reloadData()
     }
     
     func initUI() {
@@ -80,42 +85,6 @@
         MasterTableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
     
-    func searchAndReloadTable(query:String) {
-        if let managedObjectContext = self.managedObjectContext {
-            let fetchRequest = NSFetchRequest<YogaSet>(entityName: "YogaSet")
-            if query.count > 0 {
-                let predicate = NSPredicate(format: "name contains[cd] %@", query)
-                fetchRequest.predicate = predicate
-            }
-            do {
-                let theDevices = try managedObjectContext.fetch(fetchRequest)
-                self.yogasets = theDevices
-                self.begTableView.reloadData()
-                self.MasterTableView.reloadData()
-            } catch {
-                
-            }
-        }
-    }
-    
-    var managedObjectContext : NSManagedObjectContext? {
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            return appDelegate.persistentContainer.viewContext
-        }
-        return nil;
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-
-              // filterdata  = searchText.isEmpty ? data : data.filter {(item : String) -> Bool in
-        
-        searchAndReloadTable(query: searchBar.text!)
-
-              //return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
-
-        self.begTableView.reloadData()
-        self.MasterTableView.reloadData()
-      }
  }
  
  extension CoverViewController: UITableViewDelegate, UITableViewDataSource {
@@ -125,25 +94,17 @@
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let yogasets = self.yogasets {
-            return yogasets.count
-        }
-        return 0
+        return dataController.dataArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
         
-        //        if dataController.dataArray.count > 0 {
-        //            let begCollections = dataController.dataArray[indexPath.row]
-        //            cell.textLabel?.text = begCollections.title
-        //            cell.detailTextLabel?.text = begCollections.subtitle
-        //        }
-        
-        if let yogaset = self.yogasets?[indexPath.row] {
-            cell.textLabel?.text = yogaset.title
-            cell.detailTextLabel?.text = "\(yogaset.subtitle)"
-        }
+//        if dataController.dataArray.count > 0 {
+            let begCollections = dataController.dataArray[indexPath.row]
+            cell.textLabel?.text = begCollections.title
+            cell.detailTextLabel?.text = begCollections.subtitle
+//        }
         
         return cell
     }

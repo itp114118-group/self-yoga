@@ -19,8 +19,7 @@
 		1082290F2594774400F9104C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1082290E2594774400F9104C /* Profile.storyboard */; };
 		10822912259477E100F9104C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10822911259477E100F9104C /* Home.storyboard */; };
 		1082291A2594805E00F9104C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108229192594805E00F9104C /* DataController.swift */; };
-		10FCD5C82594A3AD00A1C5C6 /* YogaSet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCD5C72594A3AD00A1C5C6 /* YogaSet+CoreDataProperties.swift */; };
-		10FCD5C92594A3AD00A1C5C6 /* YogaSet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCD5C62594A3AD00A1C5C6 /* YogaSet+CoreDataClass.swift */; };
+		10C664712595CB4500E2D378 /* YogaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C664702595CB4500E2D378 /* YogaSet.swift */; };
 		42E15DDFA4C36667E8A6488F /* Pods_Self_Yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */; };
 		AB7135DB25853879003A8C99 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7135DA25853879003A8C99 /* SplashViewController.swift */; };
 		AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E3258A776200B1DC52 /* ResigerViewController.swift */; };
@@ -48,8 +47,7 @@
 		1082290E2594774400F9104C /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		10822911259477E100F9104C /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		108229192594805E00F9104C /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		10FCD5C62594A3AD00A1C5C6 /* YogaSet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "YogaSet+CoreDataClass.swift"; path = "/Users/jack.ck.lee/Documents/iOS/Self-Yoga/Self-Yoga/ViewController/Data/YogaSet+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		10FCD5C72594A3AD00A1C5C6 /* YogaSet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "YogaSet+CoreDataProperties.swift"; path = "/Users/jack.ck.lee/Documents/iOS/Self-Yoga/Self-Yoga/ViewController/Data/YogaSet+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		10C664702595CB4500E2D378 /* YogaSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaSet.swift; sourceTree = "<group>"; };
 		18AE7A0D05B319B7827DC4A0 /* Pods-Self-Yoga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self-Yoga.release.xcconfig"; path = "Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga.release.xcconfig"; sourceTree = "<group>"; };
 		A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Self_Yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7135DA25853879003A8C99 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -133,14 +131,13 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		108229222594862B00F9104C /* Data */ = {
+		108229222594862B00F9104C /* DataController */ = {
 			isa = PBXGroup;
 			children = (
-				10FCD5C62594A3AD00A1C5C6 /* YogaSet+CoreDataClass.swift */,
-				10FCD5C72594A3AD00A1C5C6 /* YogaSet+CoreDataProperties.swift */,
 				108229192594805E00F9104C /* DataController.swift */,
+				10C664702595CB4500E2D378 /* YogaSet.swift */,
 			);
-			path = Data;
+			path = DataController;
 			sourceTree = "<group>";
 		};
 		70470032A2A287FC845799B1 /* Frameworks */ = {
@@ -154,7 +151,7 @@
 		ABEEDFA1258FD6EE008AC092 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				108229222594862B00F9104C /* Data */,
+				108229222594862B00F9104C /* DataController */,
 				105F63772591F887008CE3BD /* Auth */,
 				AB7135DA25853879003A8C99 /* SplashViewController.swift */,
 				AB9521F8258BD13B00B1DC52 /* CoverViewController.swift */,
@@ -296,12 +293,11 @@
 				ABDE65BD25857F8200B7696C /* LoginViewController.swift in Sources */,
 				ABEEDFA4258FD759008AC092 /* Utilities.swift in Sources */,
 				ABD80996259024480086DDC4 /* SettingsViewController.swift in Sources */,
-				10FCD5C82594A3AD00A1C5C6 /* YogaSet+CoreDataProperties.swift in Sources */,
 				ABD1AC422590061500126FF7 /* CoverTabBarViewController.swift in Sources */,
 				100950F8257F970800B26728 /* ViewController.swift in Sources */,
-				10FCD5C92594A3AD00A1C5C6 /* YogaSet+CoreDataClass.swift in Sources */,
 				100950F4257F970800B26728 /* AppDelegate.swift in Sources */,
 				100950F6257F970800B26728 /* SceneDelegate.swift in Sources */,
+				10C664712595CB4500E2D378 /* YogaSet.swift in Sources */,
 				100950FE257F970800B26728 /* Self_Yoga.xcdatamodeld in Sources */,
 				1082291A2594805E00F9104C /* DataController.swift in Sources */,
 				AB9521F9258BD13B00B1DC52 /* CoverViewController.swift in Sources */,

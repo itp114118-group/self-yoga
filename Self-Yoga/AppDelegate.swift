@@ -9,7 +9,6 @@ import UIKit
 //import GoogleSignIn
 import CoreData
 import Firebase
-import FirebaseFirestore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,8 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        
-        let db = Firestore.firestore()
         
 //        GIDSignIn.sharedInstance()?.clientID = "547047625044-udfr02ue7in769452q9b42k5nk7ref5a.apps.googleusercontent.com"
 //        GIDSignIn.sharedInstance()?.delegate = self

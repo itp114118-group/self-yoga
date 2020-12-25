@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/jack.ck.lee/Documents/iOS/Self-Yoga/Self-Yoga/ViewController/Data/YogaSet+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/jack.ck.lee/Documents/iOS/Self-Yoga/Self-Yoga/ViewController/Data/YogaSet+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:Self-Yoga.xcodeproj">
    </FileRef>
    <FileRef
