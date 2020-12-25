@@ -18,9 +18,7 @@
     @IBOutlet weak var masterView: UIView!
     
     @IBOutlet weak var searchBar: UISearchBar!
-    
-    var yogasets : [YogaSet]?
-    
+
     var dataController = DataController()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +33,7 @@
         
         dataController.fetchData() { title, subtitle in
             self.begTableView.reloadData()
+            self.MasterTableView.reloadData()
         }
         
         begTableView.dataSource = self
@@ -76,11 +75,11 @@
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
         
-//        if dataController.dataArray.count > 0 {
+        if dataController.dataArray.count > 0 {
             let begCollections = dataController.dataArray[indexPath.row]
             cell.textLabel?.text = begCollections.title
             cell.detailTextLabel?.text = begCollections.subtitle
-//        }
+        }
         
         return cell
     }

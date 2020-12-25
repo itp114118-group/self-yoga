@@ -25,11 +25,12 @@ class DataController {
             } else {
                 for document in querySnapshot!.documents {
                     let data = document.data()
-                    let title = data["title"] as? String ?? ""
-                    let subtitle = data["subtitle"] as? String ?? ""
+                    let title = data["title"] as? String ?? "Empty"
+                    let subtitle = data["subtitle"] as? String ?? "Empty"
                     
                     let yogaSet = YogaSet(title: title, subtitle: subtitle)
                     self.dataArray.append(yogaSet)
+                    
                     completionHandler (title, subtitle)
                 }
             }
