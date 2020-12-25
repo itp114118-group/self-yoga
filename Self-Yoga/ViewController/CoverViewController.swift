@@ -69,17 +69,43 @@
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataController.dataArray.count
+        var numberOfRow = 1
+        
+        switch tableView {
+        case begTableView:
+            numberOfRow = dataController.beginnerDataArray.count
+        case MasterTableView:
+            numberOfRow = dataController.masterDataArray.count
+        default:
+            print("Error")
+        }
+        return numberOfRow
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
+        var cell = UITableViewCell()
         
-        if dataController.dataArray.count > 0 {
-            let begCollections = dataController.dataArray[indexPath.row]
+        switch tableView {
+        case begTableView:
+            cell = tableView.dequeueReusableCell(withIdentifier: "BeginnerCell", for: indexPath)
+            let begCollections = dataController.beginnerDataArray[indexPath.row]
             cell.textLabel?.text = begCollections.title
             cell.detailTextLabel?.text = begCollections.subtitle
+        case MasterTableView:
+            cell = tableView.dequeueReusableCell(withIdentifier: "MasterCell", for: indexPath)
+            let begCollections = dataController.masterDataArray[indexPath.row]
+            cell.textLabel?.text = begCollections.title
+            cell.detailTextLabel?.text = begCollections.subtitle
+        default:
+            print("Error")
         }
+        
+//
+//        if dataController.beginnerDataArray.count > 0 {
+//            let begCollections = dataController.beginnerDataArray[indexPath.row]
+//            cell.textLabel?.text = begCollections.title
+//            cell.detailTextLabel?.text = begCollections.subtitle
+//        }
         
         return cell
     }

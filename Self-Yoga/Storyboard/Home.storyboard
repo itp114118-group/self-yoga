@@ -68,7 +68,7 @@
                                         </constraints>
                                         <color key="sectionIndexBackgroundColor" name="FFFFFF"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyCell" textLabel="UM3-AV-0oB" detailTextLabel="SSB-en-ElD" style="IBUITableViewCellStyleSubtitle" id="EoD-tE-ss1">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MasterCell" textLabel="UM3-AV-0oB" detailTextLabel="SSB-en-ElD" style="IBUITableViewCellStyleSubtitle" id="EoD-tE-ss1">
                                                 <rect key="frame" x="0.0" y="28" width="374" height="55.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EoD-tE-ss1" id="tUK-Sz-7KZ">
@@ -139,7 +139,7 @@
                                         </constraints>
                                         <color key="sectionIndexBackgroundColor" name="FFFFFF"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyCell" textLabel="xGd-x4-faE" detailTextLabel="SBY-ej-ugz" style="IBUITableViewCellStyleSubtitle" id="ca8-p7-KrZ">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BeginnerCell" textLabel="xGd-x4-faE" detailTextLabel="SBY-ej-ugz" style="IBUITableViewCellStyleSubtitle" id="ca8-p7-KrZ">
                                                 <rect key="frame" x="0.0" y="28" width="374" height="55.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ca8-p7-KrZ" id="Yvu-F8-yMe">
