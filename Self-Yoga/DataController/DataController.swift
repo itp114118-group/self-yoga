@@ -55,8 +55,12 @@ class DataController {
         }
     }
     
-//    func yogaSet(at index: Int) -> YogaSet {
-//        return beginnerDataArray[index]
-//    }
+    func beginnerCollectionIndex(at index: Int) -> YogaSet {
+        return beginnerDataArray[index]
+    }
+    
+    func masterCollectionIndex(at index: Int) -> YogaSet {
+        return masterDataArray[index]
+    }
     
 }

@@ -12,11 +12,9 @@
  class HomeViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var begTableView: UITableView!
-    @IBOutlet weak var MasterTableView: UITableView!
-    
+    @IBOutlet weak var masterTableView: UITableView!
     @IBOutlet weak var begView: UIView!
     @IBOutlet weak var masterView: UIView!
-    
     @IBOutlet weak var searchBar: UISearchBar!
     
     var dataController = DataController()
@@ -28,14 +26,14 @@
         
         dataController.fetchData() { title, subtitle in
             self.begTableView.reloadData()
-            self.MasterTableView.reloadData()
+            self.masterTableView.reloadData()
         }
         
         begTableView.dataSource = self
         begTableView.delegate = self
         
-        MasterTableView.dataSource = self
-        MasterTableView.delegate = self
+        masterTableView.dataSource = self
+        masterTableView.delegate = self
         
         // Do any additional setup after loading the view.
     }
@@ -51,8 +49,8 @@
         begTableView.layer.cornerRadius = 20
         begTableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
-        MasterTableView.layer.cornerRadius = 20
-        MasterTableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        masterTableView.layer.cornerRadius = 20
+        masterTableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
     }
     
@@ -70,13 +68,13 @@
         switch tableView {
         case begTableView:
             numberOfRow = dataController.beginnerDataArray.count
-        case MasterTableView:
+        case masterTableView:
             numberOfRow = dataController.masterDataArray.count
         default:
             print("Error")
         }
         return numberOfRow
-    
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,11 +86,11 @@
             let begCollections = dataController.beginnerDataArray[indexPath.row]
             cell.textLabel?.text = begCollections.title
             cell.detailTextLabel?.text = begCollections.subtitle
-        case MasterTableView:
+        case masterTableView:
             cell = tableView.dequeueReusableCell(withIdentifier: "MasterCell", for: indexPath)
-            let begCollections = dataController.masterDataArray[indexPath.row]
-            cell.textLabel?.text = begCollections.title
-            cell.detailTextLabel?.text = begCollections.subtitle
+            let masterCollections = dataController.masterDataArray[indexPath.row]
+            cell.textLabel?.text = masterCollections.title
+            cell.detailTextLabel?.text = masterCollections.subtitle
         default:
             print("Error")
         }
@@ -107,22 +105,16 @@
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "showBeginnerCollection" {
-            if let controller = segue.destination as? HomeListViewController {
-
-                    controller.bool = true
-                
-            }
-        }
-        
-        if segue.identifier == "showMasterCollection" {
-            if let controller = segue.destination as? HomeListViewController {
-
-                    controller.bool = false
-                
+        if let controller = segue.destination as? HomeListViewController {
+            switch segue.identifier {
+            case "showBeginnerCollection":
+                controller.bool = "BeginnerCollection"
+            case "showMasterCollection":
+                controller.bool = "MasterCollection"
+            default:
+                print("Error")
             }
         }
     }
-    
     
  }

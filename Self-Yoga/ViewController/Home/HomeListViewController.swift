@@ -8,16 +8,14 @@
 import UIKit
 
 class HomeListViewController: UIViewController {
-
-    var dataController = DataController()
     
     @IBOutlet weak var tableView: UITableView!
     
-    var bool: Bool?
+    var dataController = DataController()
+    var bool: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         dataController.fetchData() { title, subtitle in
             self.tableView.reloadData()
@@ -28,17 +26,6 @@ class HomeListViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -52,12 +39,12 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource {
         var numberOfRow = 1
         
         switch bool {
-        case true:
+        case "BeginnerCollection":
             numberOfRow = dataController.beginnerDataArray.count
-        case false:
+        case "MasterCollection":
             numberOfRow = dataController.masterDataArray.count
         default:
-            print("Error")
+            print("HomeListViewController tablView numberOfRow Error")
         }
         return numberOfRow
     
@@ -67,16 +54,16 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
         
         switch bool {
-        case true:
+        case "BeginnerCollection":
             let begCollections = dataController.beginnerDataArray[indexPath.row]
             cell.textLabel?.text = begCollections.title
             cell.detailTextLabel?.text = begCollections.subtitle
-        case false:
-            let begCollections = dataController.masterDataArray[indexPath.row]
-            cell.textLabel?.text = begCollections.title
-            cell.detailTextLabel?.text = begCollections.subtitle
+        case "MasterCollection":
+            let masterCollections = dataController.masterDataArray[indexPath.row]
+            cell.textLabel?.text = masterCollections.title
+            cell.detailTextLabel?.text = masterCollections.subtitle
         default:
-            print("Error")
+            print("HomeListViewController tableView Show Data Error")
         }
         
         return cell
@@ -89,7 +76,26 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-
+        if let controller = segue.destination as? HomeDetailViewController {
+            if segue.identifier == "showYogaSetDetail" {
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    switch bool {
+                    case "BeginnerCollection":
+                        controller.bool = "BeginnerCollection"
+                        controller.yogatitle = dataController.beginnerCollectionIndex(at: indexPath.row).title
+                        controller.duration = dataController.beginnerCollectionIndex(at: indexPath.row).duration
+                        controller.tempo = dataController.beginnerCollectionIndex(at: indexPath.row).tempo
+                    case "MasterCollection":
+                        controller.bool = "MasterCollection"
+                        controller.yogatitle = dataController.masterCollectionIndex(at: indexPath.row).title
+                        controller.duration = dataController.masterCollectionIndex(at: indexPath.row).duration
+                        controller.tempo = dataController.masterCollectionIndex(at: indexPath.row).tempo
+                    default:
+                        print("HomeListViewController prepare Error")
+                    }
+                }
+            }
+        }
     }
    
 }
