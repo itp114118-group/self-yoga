@@ -115,6 +115,29 @@
                 print("Error")
             }
         }
+        
+        if let controller = segue.destination as? HomeDetailViewController {
+            let indexPath = begTableView.indexPathForSelectedRow
+            let indexPath2 = masterTableView.indexPathForSelectedRow
+            
+            switch segue.identifier {
+            case "showBeginnerDetail":
+                controller.bool = "BeginnerCollection"
+                controller.yogatitle = dataController.beginnerCollectionIndex(at: indexPath!.row).title
+                controller.duration = dataController.beginnerCollectionIndex(at: indexPath!.row).duration
+                controller.tempo = dataController.beginnerCollectionIndex(at: indexPath!.row).tempo
+                
+            case "showMasterDetail":
+                controller.bool = "MasterCollection"
+                controller.yogatitle = dataController.masterCollectionIndex(at: indexPath2!.row).title
+                controller.duration = dataController.masterCollectionIndex(at: indexPath2!.row).duration
+                controller.tempo = dataController.masterCollectionIndex(at: indexPath2!.row).tempo
+                
+            default:
+                print("Error")
+            }
+        }
+        
     }
     
  }
