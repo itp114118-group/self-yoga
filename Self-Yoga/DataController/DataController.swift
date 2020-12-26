@@ -17,25 +17,34 @@ class DataController {
     
     init() {
         
-        fetchData() { title, subtitle in
+        fetchData() { title, subtitle, collectionName in
             let yogaSet = YogaSet(title: title, subtitle: subtitle)
-            self.beginnerDataArray.append(yogaSet)
-            self.masterDataArray.append(yogaSet)
+            
+            switch collectionName {
+            case "Beginner Collection":
+                self.beginnerDataArray.append(yogaSet)
+            case "Masters' Collection":
+                self.masterDataArray.append(yogaSet)
+            default:
+                print("Error")
+            }
+            
         }
         
     }
     
-    func fetchData(completionHandler:@escaping(String, String)->()) {
+    func fetchData(completionHandler:@escaping(String, String, String)->()) {
         db.collection("Beginners Collection").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
                     let data = document.data()
+                    let collectionName = "Beginner Collection"
                     let title = data["title"] as? String ?? "Empty"
                     let subtitle = data["subtitle"] as? String ?? "Empty"
                     
-                    completionHandler (title, subtitle)
+                    completionHandler (title, subtitle, collectionName)
                 }
             }
         }
@@ -46,10 +55,12 @@ class DataController {
             } else {
                 for document in querySnapshot!.documents {
                     let data = document.data()
+                    
+                    let collectionName = "Masters' Collection"
                     let title = data["title"] as? String ?? "Empty"
                     let subtitle = data["subtitle"] as? String ?? "Empty"
     
-                    completionHandler (title, subtitle)
+                    completionHandler (title, subtitle, collectionName)
                 }
             }
         }

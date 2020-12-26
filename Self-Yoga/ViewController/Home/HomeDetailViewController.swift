@@ -27,7 +27,7 @@ class HomeDetailViewController: UIViewController {
         durationLabel.text = "\(duration)"
         tempoLabel.text = tempo
         
-        dataController.fetchData() { title, subtitle in
+        dataController.fetchData() { title, subtitle, collectionName in
             self.tableView.reloadData()
         }
         

@@ -17,7 +17,7 @@ class HomeListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataController.fetchData() { title, subtitle in
+        dataController.fetchData() { title, subtitle, collectionName in
             self.tableView.reloadData()
         }
         

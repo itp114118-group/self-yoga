@@ -24,7 +24,7 @@
         
         initUI()
         
-        dataController.fetchData() { title, subtitle in
+        dataController.fetchData() { title, subtitle, collectionName in
             self.begTableView.reloadData()
             self.masterTableView.reloadData()
         }
