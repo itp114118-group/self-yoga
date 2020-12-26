@@ -117,21 +117,21 @@
         }
         
         if let controller = segue.destination as? HomeDetailViewController {
-            let indexPath = begTableView.indexPathForSelectedRow
-            let indexPath2 = masterTableView.indexPathForSelectedRow
+            let beginnerIndexPath = begTableView.indexPathForSelectedRow
+            let masterIndexPath = masterTableView.indexPathForSelectedRow
             
             switch segue.identifier {
             case "showBeginnerDetail":
                 controller.bool = "BeginnerCollection"
-                controller.yogatitle = dataController.beginnerCollectionIndex(at: indexPath!.row).title
-                controller.duration = dataController.beginnerCollectionIndex(at: indexPath!.row).duration
-                controller.tempo = dataController.beginnerCollectionIndex(at: indexPath!.row).tempo
+                controller.yogatitle = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).title
+                controller.duration = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).duration
+                controller.tempo = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).tempo
                 
             case "showMasterDetail":
                 controller.bool = "MasterCollection"
-                controller.yogatitle = dataController.masterCollectionIndex(at: indexPath2!.row).title
-                controller.duration = dataController.masterCollectionIndex(at: indexPath2!.row).duration
-                controller.tempo = dataController.masterCollectionIndex(at: indexPath2!.row).tempo
+                controller.yogatitle = dataController.masterCollectionIndex(at: masterIndexPath!.row).title
+                controller.duration = dataController.masterCollectionIndex(at: masterIndexPath!.row).duration
+                controller.tempo = dataController.masterCollectionIndex(at: masterIndexPath!.row).tempo
                 
             default:
                 print("Error")
