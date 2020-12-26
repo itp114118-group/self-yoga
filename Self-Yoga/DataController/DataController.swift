@@ -17,8 +17,8 @@ class DataController {
     
     init() {
         
-        fetchData() { title, subtitle, collectionName in
-            let yogaSet = YogaSet(title: title, subtitle: subtitle)
+        fetchData() { collectionName, title, subtitle, duration, tempo, description in
+            let yogaSet = YogaSet(title: title, subtitle: subtitle, duration: duration, tempo: tempo, description: description)
             
             switch collectionName {
             case "Beginner Collection":
@@ -26,14 +26,14 @@ class DataController {
             case "Masters' Collection":
                 self.masterDataArray.append(yogaSet)
             default:
-                print("Error")
+                print("DataController init Error")
             }
             
         }
         
     }
     
-    func fetchData(completionHandler:@escaping(String, String, String)->()) {
+    func fetchData(completionHandler:@escaping(String, String, String, String, String, String)->()) {
         db.collection("Beginners Collection").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -43,8 +43,11 @@ class DataController {
                     let collectionName = "Beginner Collection"
                     let title = data["title"] as? String ?? "Empty"
                     let subtitle = data["subtitle"] as? String ?? "Empty"
+                    let duration = data["duration"] as? String ?? "Empty"
+                    let tempo = data["tempo"] as? String ?? "Empty"
+                    let description = data["description"] as? String ?? "Empty"
                     
-                    completionHandler (title, subtitle, collectionName)
+                    completionHandler (collectionName, title, subtitle, duration, tempo, description)
                 }
             }
         }
@@ -59,8 +62,11 @@ class DataController {
                     let collectionName = "Masters' Collection"
                     let title = data["title"] as? String ?? "Empty"
                     let subtitle = data["subtitle"] as? String ?? "Empty"
+                    let duration = data["duration"] as? String ?? "Empty"
+                    let tempo = data["tempo"] as? String ?? "Empty"
+                    let description = data["description"] as? String ?? "Empty"
     
-                    completionHandler (title, subtitle, collectionName)
+                    completionHandler (collectionName, title, subtitle, duration, tempo, description)
                 }
             }
         }

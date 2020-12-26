@@ -408,6 +408,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="511-aI-Gxi"/>
                     <connections>
+                        <outlet property="descriptionLabel" destination="0n3-aq-vvB" id="UuO-6O-yZu"/>
                         <outlet property="durationLabel" destination="g09-mx-U6F" id="kuS-z1-cnL"/>
                         <outlet property="tableView" destination="89i-lg-lze" id="RUj-yS-0zS"/>
                         <outlet property="tempoLabel" destination="avw-bC-iUe" id="EzL-dP-C2R"/>
@@ -416,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9e-Sp-msE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2796" y="-2377"/>
+            <point key="canvasLocation" x="2795.6521739130435" y="-2377.2321428571427"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -24,7 +24,7 @@
         
         initUI()
         
-        dataController.fetchData() { title, subtitle, collectionName in
+        dataController.fetchData() { collectionName, title, subtitle, duration, tempo, description in
             self.begTableView.reloadData()
             self.masterTableView.reloadData()
         }
@@ -126,13 +126,13 @@
                 controller.yogatitle = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).title
                 controller.duration = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).duration
                 controller.tempo = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).tempo
-                
+                controller.yogadescription = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).description
             case "showMasterDetail":
                 controller.bool = "MasterCollection"
                 controller.yogatitle = dataController.masterCollectionIndex(at: masterIndexPath!.row).title
                 controller.duration = dataController.masterCollectionIndex(at: masterIndexPath!.row).duration
                 controller.tempo = dataController.masterCollectionIndex(at: masterIndexPath!.row).tempo
-                
+                controller.yogadescription = dataController.beginnerCollectionIndex(at: masterIndexPath!.row).description
             default:
                 print("Error")
             }

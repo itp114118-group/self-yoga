@@ -17,7 +17,7 @@ class HomeListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataController.fetchData() { title, subtitle, collectionName in
+        dataController.fetchData() { collectionName, title, subtitle, duration, tempo, description in
             self.tableView.reloadData()
         }
         
@@ -85,11 +85,13 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource {
                         controller.yogatitle = dataController.beginnerCollectionIndex(at: indexPath.row).title
                         controller.duration = dataController.beginnerCollectionIndex(at: indexPath.row).duration
                         controller.tempo = dataController.beginnerCollectionIndex(at: indexPath.row).tempo
+                        controller.yogadescription = dataController.beginnerCollectionIndex(at: indexPath.row).description
                     case "MasterCollection":
                         controller.bool = "MasterCollection"
                         controller.yogatitle = dataController.masterCollectionIndex(at: indexPath.row).title
                         controller.duration = dataController.masterCollectionIndex(at: indexPath.row).duration
                         controller.tempo = dataController.masterCollectionIndex(at: indexPath.row).tempo
+                        controller.yogadescription = dataController.masterCollectionIndex(at: indexPath.row).description
                     default:
                         print("HomeListViewController prepare Error")
                     }

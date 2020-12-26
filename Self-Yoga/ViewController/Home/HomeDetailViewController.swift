@@ -12,22 +12,25 @@ class HomeDetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var tempoLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     var dataController = DataController()
     var bool: String?
     var yogatitle: String?
-    var duration: Int?
+    var duration: String?
     var tempo: String?
+    var yogadescription: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         titleLabel.text = yogatitle
-        durationLabel.text = "\(duration)"
+        durationLabel.text = duration
         tempoLabel.text = tempo
+        descriptionLabel.text = yogadescription
         
-        dataController.fetchData() { title, subtitle, collectionName in
+        dataController.fetchData() { collectionName, title, subtitle, duration, tempo, description in
             self.tableView.reloadData()
         }
         

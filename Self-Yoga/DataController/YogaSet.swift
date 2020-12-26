@@ -12,7 +12,7 @@ struct YogaSet {
     var title: String?
     var subtitle: String?
     
-    var duration: Int?
+    var duration: String?
     var tempo: String?
     var description: String?
     
