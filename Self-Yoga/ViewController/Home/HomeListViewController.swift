@@ -13,7 +13,7 @@ class HomeListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var bool: String?
+    var bool: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +52,9 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource {
         var numberOfRow = 1
         
         switch bool {
-        case "showBeginnerCollection":
+        case true:
             numberOfRow = dataController.beginnerDataArray.count
-        case "showMasterCollection":
+        case false:
             numberOfRow = dataController.masterDataArray.count
         default:
             print("Error")
@@ -64,16 +64,14 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
         
         switch bool {
-        case "showBeginnerCollection":
-            cell = tableView.dequeueReusableCell(withIdentifier: "BeginnerCell", for: indexPath)
+        case true:
             let begCollections = dataController.beginnerDataArray[indexPath.row]
             cell.textLabel?.text = begCollections.title
             cell.detailTextLabel?.text = begCollections.subtitle
-        case "showMasterCollection":
-            cell = tableView.dequeueReusableCell(withIdentifier: "MasterCell", for: indexPath)
+        case false:
             let begCollections = dataController.masterDataArray[indexPath.row]
             cell.textLabel?.text = begCollections.title
             cell.detailTextLabel?.text = begCollections.subtitle

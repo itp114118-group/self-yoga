@@ -110,7 +110,7 @@
         if segue.identifier == "showBeginnerCollection" {
             if let controller = segue.destination as? HomeListViewController {
 
-                    controller.bool = 
+                    controller.bool = true
                 
             }
         }
@@ -118,7 +118,7 @@
         if segue.identifier == "showMasterCollection" {
             if let controller = segue.destination as? HomeListViewController {
 
-                    controller.bool = "MasterCollection"
+                    controller.bool = false
                 
             }
         }
