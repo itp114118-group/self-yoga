@@ -8,19 +8,23 @@
 
 import UIKit
 import Charts
+import HealthKit
 
-class GoalsViewController: UIViewController, ChartViewDelegate {
-    
-    var pieChart = PieChartView()
-    var barChart = BarChartView()
+class GoalsViewController: UIViewController {
     
     @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var pieChartView: PieChartView!
+    
+    var pieChart = PieChartView()
+    var barChart = BarChartView()
+    let healthKitManager = HealthKitManager.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pieChart.delegate = self
         barChart.delegate = self
+  
+        healthKitManager.requestHealthKitAuthorization()
     }
     
     override func viewDidLayoutSubviews() {
@@ -30,6 +34,10 @@ class GoalsViewController: UIViewController, ChartViewDelegate {
         showPieChartView()
     }
     
+}
+
+extension GoalsViewController: ChartViewDelegate {
+        
     func showBarChartView() {
         barChart.frame = CGRect(x: 0, y: 0, width: self.barChartView.frame.size.width,
                                 height: self.barChartView.frame.size.height)
@@ -82,7 +90,7 @@ class GoalsViewController: UIViewController, ChartViewDelegate {
         set.colors = colors as! [NSUIColor]
         pieChart.data = PieChartData(dataSet: set)
         
-//        pieChart.data?.setDrawValues(false)
+        //        pieChart.data?.setDrawValues(false)
         
         pieChart.animate(xAxisDuration: 2.0)
         

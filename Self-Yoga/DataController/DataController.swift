@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestore
 
-class DataController {
+open class DataController {
     
     var db = Firestore.firestore()
     
