@@ -22,6 +22,8 @@
 		10C664712595CB4500E2D378 /* YogaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C664702595CB4500E2D378 /* YogaSet.swift */; };
 		10C664842595F6D600E2D378 /* HomeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C664832595F6D600E2D378 /* HomeListViewController.swift */; };
 		10C664872595F75A00E2D378 /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C664862595F75A00E2D378 /* HomeDetailViewController.swift */; };
+		10C6AF01259847450022649E /* Predictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6AF00259847450022649E /* Predictor.swift */; };
+		10C6AF0425984EC40022649E /* PlayerActionClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 10C6AF0325984EC40022649E /* PlayerActionClassifier.mlmodel */; };
 		42E15DDFA4C36667E8A6488F /* Pods_Self_Yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */; };
 		AB7135DB25853879003A8C99 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7135DA25853879003A8C99 /* SplashViewController.swift */; };
 		AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E3258A776200B1DC52 /* ResigerViewController.swift */; };
@@ -52,6 +54,8 @@
 		10C664702595CB4500E2D378 /* YogaSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaSet.swift; sourceTree = "<group>"; };
 		10C664832595F6D600E2D378 /* HomeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListViewController.swift; sourceTree = "<group>"; };
 		10C664862595F75A00E2D378 /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
+		10C6AF00259847450022649E /* Predictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Predictor.swift; sourceTree = "<group>"; };
+		10C6AF0325984EC40022649E /* PlayerActionClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PlayerActionClassifier.mlmodel; sourceTree = "<group>"; };
 		18AE7A0D05B319B7827DC4A0 /* Pods-Self-Yoga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self-Yoga.release.xcconfig"; path = "Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga.release.xcconfig"; sourceTree = "<group>"; };
 		A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Self_Yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7135DA25853879003A8C99 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			children = (
 				105F63792591F8B9008CE3BD /* Storyboard */,
 				10C664762595F3A400E2D378 /* ViewController */,
+				10C6AEFF259847030022649E /* ModelPredictor */,
 				ABEEDFA1258FD6EE008AC092 /* DataController */,
 				100950F3257F970800B26728 /* AppDelegate.swift */,
 				100950F5257F970800B26728 /* SceneDelegate.swift */,
@@ -157,6 +162,15 @@
 				10C664862595F75A00E2D378 /* HomeDetailViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		10C6AEFF259847030022649E /* ModelPredictor */ = {
+			isa = PBXGroup;
+			children = (
+				10C6AF0325984EC40022649E /* PlayerActionClassifier.mlmodel */,
+				10C6AF00259847450022649E /* Predictor.swift */,
+			);
+			path = ModelPredictor;
 			sourceTree = "<group>";
 		};
 		70470032A2A287FC845799B1 /* Frameworks */ = {
@@ -317,8 +331,10 @@
 				10C664842595F6D600E2D378 /* HomeListViewController.swift in Sources */,
 				10C664872595F75A00E2D378 /* HomeDetailViewController.swift in Sources */,
 				AB9521F9258BD13B00B1DC52 /* HomeViewController.swift in Sources */,
+				10C6AF0425984EC40022649E /* PlayerActionClassifier.mlmodel in Sources */,
 				AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */,
 				ABC240D4258CDBA900554848 /* GoalsViewController.swift in Sources */,
+				10C6AF01259847450022649E /* Predictor.swift in Sources */,
 				AB7135DB25853879003A8C99 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
