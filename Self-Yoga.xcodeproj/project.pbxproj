@@ -24,6 +24,8 @@
 		10C664872595F75A00E2D378 /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C664862595F75A00E2D378 /* HomeDetailViewController.swift */; };
 		10C6AF01259847450022649E /* Predictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6AF00259847450022649E /* Predictor.swift */; };
 		10C6AF0425984EC40022649E /* PlayerActionClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 10C6AF0325984EC40022649E /* PlayerActionClassifier.mlmodel */; };
+		10C6AF2F259864FC0022649E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C6AF2E259864FC0022649E /* HealthKit.framework */; };
+		10C6AF32259871840022649E /* HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6AF31259871840022649E /* HealthKit.swift */; };
 		42E15DDFA4C36667E8A6488F /* Pods_Self_Yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */; };
 		AB7135DB25853879003A8C99 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7135DA25853879003A8C99 /* SplashViewController.swift */; };
 		AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E3258A776200B1DC52 /* ResigerViewController.swift */; };
@@ -56,6 +58,9 @@
 		10C664862595F75A00E2D378 /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
 		10C6AF00259847450022649E /* Predictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Predictor.swift; sourceTree = "<group>"; };
 		10C6AF0325984EC40022649E /* PlayerActionClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PlayerActionClassifier.mlmodel; sourceTree = "<group>"; };
+		10C6AF2D259864FC0022649E /* Self-Yoga.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Self-Yoga.entitlements"; sourceTree = "<group>"; };
+		10C6AF2E259864FC0022649E /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		10C6AF31259871840022649E /* HealthKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKit.swift; sourceTree = "<group>"; };
 		18AE7A0D05B319B7827DC4A0 /* Pods-Self-Yoga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self-Yoga.release.xcconfig"; path = "Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga.release.xcconfig"; sourceTree = "<group>"; };
 		A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Self_Yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7135DA25853879003A8C99 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42E15DDFA4C36667E8A6488F /* Pods_Self_Yoga.framework in Frameworks */,
+				10C6AF2F259864FC0022649E /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +109,7 @@
 		100950F2257F970800B26728 /* Self-Yoga */ = {
 			isa = PBXGroup;
 			children = (
+				10C6AF2D259864FC0022649E /* Self-Yoga.entitlements */,
 				105F63792591F8B9008CE3BD /* Storyboard */,
 				10C664762595F3A400E2D378 /* ViewController */,
 				10C6AEFF259847030022649E /* ModelPredictor */,
@@ -176,6 +183,7 @@
 		70470032A2A287FC845799B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10C6AF2E259864FC0022649E /* HealthKit.framework */,
 				A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */,
 			);
 			name = Frameworks;
@@ -186,6 +194,7 @@
 			children = (
 				108229192594805E00F9104C /* DataController.swift */,
 				10C664702595CB4500E2D378 /* YogaSet.swift */,
+				10C6AF31259871840022649E /* HealthKit.swift */,
 			);
 			path = DataController;
 			sourceTree = "<group>";
@@ -329,6 +338,7 @@
 				100950FE257F970800B26728 /* Self_Yoga.xcdatamodeld in Sources */,
 				1082291A2594805E00F9104C /* DataController.swift in Sources */,
 				10C664842595F6D600E2D378 /* HomeListViewController.swift in Sources */,
+				10C6AF32259871840022649E /* HealthKit.swift in Sources */,
 				10C664872595F75A00E2D378 /* HomeDetailViewController.swift in Sources */,
 				AB9521F9258BD13B00B1DC52 /* HomeViewController.swift in Sources */,
 				10C6AF0425984EC40022649E /* PlayerActionClassifier.mlmodel in Sources */,
@@ -483,6 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Self-Yoga/Self-Yoga.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5JS8HUQALB;
 				INFOPLIST_FILE = "Self-Yoga/Info.plist";
@@ -503,6 +514,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Self-Yoga/Self-Yoga.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5JS8HUQALB;
 				INFOPLIST_FILE = "Self-Yoga/Info.plist";
