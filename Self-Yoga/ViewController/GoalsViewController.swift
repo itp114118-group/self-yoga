@@ -15,16 +15,15 @@ class GoalsViewController: UIViewController {
     @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var pieChartView: PieChartView!
     
-    var pieChart = PieChartView()
     var barChart = BarChartView()
-    let healthKitManager = HealthKitManager.sharedInstance
+    var pieChart = PieChartView()
+    let healthKit = HealthKit.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pieChart.delegate = self
         barChart.delegate = self
-  
-        healthKitManager.requestHealthKitAuthorization()
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -32,12 +31,23 @@ class GoalsViewController: UIViewController {
         
         showBarChartView()
         showPieChartView()
+        
+        healthKit.requestHealthKitAuthorization { (isAuthorized, error) in
+            if isAuthorized {
+                self.healthKit.querySteps() { results in
+                    print(results)
+                }
+            } else {
+                print(error!)
+            }
+        }
+        
     }
     
 }
 
 extension GoalsViewController: ChartViewDelegate {
-        
+    
     func showBarChartView() {
         barChart.frame = CGRect(x: 0, y: 0, width: self.barChartView.frame.size.width,
                                 height: self.barChartView.frame.size.height)
@@ -60,16 +70,19 @@ extension GoalsViewController: ChartViewDelegate {
         // Don't show data
         barChart.data?.setDrawValues(false)
         
+        // Animation
+        barChart.animate(xAxisDuration: 2.0)
+        
+        // UI design
         barChartView.backgroundColor = UIColor(named: "003659")
         
         barChart.xAxis.labelPosition = .bottom
         barChart.xAxis.labelTextColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         barChart.leftAxis.labelTextColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
-        barChart.animate(xAxisDuration: 2.0)
-        
         barChartView.layer.cornerRadius = 20
         barChartView.layer.masksToBounds = true
+        
     }
     
     func showPieChartView() {
@@ -92,8 +105,10 @@ extension GoalsViewController: ChartViewDelegate {
         
         //        pieChart.data?.setDrawValues(false)
         
+        // Animation
         pieChart.animate(xAxisDuration: 2.0)
         
+        // UI design
         pieChartView.backgroundColor = UIColor(named: "003659")
         
         pieChartView.layer.cornerRadius = 20
@@ -105,5 +120,5 @@ extension GoalsViewController: ChartViewDelegate {
         pieChart.drawHoleEnabled = false
         
     }
-
+    
 }

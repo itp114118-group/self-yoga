@@ -66,8 +66,6 @@
 	</array>
 	<key>NSHealthShareUsageDescription</key>
 	<string>&quot;Please give us the reading permission to allow the app to work.&quot;</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>&quot;Please give us the update permission to add data into Apple Health.&quot;</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
