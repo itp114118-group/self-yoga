@@ -6,60 +6,98 @@
 ////
 //
 //import Foundation
-//import CoreML
-//import Vision
 //
 //class Predictor {
 //
-//    let playerActionClassifier = PlayerActionClassifier()
+//    // Accurate pose detector on static images, when depending on the
+//    // PoseDetectionAccurate SDK
+//    let options = AccuratePoseDetectorOptions()
+//    options.detectorMode = .singleImage
 //
-//    let humanBodyPoseRequest = VNDetectHumanBodyPoseRequest()
+//    let poseDetector = PoseDetector.poseDetector(options: options)
 //
-//    var posesWindow: [VNRecognizedPointsObservation?] = []
+//    let image = VisionImage(image: UIImage)
+//    visionImage.orientation = image.imageOrientation
 //
-//    init() {
-//        posesWindow.reserveCapacity(predictionWindowSize)
+//    func imageOrientation(
+//      deviceOrientation: UIDeviceOrientation,
+//      cameraPosition: AVCaptureDevice.Position
+//    ) -> UIImage.Orientation {
+//      switch deviceOrientation {
+//      case .portrait:
+//        return cameraPosition == .front ? .leftMirrored : .right
+//      case .landscapeLeft:
+//        return cameraPosition == .front ? .downMirrored : .up
+//      case .portraitUpsideDown:
+//        return cameraPosition == .front ? .rightMirrored : .left
+//      case .landscapeRight:
+//        return cameraPosition == .front ? .upMirrored : .down
+//      case .faceDown, .faceUp, .unknown:
+//        return .up
+//      }
 //    }
 //
-//    func processFrame(_ samplebuffer: CMSampleBuffer) throws -> [VNRecognizedPointsObservation] {
-//            // 抓取出视频中的动作
-//            let framePoses = extractPoses(from: samplebuffer)
+//    let image = VisionImage(buffer: sampleBuffer)
+//    image.orientation = imageOrientation(
+//      deviceOrientation: UIDevice.current.orientation,
+//      cameraPosition: cameraPosition)
 //
-//            // 选择视频中最明显的那个人
-//            let pose = try selectMostProminentPerson(from: framePoses)
-//
-//            // 将数据点导入分析窗口
-//            posesWindow.append(pose)
-//
-//            return framePoses
-//        }
-//
-//    var isReadyToMakePrediction: Bool {
-//        posesWindow.count == predictionWindowSize
+//    var results: [Pose]
+//    do {
+//      results = try poseDetector.results(in: image)
+//    } catch let error {
+//      print("Failed to detect pose with error: \(error.localizedDescription).")
+//      return
+//    }
+//    guard let detectedPoses = results, !detectedPoses.isEmpty else {
+//      print("Pose detector returned no results.")
+//      return
 //    }
 //
-//    func makePrediction() throws -> PredictionOutput {
-//        // 将数据识别点转化为多维特征矩阵
-//        let poseMultiArrays: [MLMultiArray] = try posesWindow.map { person in
-//            guard let person = person else {
-//                return zeroPaddedMultiArray()
-//            }
-//            return try person.keypointsMultiArray()
-//        }
+//    // Success. Get pose landmarks here.
 //
-//        // 数据处理
-//        let modelInput = MLMultiArray(concatenating: poseMultiArrays, axis: 0, dataType: .float)
+//    poseDetector.process(image) { detectedPoses, error in
+//      guard error == nil else {
+//        // Error.
+//        return
+//      }
+//      guard !detectedPoses.isEmpty else {
+//        // No pose detected.
+//        return
+//      }
 //
-//        // 调用分类器模型对数据进行分析
-//        let predictions = try playerActionClassifier.prediction(poses: modelInput)
-//
-//        // 重置分析窗口
-//        posesWindow.removeFirst(predictionInterval)
-//
-//       // 返回动作类型及其相关的置信度
-//        return (
-//            label: predictions.label,
-//            confidence: predictions.labelProbabilities[predictions.label]!
-//        )
+//      // Success. Get pose landmarks here.
 //    }
+//
+//    for pose in detectedPoses {
+//      let leftAnkleLandmark = pose.landmark(ofType: .leftAnkle)
+//      if leftAnkleLandmark.inFrameLikelihood > 0.5 {
+//        let position = leftAnkleLandmark.position
+//      }
+//    }
+//
+//    // Pose Classification Tips
+//    func angle(
+//          firstLandmark: PoseLandmark,
+//          midLandmark: PoseLandmark,
+//          lastLandmark: PoseLandmark
+//      ) -> CGFloat {
+//          let radians: CGFloat =
+//              atan2(lastLandmark.position.y - midLandmark.position.y,
+//                        lastLandmark.position.x - midLandmark.position.x) -
+//                atan2(firstLandmark.position.y - midLandmark.position.y,
+//                        firstLandmark.position.x - midLandmark.position.x)
+//          var degrees = radians * 180.0 / .pi
+//          degrees = abs(degrees) // Angle should never be negative
+//          if degrees > 180.0 {
+//              degrees = 360.0 - degrees // Always get the acute representation of the angle
+//          }
+//          return degrees
+//      }
+//
+//    let rightHipAngle = angle(
+//          firstLandmark: pose.landmark(ofType: .rightShoulder),
+//          midLandmark: pose.landmark(ofType: .rightHip),
+//          lastLandmark: pose.landmark(ofType: .rightKnee))
+//
 //}

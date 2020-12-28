@@ -24,23 +24,16 @@ class GoalsViewController: UIViewController {
         pieChart.delegate = self
         barChart.delegate = self
         
+//        healthKit.requestHealthKitAuthorization()
+//        
+//        print(self.healthKit.steps)
+        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         showBarChartView()
         showPieChartView()
-        
-        healthKit.requestHealthKitAuthorization { (isAuthorized, error) in
-            if isAuthorized {
-                self.healthKit.querySteps() { results in
-                    print(results)
-                }
-            } else {
-                print(error!)
-            }
-        }
         
     }
     

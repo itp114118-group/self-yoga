@@ -23,7 +23,6 @@
 		10C664842595F6D600E2D378 /* HomeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C664832595F6D600E2D378 /* HomeListViewController.swift */; };
 		10C664872595F75A00E2D378 /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C664862595F75A00E2D378 /* HomeDetailViewController.swift */; };
 		10C6AF01259847450022649E /* Predictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6AF00259847450022649E /* Predictor.swift */; };
-		10C6AF0425984EC40022649E /* PlayerActionClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 10C6AF0325984EC40022649E /* PlayerActionClassifier.mlmodel */; };
 		10C6AF2F259864FC0022649E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C6AF2E259864FC0022649E /* HealthKit.framework */; };
 		10C6AF32259871840022649E /* HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6AF31259871840022649E /* HealthKit.swift */; };
 		42E15DDFA4C36667E8A6488F /* Pods_Self_Yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */; };
@@ -57,7 +56,6 @@
 		10C664832595F6D600E2D378 /* HomeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListViewController.swift; sourceTree = "<group>"; };
 		10C664862595F75A00E2D378 /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
 		10C6AF00259847450022649E /* Predictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Predictor.swift; sourceTree = "<group>"; };
-		10C6AF0325984EC40022649E /* PlayerActionClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PlayerActionClassifier.mlmodel; sourceTree = "<group>"; };
 		10C6AF2D259864FC0022649E /* Self-Yoga.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Self-Yoga.entitlements"; sourceTree = "<group>"; };
 		10C6AF2E259864FC0022649E /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		10C6AF31259871840022649E /* HealthKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKit.swift; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 		10C6AEFF259847030022649E /* ModelPredictor */ = {
 			isa = PBXGroup;
 			children = (
-				10C6AF0325984EC40022649E /* PlayerActionClassifier.mlmodel */,
 				10C6AF00259847450022649E /* Predictor.swift */,
 			);
 			path = ModelPredictor;
@@ -341,7 +338,6 @@
 				10C6AF32259871840022649E /* HealthKit.swift in Sources */,
 				10C664872595F75A00E2D378 /* HomeDetailViewController.swift in Sources */,
 				AB9521F9258BD13B00B1DC52 /* HomeViewController.swift in Sources */,
-				10C6AF0425984EC40022649E /* PlayerActionClassifier.mlmodel in Sources */,
 				AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */,
 				ABC240D4258CDBA900554848 /* GoalsViewController.swift in Sources */,
 				10C6AF01259847450022649E /* Predictor.swift in Sources */,
