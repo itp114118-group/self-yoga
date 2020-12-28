@@ -13,6 +13,8 @@ class HealthKit {
     var steps = [HKQuantitySample]()
     var exerciseTime = [HKQuantitySample]()
  
+    var readTypes = Set<HKObjectType>()
+    
     // get data from last 7 days
 //    let predicate = HKQuery.predicateForSamples(withStart: Date() - 7 * 24 * 60 * 60, end: Date(), options: [])
     
@@ -43,8 +45,10 @@ class HealthKit {
     
     // ask health app permission
     func requestHealthKitAuthorization() {
-        let dataTypesToRead = NSSet(objects: stepsCount as Any)
-        healthStore?.requestAuthorization(toShare: nil, read: dataTypesToRead as? Set<HKObjectType>, completion: { (success, error) in
+        readTypes.insert(stepsCount!)
+        readTypes.insert(dataCount!)
+        
+        healthStore?.requestAuthorization(toShare: nil, read: readTypes, completion: { (success, error) in
             if success {
                 self.querySteps() { results in
                     self.steps = results
