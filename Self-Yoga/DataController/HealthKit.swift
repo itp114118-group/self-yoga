@@ -12,6 +12,10 @@ class HealthKit {
     
     var steps = [HKQuantitySample]()
     
+    init() {
+        requestHealthKitAuthorization()
+    }
+    
     class var sharedInstance: HealthKit {
         struct Singleton {
             static let instance = HealthKit()
@@ -32,12 +36,12 @@ class HealthKit {
     
     let stepsUnit = HKUnit.count()
     
-    func requestHealthKitAuthorization(completionHandler:@escaping(String)->()) {
+    func requestHealthKitAuthorization() {
         let dataTypesToRead = NSSet(objects: stepsCount as Any)
-        let result = healthStore?.requestAuthorization(toShare: nil, read: dataTypesToRead as? Set<HKObjectType>, completion: { (success, error) in
+        healthStore?.requestAuthorization(toShare: nil, read: dataTypesToRead as? Set<HKObjectType>, completion: { (success, error) in
             if success {
                 self.querySteps() { results in
-                    print(results)
+                    self.steps = results
                 }
             } else {
                 print(error.debugDescription)
@@ -53,7 +57,7 @@ class HealthKit {
                                         sortDescriptors: nil)
         { (query, results, error) in
             if let results = results as? [HKQuantitySample] {
-                completionHandler (results)
+                completionHandler(results)
             }
         }
         

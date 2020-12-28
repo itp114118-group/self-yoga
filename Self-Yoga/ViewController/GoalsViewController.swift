@@ -17,16 +17,15 @@ class GoalsViewController: UIViewController {
     
     var barChart = BarChartView()
     var pieChart = PieChartView()
-    let healthKit = HealthKit.sharedInstance
+    
+    let healthKit = HealthKit()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pieChart.delegate = self
         barChart.delegate = self
         
-//        healthKit.requestHealthKitAuthorization()
-//        
-//        print(self.healthKit.steps)
+        print(healthKit.steps)
         
     }
     
