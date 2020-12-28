@@ -18,13 +18,12 @@ class GoalsViewController: UIViewController {
     var barChart = BarChartView()
     var pieChart = PieChartView()
     
-    let healthKit = HealthKit()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         pieChart.delegate = self
         barChart.delegate = self
         
+        let healthKit = HealthKit.sharedInstance
         print(healthKit.steps)
         
     }

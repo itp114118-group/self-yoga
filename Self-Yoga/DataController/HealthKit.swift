@@ -11,6 +11,7 @@ import HealthKit
 class HealthKit {
     
     var steps = [HKQuantitySample]()
+    var exerciseTime = [HKQuantitySample]()
  
     // get data from last 7 days
 //    let predicate = HKQuery.predicateForSamples(withStart: Date() - 7 * 24 * 60 * 60, end: Date(), options: [])
@@ -36,6 +37,7 @@ class HealthKit {
     }()
     
     let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+    let dataCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.appleExerciseTime)
     
     let stepsUnit = HKUnit.count()
     
@@ -47,6 +49,10 @@ class HealthKit {
                 self.querySteps() { results in
                     self.steps = results
                 }
+                
+                self.queryExerciseTime() { results in
+                    self.exerciseTime = results
+                }
             } else {
                 print(error.debugDescription)
             }
@@ -57,6 +63,21 @@ class HealthKit {
     // get steps from Health app
     func querySteps(completionHandler:@escaping([HKQuantitySample])->()) {
         let sampleQuery = HKSampleQuery(sampleType: stepsCount!,
+                                        predicate: nil,
+                                        limit: 100,
+                                        sortDescriptors: nil)
+        { (query, results, error) in
+            if let results = results as? [HKQuantitySample] {
+                completionHandler(results)
+            }
+        }
+        
+        healthStore?.execute(sampleQuery)
+    }
+    
+    // get Exercise Time from Health app
+    func queryExerciseTime(completionHandler:@escaping([HKQuantitySample])->()) {
+        let sampleQuery = HKSampleQuery(sampleType: dataCount!,
                                         predicate: nil,
                                         limit: 100,
                                         sortDescriptors: nil)
