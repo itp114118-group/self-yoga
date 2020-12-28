@@ -11,6 +11,9 @@ import HealthKit
 class HealthKit {
     
     var steps = [HKQuantitySample]()
+ 
+    // get data from last 7 days
+    let predicate = HKQuery.predicateForSamples(withStart: Date() - 7 * 24 * 60 * 60, end: Date(), options: [])
     
     init() {
         requestHealthKitAuthorization()
@@ -36,6 +39,7 @@ class HealthKit {
     
     let stepsUnit = HKUnit.count()
     
+    // ask health app permission
     func requestHealthKitAuthorization() {
         let dataTypesToRead = NSSet(objects: stepsCount as Any)
         healthStore?.requestAuthorization(toShare: nil, read: dataTypesToRead as? Set<HKObjectType>, completion: { (success, error) in
@@ -50,9 +54,10 @@ class HealthKit {
  
     }
     
+    // get steps from Health app
     func querySteps(completionHandler:@escaping([HKQuantitySample])->()) {
         let sampleQuery = HKSampleQuery(sampleType: stepsCount!,
-                                        predicate: nil,
+                                        predicate: predicate,
                                         limit: 100,
                                         sortDescriptors: nil)
         { (query, results, error) in
