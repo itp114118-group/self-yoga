@@ -18,13 +18,24 @@ class GoalsViewController: UIViewController {
     var barChart = BarChartView()
     var pieChart = PieChartView()
     
+    let healthKit = HealthKit.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pieChart.delegate = self
         barChart.delegate = self
         
-        let healthKit = HealthKit.sharedInstance
+        // ask user health app permission
+        healthKit.requestHealthKitAuthorization()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // print user health data, such as number of steps and exercise time
         print(healthKit.steps)
+        print(healthKit.exerciseTime)
         
     }
     
@@ -32,7 +43,7 @@ class GoalsViewController: UIViewController {
         super.viewDidLayoutSubviews()
         showBarChartView()
         showPieChartView()
-        
+    
     }
     
 }

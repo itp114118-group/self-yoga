@@ -12,15 +12,15 @@ class HealthKit {
     
     var steps = [HKQuantitySample]()
     var exerciseTime = [HKQuantitySample]()
- 
-    var readTypes = Set<HKObjectType>()
+    
+    let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+    let dataCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.appleExerciseTime)
+    
+    // No Ideas
+    let stepsUnit = HKUnit.count()
     
     // get data from last 7 days
 //    let predicate = HKQuery.predicateForSamples(withStart: Date() - 7 * 24 * 60 * 60, end: Date(), options: [])
-    
-    init() {
-        requestHealthKitAuthorization()
-    }
     
     class var sharedInstance: HealthKit {
         struct Singleton {
@@ -38,25 +38,16 @@ class HealthKit {
         }
     }()
     
-    let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
-    let dataCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.appleExerciseTime)
-    
-    let stepsUnit = HKUnit.count()
-    
     // ask health app permission
     func requestHealthKitAuthorization() {
+        var readTypes = Set<HKObjectType>()
         readTypes.insert(stepsCount!)
         readTypes.insert(dataCount!)
         
         healthStore?.requestAuthorization(toShare: nil, read: readTypes, completion: { (success, error) in
             if success {
-                self.querySteps() { results in
-                    self.steps = results
-                }
-                
-                self.queryExerciseTime() { results in
-                    self.exerciseTime = results
-                }
+                self.querySteps()
+                self.queryExerciseTime()
             } else {
                 print(error.debugDescription)
             }
@@ -65,14 +56,15 @@ class HealthKit {
     }
     
     // get steps from Health app
-    func querySteps(completionHandler:@escaping([HKQuantitySample])->()) {
+    func querySteps() {
         let sampleQuery = HKSampleQuery(sampleType: stepsCount!,
                                         predicate: nil,
                                         limit: 100,
                                         sortDescriptors: nil)
         { (query, results, error) in
             if let results = results as? [HKQuantitySample] {
-                completionHandler(results)
+                self.steps = results
+
             }
         }
         
@@ -80,14 +72,14 @@ class HealthKit {
     }
     
     // get Exercise Time from Health app
-    func queryExerciseTime(completionHandler:@escaping([HKQuantitySample])->()) {
+    func queryExerciseTime() {
         let sampleQuery = HKSampleQuery(sampleType: dataCount!,
                                         predicate: nil,
                                         limit: 100,
                                         sortDescriptors: nil)
         { (query, results, error) in
             if let results = results as? [HKQuantitySample] {
-                completionHandler(results)
+                self.exerciseTime = results
             }
         }
         
