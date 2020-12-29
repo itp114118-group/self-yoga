@@ -52,7 +52,6 @@ class HealthKit {
                 print(error.debugDescription)
             }
         })
- 
     }
     
     // get steps from Health app

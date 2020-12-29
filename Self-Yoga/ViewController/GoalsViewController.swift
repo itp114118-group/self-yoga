@@ -34,6 +34,8 @@ class GoalsViewController: UIViewController {
         super.viewDidAppear(animated)
         
         // print user health data, such as number of steps and exercise time
+        
+        // print array
         print(healthKit.steps)
         print(healthKit.exerciseTime)
         
