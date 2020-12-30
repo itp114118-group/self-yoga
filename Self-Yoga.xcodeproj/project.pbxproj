@@ -111,7 +111,7 @@
 				105F63792591F8B9008CE3BD /* Storyboard */,
 				10C664762595F3A400E2D378 /* ViewController */,
 				10C6AEFF259847030022649E /* ModelPredictor */,
-				ABEEDFA1258FD6EE008AC092 /* DataController */,
+				ABEEDFA1258FD6EE008AC092 /* DataControl */,
 				100950F3257F970800B26728 /* AppDelegate.swift */,
 				100950F5257F970800B26728 /* SceneDelegate.swift */,
 				100950FF257F970800B26728 /* Assets.xcassets */,
@@ -186,14 +186,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		ABEEDFA1258FD6EE008AC092 /* DataController */ = {
+		ABEEDFA1258FD6EE008AC092 /* DataControl */ = {
 			isa = PBXGroup;
 			children = (
 				108229192594805E00F9104C /* DataController.swift */,
 				10C664702595CB4500E2D378 /* YogaSet.swift */,
 				10C6AF31259871840022649E /* HealthKit.swift */,
 			);
-			path = DataController;
+			path = DataControl;
 			sourceTree = "<group>";
 		};
 		AFE2C9695A4D6A13F2972E66 /* Pods */ = {

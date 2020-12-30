@@ -8,6 +8,10 @@
 //import Foundation
 //
 //class Predictor {
+
+////    // Base pose detector with streaming, when depending on the PoseDetection SDK
+////    let options = PoseDetectorOptions()
+////    options.detectorMode = .stream
 //
 //    // Accurate pose detector on static images, when depending on the
 //    // PoseDetectionAccurate SDK

@@ -63,7 +63,6 @@ class HealthKit {
         { (query, results, error) in
             if let results = results as? [HKQuantitySample] {
                 self.steps = results
-
             }
         }
         

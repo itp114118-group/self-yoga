@@ -38,7 +38,6 @@ class GoalsViewController: UIViewController {
         // print array
         print(healthKit.steps)
         print(healthKit.exerciseTime)
-        
     }
     
     override func viewDidLayoutSubviews() {
