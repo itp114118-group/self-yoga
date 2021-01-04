@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rad-o6-oK4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Goals Page-->
+        <scene sceneID="jmf-ap-moX">
+            <objects>
+                <viewController title="Goals Page" id="Kpb-dv-Myq" customClass="GoalsViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VpL-q5-jq5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lk-JF-xBG" userLabel="BarChartView" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="25" y="141" width="364" height="240"/>
+                                <color key="backgroundColor" name="003659"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMe-ey-Otw" userLabel="PieChartView" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="25" y="391" width="364" height="412"/>
+                                <color key="backgroundColor" name="003659"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="175" translatesAutoresizingMaskIntoConstraints="NO" id="mJL-mL-ZI7">
+                                <rect key="frame" x="25" y="98" width="364" height="33"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fms-xT-Gxz">
+                                        <rect key="frame" x="0.0" y="0.0" width="114" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="868-TK-Yfa">
+                                        <rect key="frame" x="289" y="0.0" width="75" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <state key="normal" title="Show all">
+                                            <color key="titleColor" name="Color"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g4S-wJ-xqE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4lk-JF-xBG" firstAttribute="top" secondItem="mJL-mL-ZI7" secondAttribute="bottom" constant="10" id="2li-6T-WOT"/>
+                            <constraint firstItem="4lk-JF-xBG" firstAttribute="leading" secondItem="g4S-wJ-xqE" secondAttribute="leading" constant="25" id="7UC-VJ-VeY"/>
+                            <constraint firstItem="mJL-mL-ZI7" firstAttribute="leading" secondItem="g4S-wJ-xqE" secondAttribute="leading" constant="25" id="9cT-9E-f5M"/>
+                            <constraint firstItem="kMe-ey-Otw" firstAttribute="top" secondItem="4lk-JF-xBG" secondAttribute="bottom" constant="10" id="EdL-rE-oUw"/>
+                            <constraint firstItem="kMe-ey-Otw" firstAttribute="leading" secondItem="g4S-wJ-xqE" secondAttribute="leading" constant="25" id="MKK-bT-tZT"/>
+                            <constraint firstItem="kMe-ey-Otw" firstAttribute="centerY" secondItem="VpL-q5-jq5" secondAttribute="centerY" constant="149" id="QzK-yG-PdF"/>
+                            <constraint firstItem="kMe-ey-Otw" firstAttribute="top" secondItem="4lk-JF-xBG" secondAttribute="bottom" constant="10" id="VQp-f7-ecf"/>
+                            <constraint firstItem="mJL-mL-ZI7" firstAttribute="top" secondItem="g4S-wJ-xqE" secondAttribute="top" constant="10" id="gEQ-BT-ljW"/>
+                            <constraint firstItem="g4S-wJ-xqE" firstAttribute="bottom" secondItem="kMe-ey-Otw" secondAttribute="bottom" constant="10" id="guW-gG-ige"/>
+                            <constraint firstItem="g4S-wJ-xqE" firstAttribute="trailing" secondItem="kMe-ey-Otw" secondAttribute="trailing" constant="25" id="iVh-6O-Tdq"/>
+                            <constraint firstItem="g4S-wJ-xqE" firstAttribute="trailing" secondItem="mJL-mL-ZI7" secondAttribute="trailing" constant="25" id="lXW-02-zzq"/>
+                            <constraint firstItem="g4S-wJ-xqE" firstAttribute="trailing" secondItem="4lk-JF-xBG" secondAttribute="trailing" constant="25" id="ocC-jT-yxw"/>
+                            <constraint firstItem="4lk-JF-xBG" firstAttribute="top" secondItem="mJL-mL-ZI7" secondAttribute="bottom" constant="10" id="vIQ-eZ-eRx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Goals" id="MUE-pn-7In"/>
+                    <connections>
+                        <outlet property="barChartView" destination="4lk-JF-xBG" id="bSy-Ug-pHJ"/>
+                        <outlet property="pieChartView" destination="kMe-ey-Otw" id="qA1-Yq-UGu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MTh-ic-Ko3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="998.55072463768124" y="-1504.0178571428571"/>
+        </scene>
+        <!--Cover Tab Bar View Controller-->
+        <scene sceneID="qh1-ey-OhE">
+            <objects>
+                <tabBarController storyboardIdentifier="CoverVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rad-o6-oK4" customClass="CoverTabBarViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" insetsLayoutMarginsFromSafeArea="NO" id="p1Q-9D-iGY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="003659"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Ixg-0E-H7Y" kind="relationship" relationship="viewControllers" id="9H0-lK-tsq"/>
+                        <segue destination="08U-vM-INI" kind="relationship" relationship="viewControllers" id="3KZ-Rp-u2W"/>
+                        <segue destination="Te0-fL-ixo" kind="relationship" relationship="viewControllers" id="Ry0-Qy-hag"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Uo-rG-lrU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1100" y="-2377"/>
+        </scene>
+        <!--Proflie-->
+        <scene sceneID="Jr3-JJ-eSA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Te0-fL-ixo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Proflie" image="profile" selectedImage="selectedprofile" id="5cc-vd-D0R"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AGm-UL-jDi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                            <color key="textColor" name="003659"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="-270" vertical="0.0"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5m5-lX-hB7" kind="relationship" relationship="rootViewController" id="bFZ-zv-42r"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yjK-nq-vSg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="38" y="-3242"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="nqd-q7-lh3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="5m5-lX-hB7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="uwa-7M-3wR"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hQc-pW-kOe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975" y="-3242"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="aTw-JB-LeM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ixg-0E-H7Y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="selectedhome" id="t1v-fm-Vo1"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GLq-fR-eFT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                            <color key="textColor" name="003659"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="-270" vertical="0.0"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kE9-lj-0RS" kind="relationship" relationship="rootViewController" id="bon-w1-Bfu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GHD-xU-Asj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="38" y="-2377"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="SpQ-EH-CML">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="kE9-lj-0RS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="0Md-ZM-n9b"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vrQ-Cc-K81" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="959" y="-2377"/>
+        </scene>
+        <!--Goals-->
+        <scene sceneID="0G8-5Q-8GM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="08U-vM-INI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Goals" image="goal" selectedImage="selectedgoal" id="ykM-87-Kna"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="smI-Xv-Abg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                            <color key="textColor" name="003659"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="-270" vertical="0.0"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Kpb-dv-Myq" kind="relationship" relationship="rootViewController" id="jwr-zj-tEI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7YP-dJ-8NO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="38" y="-1504"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="goal" width="38" height="38"/>
+        <image name="home" width="38" height="38"/>
+        <image name="profile" width="38" height="38"/>
+        <image name="selectedgoal" width="38" height="38"/>
+        <image name="selectedhome" width="38" height="38"/>
+        <image name="selectedprofile" width="38" height="38"/>
+        <namedColor name="003659">
+            <color red="0.0" green="0.21199999749660492" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Color">
+            <color red="0.62400001287460327" green="0.62400001287460327" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

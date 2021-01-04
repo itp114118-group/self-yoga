@@ -6,12 +6,12 @@
 //
 
 import UIKit
-import GoogleSignIn
+//import GoogleSignIn
 import CoreData
 import Firebase
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate{
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
@@ -19,18 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate{
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        GIDSignIn.sharedInstance()?.chlientID = "547047625044-udfr02ue7in769452q9b42k5nk7ref5a.apps.googleusercontent.com"
-        GIDSignIn.sharedInstance()?.delegate = self
+//        GIDSignIn.sharedInstance()?.clientID = "547047625044-udfr02ue7in769452q9b42k5nk7ref5a.apps.googleusercontent.com"
+//        GIDSignIn.sharedInstance()?.delegate = self
+        
         return true
     }
 
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        print("User email: \(user.profile.email ?? "No Email")")
-    }
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        print("User email: \(user.profile.email ?? "No Email")")
+//    }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool{
-    return GIDSignIn.sharedInstance().handle(url)
-}
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool{
+//    return GIDSignIn.sharedInstance().handle(url)
+//}
     
     // MARK: UISceneSession Lifecycle
 

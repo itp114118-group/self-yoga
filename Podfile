@@ -6,9 +6,16 @@ target 'Self-Yoga' do
   use_frameworks!
 
   # Pods for Self-Yoga
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Auth'
-  pod 'GoogleSignIn'
+  
+  # pod 'Firebase/Analytics'
+  # pod 'Firebase/Analytics', '> 7.2-M1'
+  
+  #  pod 'Firebase/Auth'
+  pod 'Firebase/Auth', '> 7.2.0-M1'
+  
   pod 'Charts'
+  pod 'FirebaseFirestoreSwift', '7.2-beta'
+  # pod 'GoogleSignIn'
+  # pod 'GoogleMLKit/PoseDetectionAccurate'
 
 end
