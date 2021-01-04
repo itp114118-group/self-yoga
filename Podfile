@@ -12,5 +12,6 @@ target 'Self-Yoga' do
   pod 'Charts'
   pod 'FirebaseFirestoreSwift', '7.2-beta'
   # pod 'GoogleSignIn'
+  # pod 'GoogleMLKit/PoseDetectionAccurate'
 
 end
