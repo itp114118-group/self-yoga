@@ -88,7 +88,7 @@ extension HomeDetailViewController: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = "Please Watch \(begCollections.videoName!)"
         case "MasterCollection":
             let masterCollections = dataController.masterNestedDataArray[indexPath.row]
-            cell.textLabel?.text = masterCollections.videoName
+            cell.textLabel?.text = "Please Watch \(masterCollections.videoName!)"
         default:
             print("HomeListViewController tableView Show Data Error")
         }
