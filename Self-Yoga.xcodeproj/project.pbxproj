@@ -15,6 +15,7 @@
 		10095100257F970800B26728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 100950FF257F970800B26728 /* Assets.xcassets */; };
 		10095103257F970800B26728 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10095101257F970800B26728 /* LaunchScreen.storyboard */; };
 		1009510C257F976C00B26728 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1009510B257F976C00B26728 /* GoogleService-Info.plist */; };
+		1056BA3725A457FA00F6E08A /* HomeVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1056BA3625A457FA00F6E08A /* HomeVideoController.swift */; };
 		10822901259476C000F9104C /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10822900259476C000F9104C /* Auth.storyboard */; };
 		1082290F2594774400F9104C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1082290E2594774400F9104C /* Profile.storyboard */; };
 		10822912259477E100F9104C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10822911259477E100F9104C /* Home.storyboard */; };
@@ -48,6 +49,7 @@
 		10095102257F970800B26728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10095104257F970800B26728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1009510B257F976C00B26728 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1056BA3625A457FA00F6E08A /* HomeVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoController.swift; sourceTree = "<group>"; };
 		10822900259476C000F9104C /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		1082290E2594774400F9104C /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		10822911259477E100F9104C /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				AB9521F8258BD13B00B1DC52 /* HomeViewController.swift */,
 				10C664832595F6D600E2D378 /* HomeListViewController.swift */,
 				10C664862595F75A00E2D378 /* HomeDetailViewController.swift */,
+				1056BA3625A457FA00F6E08A /* HomeVideoController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				100950FE257F970800B26728 /* Self_Yoga.xcdatamodeld in Sources */,
 				1082291A2594805E00F9104C /* DataController.swift in Sources */,
 				10C664842595F6D600E2D378 /* HomeListViewController.swift in Sources */,
+				1056BA3725A457FA00F6E08A /* HomeVideoController.swift in Sources */,
 				10C6AF32259871840022649E /* HealthKit.swift in Sources */,
 				10C664872595F75A00E2D378 /* HomeDetailViewController.swift in Sources */,
 				AB9521F9258BD13B00B1DC52 /* HomeViewController.swift in Sources */,

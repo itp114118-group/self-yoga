@@ -384,6 +384,9 @@
                                     <constraint firstAttribute="width" constant="281" id="7rP-HD-1KC"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="get"/>
+                                <connections>
+                                    <segue destination="WEF-vc-ZOd" kind="show" identifier="showDetails" id="9I6-AP-rHv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kt3-qE-1SA"/>
@@ -418,6 +421,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9e-Sp-msE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2795.6521739130435" y="-2377.2321428571427"/>
+        </scene>
+        <!--Home Video View Controller-->
+        <scene sceneID="R4G-eq-0xn">
+            <objects>
+                <viewController id="WEF-vc-ZOd" customClass="HomeVideoViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6sZ-8a-Nh1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64B-Y7-GAP" customClass="YTPlayerView">
+                                <rect key="frame" x="87" y="357" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCq-f2-P6m">
+                                <rect key="frame" x="360" y="798" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SnJ-5P-Xp1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SnJ-5P-Xp1" firstAttribute="trailing" secondItem="JCq-f2-P6m" secondAttribute="trailing" constant="20" id="laB-ft-vlm"/>
+                            <constraint firstItem="JCq-f2-P6m" firstAttribute="bottom" secondItem="SnJ-5P-Xp1" secondAttribute="bottom" constant="20" id="nM7-mi-qYA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="X5Z-P3-FRG"/>
+                    <connections>
+                        <outlet property="videoPlayerView" destination="64B-Y7-GAP" id="TSZ-PH-Ms8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9MR-5c-nVc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3628" y="-2377"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

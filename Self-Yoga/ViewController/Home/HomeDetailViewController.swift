@@ -17,20 +17,21 @@ class HomeDetailViewController: UIViewController {
     
     var dataController = DataController()
     var bool: String?
-    var yogatitle: String?
+    var yogaTitle: String?
     var duration: String?
     var tempo: String?
-    var yogadescription: String?
+    var yogaDescription: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLabel.text = yogatitle
+        print(bool)
+        titleLabel.text = yogaTitle
         durationLabel.text = duration
         tempoLabel.text = tempo
-        descriptionLabel.text = yogadescription
+        descriptionLabel.text = yogaDescription
         
-        dataController.fetchData() { collectionName, title, subtitle, duration, tempo, description in
+        dataController.fetchNestedData() { collectionName, videoName, video in
             self.tableView.reloadData()
         }
         
@@ -38,6 +39,21 @@ class HomeDetailViewController: UIViewController {
         tableView.delegate = self
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? HomeVideoViewController {
+            if segue.identifier == "showDetails" {
+                    switch bool {
+                    case "BeginnerCollection":
+                        controller.bool = "BeginnerCollection"
+                    case "MasterCollection":
+                        controller.bool = "MasterCollection"
+                    default:
+                        print("HomeListViewController prepare Error")
+                    }
+                }
+        }
     }
     
 }
@@ -53,9 +69,9 @@ extension HomeDetailViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch bool {
         case "BeginnerCollection":
-            numberOfRow = dataController.beginnerDataArray.count
+            numberOfRow = dataController.beginnerNestedDataArray.count
         case "MasterCollection":
-            numberOfRow = dataController.masterDataArray.count
+            numberOfRow = dataController.masterNestedDataArray.count
         default:
             print("HomeListViewController tablView numberOfRow Error")
         }
@@ -68,13 +84,13 @@ extension HomeDetailViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch bool {
         case "BeginnerCollection":
-            let begCollections = dataController.beginnerDataArray[indexPath.row]
-            cell.textLabel?.text = begCollections.title
-            cell.detailTextLabel?.text = begCollections.subtitle
+            let begCollections = dataController.beginnerNestedDataArray[indexPath.row]
+            cell.textLabel?.text = begCollections.videoName
+            cell.detailTextLabel?.text = begCollections.video
         case "MasterCollection":
-            let masterCollections = dataController.masterDataArray[indexPath.row]
-            cell.textLabel?.text = masterCollections.title
-            cell.detailTextLabel?.text = masterCollections.subtitle
+            let masterCollections = dataController.masterNestedDataArray[indexPath.row]
+            cell.textLabel?.text = masterCollections.videoName
+            cell.detailTextLabel?.text = masterCollections.video
         default:
             print("HomeListViewController tableView Show Data Error")
         }
