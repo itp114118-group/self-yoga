@@ -85,12 +85,10 @@ extension HomeDetailViewController: UITableViewDelegate, UITableViewDataSource {
         switch bool {
         case "BeginnerCollection":
             let begCollections = dataController.beginnerNestedDataArray[indexPath.row]
-            cell.textLabel?.text = begCollections.videoName
-            cell.detailTextLabel?.text = begCollections.video
+            cell.textLabel?.text = "Please Watch \(begCollections.videoName!)"
         case "MasterCollection":
             let masterCollections = dataController.masterNestedDataArray[indexPath.row]
             cell.textLabel?.text = masterCollections.videoName
-            cell.detailTextLabel?.text = masterCollections.video
         default:
             print("HomeListViewController tableView Show Data Error")
         }
