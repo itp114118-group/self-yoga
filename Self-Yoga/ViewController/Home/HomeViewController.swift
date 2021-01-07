@@ -18,7 +18,7 @@
     @IBOutlet weak var searchBar: UISearchBar!
     
     var dataController = DataController()
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         

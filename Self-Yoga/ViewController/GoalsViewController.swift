@@ -26,18 +26,14 @@ class GoalsViewController: UIViewController {
         barChart.delegate = self
         
         // ask user health app permission
-        healthKit.requestHealthKitAuthorization()
+        healthKit.requestHealthKitAuthorization { (result, error) in
+            if result {
+                print("Auth ok")
+            } else {
+                print("Auth denied")
+            }
+        }
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        // print user health data, such as number of steps and exercise time
-        
-        // print array
-        print(healthKit.steps)
-        print(healthKit.exerciseTime)
     }
     
     override func viewDidLayoutSubviews() {
