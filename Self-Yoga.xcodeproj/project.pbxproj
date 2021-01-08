@@ -26,7 +26,12 @@
 		10C6AF2F259864FC0022649E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C6AF2E259864FC0022649E /* HealthKit.framework */; };
 		10C6AF32259871840022649E /* HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6AF31259871840022649E /* HealthKit.swift */; };
 		42E15DDFA4C36667E8A6488F /* Pods_Self_Yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */; };
+		AB04673A25A901AA00C1B885 /* MLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04673925A901AA00C1B885 /* MLViewController.swift */; };
+		AB04673E25A9080200C1B885 /* MLStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB04673D25A9080200C1B885 /* MLStoryboard.storyboard */; };
 		AB7135DB25853879003A8C99 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7135DA25853879003A8C99 /* SplashViewController.swift */; };
+		AB813AE825A912620051DA41 /* MLKitExtensionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB813AE725A912620051DA41 /* MLKitExtensionsViewController.swift */; };
+		AB813AEB25A913B60051DA41 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB813AEA25A913B50051DA41 /* UIUtilities.swift */; };
+		AB813AEE25A913BD0051DA41 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB813AED25A913BD0051DA41 /* CameraViewController.swift */; };
 		AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E3258A776200B1DC52 /* ResigerViewController.swift */; };
 		AB9521E7258A7D8400B1DC52 /* ForgotpwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E6258A7D8400B1DC52 /* ForgotpwViewController.swift */; };
 		AB9521F9258BD13B00B1DC52 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521F8258BD13B00B1DC52 /* HomeViewController.swift */; };
@@ -61,7 +66,12 @@
 		10C6AF31259871840022649E /* HealthKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKit.swift; sourceTree = "<group>"; };
 		18AE7A0D05B319B7827DC4A0 /* Pods-Self-Yoga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self-Yoga.release.xcconfig"; path = "Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga.release.xcconfig"; sourceTree = "<group>"; };
 		A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Self_Yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB04673925A901AA00C1B885 /* MLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLViewController.swift; sourceTree = "<group>"; };
+		AB04673D25A9080200C1B885 /* MLStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MLStoryboard.storyboard; sourceTree = "<group>"; };
 		AB7135DA25853879003A8C99 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		AB813AE725A912620051DA41 /* MLKitExtensionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLKitExtensionsViewController.swift; sourceTree = "<group>"; };
+		AB813AEA25A913B50051DA41 /* UIUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
+		AB813AED25A913BD0051DA41 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		AB9521E3258A776200B1DC52 /* ResigerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResigerViewController.swift; sourceTree = "<group>"; };
 		AB9521E6258A7D8400B1DC52 /* ForgotpwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotpwViewController.swift; sourceTree = "<group>"; };
 		AB9521F8258BD13B00B1DC52 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +117,7 @@
 		100950F2257F970800B26728 /* Self-Yoga */ = {
 			isa = PBXGroup;
 			children = (
+				AB04673825A9018800C1B885 /* ML Kit */,
 				10C6AF2D259864FC0022649E /* Self-Yoga.entitlements */,
 				105F63792591F8B9008CE3BD /* Storyboard */,
 				10C664762595F3A400E2D378 /* ViewController */,
@@ -142,6 +153,7 @@
 				10822900259476C000F9104C /* Auth.storyboard */,
 				1082290E2594774400F9104C /* Profile.storyboard */,
 				10822911259477E100F9104C /* Home.storyboard */,
+				AB04673D25A9080200C1B885 /* MLStoryboard.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -184,6 +196,17 @@
 				A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB04673825A9018800C1B885 /* ML Kit */ = {
+			isa = PBXGroup;
+			children = (
+				AB04673925A901AA00C1B885 /* MLViewController.swift */,
+				AB813AE725A912620051DA41 /* MLKitExtensionsViewController.swift */,
+				AB813AEA25A913B50051DA41 /* UIUtilities.swift */,
+				AB813AED25A913BD0051DA41 /* CameraViewController.swift */,
+			);
+			path = "ML Kit";
 			sourceTree = "<group>";
 		};
 		ABEEDFA1258FD6EE008AC092 /* DataControl */ = {
@@ -264,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB04673E25A9080200C1B885 /* MLStoryboard.storyboard in Resources */,
 				10822912259477E100F9104C /* Home.storyboard in Resources */,
 				1082290F2594774400F9104C /* Profile.storyboard in Resources */,
 				10095103257F970800B26728 /* LaunchScreen.storyboard in Resources */,
@@ -326,10 +350,13 @@
 				AB9521E7258A7D8400B1DC52 /* ForgotpwViewController.swift in Sources */,
 				ABDE65BD25857F8200B7696C /* LoginViewController.swift in Sources */,
 				ABEEDFA4258FD759008AC092 /* Utilities.swift in Sources */,
+				AB813AEE25A913BD0051DA41 /* CameraViewController.swift in Sources */,
 				ABD80996259024480086DDC4 /* SettingsViewController.swift in Sources */,
 				ABD1AC422590061500126FF7 /* CoverTabBarViewController.swift in Sources */,
+				AB04673A25A901AA00C1B885 /* MLViewController.swift in Sources */,
 				100950F8257F970800B26728 /* ViewController.swift in Sources */,
 				100950F4257F970800B26728 /* AppDelegate.swift in Sources */,
+				AB813AEB25A913B60051DA41 /* UIUtilities.swift in Sources */,
 				100950F6257F970800B26728 /* SceneDelegate.swift in Sources */,
 				10C664712595CB4500E2D378 /* YogaSet.swift in Sources */,
 				100950FE257F970800B26728 /* Self_Yoga.xcdatamodeld in Sources */,
@@ -340,6 +367,7 @@
 				AB9521F9258BD13B00B1DC52 /* HomeViewController.swift in Sources */,
 				AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */,
 				ABC240D4258CDBA900554848 /* GoalsViewController.swift in Sources */,
+				AB813AE825A912620051DA41 /* MLKitExtensionsViewController.swift in Sources */,
 				10C6AF01259847450022649E /* Predictor.swift in Sources */,
 				AB7135DB25853879003A8C99 /* SplashViewController.swift in Sources */,
 			);

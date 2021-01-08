@@ -32,6 +32,8 @@ class DataController {
         }
         
     }
+    
+    
 
     func fetchData(completionHandler:@escaping(String, String, String, String, String, String)->()) {
         db.collection("Beginners Collection").getDocuments() { (querySnapshot, err) in
