@@ -16,4 +16,7 @@ struct YogaSet {
     var tempo: String?
     var description: String?
     
+    var videoName: String?
+    var video: String?
+    
 }

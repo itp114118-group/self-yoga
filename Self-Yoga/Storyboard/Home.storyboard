@@ -384,6 +384,9 @@
                                     <constraint firstAttribute="width" constant="281" id="7rP-HD-1KC"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="get"/>
+                                <connections>
+                                    <segue destination="UMW-c1-uj4" kind="show" id="PWs-ev-Lyk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kt3-qE-1SA"/>
@@ -418,6 +421,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9e-Sp-msE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2795.6521739130435" y="-2377.2321428571427"/>
+        </scene>
+        <!--Home Video View Controller-->
+        <scene sceneID="cxZ-3N-ya9">
+            <objects>
+                <viewController id="UMW-c1-uj4" customClass="HomeVideoViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1CN-ts-4On">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pcj-2Y-J2A" customClass="YTPlayerView">
+                                <rect key="frame" x="87" y="357" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="44F-zm-T4k"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hIf-pv-OaX"/>
+                    <connections>
+                        <outlet property="videoPlayerView" destination="Pcj-2Y-J2A" id="D3Q-t7-9sC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oen-XG-i7q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3609" y="-2377"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

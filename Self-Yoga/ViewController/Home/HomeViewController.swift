@@ -123,16 +123,16 @@
             switch segue.identifier {
             case "showBeginnerDetail":
                 controller.bool = "BeginnerCollection"
-                controller.yogatitle = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).title
+                controller.yogaTitle = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).title
                 controller.duration = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).duration
                 controller.tempo = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).tempo
-                controller.yogadescription = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).description
+                controller.yogaDescription = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).description
             case "showMasterDetail":
                 controller.bool = "MasterCollection"
-                controller.yogatitle = dataController.masterCollectionIndex(at: masterIndexPath!.row).title
+                controller.yogaTitle = dataController.masterCollectionIndex(at: masterIndexPath!.row).title
                 controller.duration = dataController.masterCollectionIndex(at: masterIndexPath!.row).duration
                 controller.tempo = dataController.masterCollectionIndex(at: masterIndexPath!.row).tempo
-                controller.yogadescription = dataController.beginnerCollectionIndex(at: masterIndexPath!.row).description
+                controller.yogaDescription = dataController.beginnerCollectionIndex(at: masterIndexPath!.row).description
             default:
                 print("Error")
             }

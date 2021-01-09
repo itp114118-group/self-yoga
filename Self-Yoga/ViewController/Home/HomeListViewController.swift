@@ -82,16 +82,16 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource {
                     switch bool {
                     case "BeginnerCollection":
                         controller.bool = "BeginnerCollection"
-                        controller.yogatitle = dataController.beginnerCollectionIndex(at: indexPath.row).title
+                        controller.yogaTitle = dataController.beginnerCollectionIndex(at: indexPath.row).title
                         controller.duration = dataController.beginnerCollectionIndex(at: indexPath.row).duration
                         controller.tempo = dataController.beginnerCollectionIndex(at: indexPath.row).tempo
-                        controller.yogadescription = dataController.beginnerCollectionIndex(at: indexPath.row).description
+                        controller.yogaDescription = dataController.beginnerCollectionIndex(at: indexPath.row).description
                     case "MasterCollection":
                         controller.bool = "MasterCollection"
-                        controller.yogatitle = dataController.masterCollectionIndex(at: indexPath.row).title
+                        controller.yogaTitle = dataController.masterCollectionIndex(at: indexPath.row).title
                         controller.duration = dataController.masterCollectionIndex(at: indexPath.row).duration
                         controller.tempo = dataController.masterCollectionIndex(at: indexPath.row).tempo
-                        controller.yogadescription = dataController.masterCollectionIndex(at: indexPath.row).description
+                        controller.yogaDescription = dataController.masterCollectionIndex(at: indexPath.row).description
                     default:
                         print("HomeListViewController prepare Error")
                     }

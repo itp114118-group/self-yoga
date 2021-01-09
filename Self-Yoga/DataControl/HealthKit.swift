@@ -8,80 +8,70 @@
 import Foundation
 import HealthKit
 
-class HealthKit {
+struct HealthKit {
     
-    var steps = [HKQuantitySample]()
-    var exerciseTime = [HKQuantitySample]()
-    
-    let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
-    let dataCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.appleExerciseTime)
-    
-    // No Ideas
-    let stepsUnit = HKUnit.count()
-    
-    // get data from last 7 days
-//    let predicate = HKQuery.predicateForSamples(withStart: Date() - 7 * 24 * 60 * 60, end: Date(), options: [])
-    
-    class var sharedInstance: HealthKit {
+    static var sharedInstance: HealthKit {
         struct Singleton {
             static let instance = HealthKit()
         }
-        
         return Singleton.instance
     }
     
-    let healthStore: HKHealthStore? = {
-        if HKHealthStore.isHealthDataAvailable() {
-            return HKHealthStore()
-        } else {
-            return nil
-        }
-    }()
+    private enum HealthkitSetupError: Error {
+        case notAvailableOnDevice
+        case dataTypeNotAvailable
+    }
     
     // ask health app permission
-    func requestHealthKitAuthorization() {
-        var readTypes = Set<HKObjectType>()
-        readTypes.insert(stepsCount!)
-        readTypes.insert(dataCount!)
+    func requestHealthKitAuthorization(completion: @escaping (Bool, Error?) -> Swift.Void) {
+        guard HKHealthStore.isHealthDataAvailable() else {
+            completion(false, HealthkitSetupError.notAvailableOnDevice)
+            return
+        }
         
-        healthStore?.requestAuthorization(toShare: nil, read: readTypes, completion: { (success, error) in
-            if success {
-                self.querySteps()
-                self.queryExerciseTime()
+        guard let stepsCount = HKObjectType.quantityType(forIdentifier: .stepCount) else {
+            completion(false, HealthkitSetupError.dataTypeNotAvailable)
+            return
+        }
+        
+        var healthKitTypesToWrite = Set<HKSampleType>()
+        healthKitTypesToWrite.insert(stepsCount)
+        
+        HKHealthStore().requestAuthorization(toShare: healthKitTypesToWrite, read: nil) { (success, error) in
+            completion(success, error)
+        }
+        
+    }
+    
+    // save user steps func
+    func saveSteps(stepsCountValue: Int,
+                   date: Date,
+                   completion: @escaping (Error?) -> Swift.Void) {
+        
+        guard let stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
+            fatalError("Step Count Type is no longer available in HealthKit")
+        }
+        
+        let stepsCountUnit:HKUnit = HKUnit.count()
+        let stepsCountQuantity = HKQuantity(unit: stepsCountUnit,
+                                            doubleValue: Double(stepsCountValue))
+        
+        let stepsCountSample = HKQuantitySample(type: stepCountType,
+                                                quantity: stepsCountQuantity,
+                                                start: date,
+                                                end: date)
+        
+        HKHealthStore().save(stepsCountSample) { (success, error) in
+            if let error = error {
+                completion(error)
+                print("Error Saving Steps Count Sample: \(error.localizedDescription)")
             } else {
-                print(error.debugDescription)
-            }
-        })
-    }
-    
-    // get steps from Health app
-    func querySteps() {
-        let sampleQuery = HKSampleQuery(sampleType: stepsCount!,
-                                        predicate: nil,
-                                        limit: 100,
-                                        sortDescriptors: nil)
-        { (query, results, error) in
-            if let results = results as? [HKQuantitySample] {
-                self.steps = results
+                completion(nil)
+                print("Successfully saved Steps Count Sample")
             }
         }
         
-        healthStore?.execute(sampleQuery)
-    }
-    
-    // get Exercise Time from Health app
-    func queryExerciseTime() {
-        let sampleQuery = HKSampleQuery(sampleType: dataCount!,
-                                        predicate: nil,
-                                        limit: 100,
-                                        sortDescriptors: nil)
-        { (query, results, error) in
-            if let results = results as? [HKQuantitySample] {
-                self.exerciseTime = results
-            }
-        }
-        
-        healthStore?.execute(sampleQuery)
     }
     
 }
+

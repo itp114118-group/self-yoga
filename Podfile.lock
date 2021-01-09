@@ -303,11 +303,13 @@ PODS:
   - nanopb/decode (2.30906.0)
   - nanopb/encode (2.30906.0)
   - PromisesObjC (1.2.11)
+  - youtube-ios-player-helper (1.0.2)
 
 DEPENDENCIES:
   - Charts
   - Firebase/Auth (> 7.2.0-M1)
   - FirebaseFirestoreSwift (= 7.2-beta)
+  - youtube-ios-player-helper
 
 SPEC REPOS:
   trunk:
@@ -328,6 +330,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -347,7 +350,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  youtube-ios-player-helper: 40b96e52c22445f0fdc43731cefa32c67075ff81
 
-PODFILE CHECKSUM: a041cb2b747f611a2fdb0e75c0d77ed6572c7fa0
+PODFILE CHECKSUM: d58247c63df7760e6d22ccc7496e7fa2ce0cc414
 
 COCOAPODS: 1.10.0
