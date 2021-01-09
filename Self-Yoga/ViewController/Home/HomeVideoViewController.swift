@@ -13,7 +13,7 @@ class HomeVideoViewController: UIViewController {
     
     @IBOutlet weak var videoPlayerView: YTPlayerView!
     
-    var dataController = DataController()
+    var dataController = FirestoreController()
     var bool: String?
     var db = Firestore.firestore()
     var healthKit = HealthKit()
@@ -22,9 +22,10 @@ class HomeVideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        healthKit.saveSteps(stepsCountValue: Int(8), date: date) { (error) in
-            print("add data")
-        }
+        // add steps to Health App
+//        healthKit.saveSteps(stepsCountValue: Int(8), date: date) { (error) in
+//            print("added 8 steps to Health App")
+//        }
         
         dataController.fetchNestedData() { collection, videoName, video in
             switch self.bool {
@@ -55,7 +56,7 @@ class HomeVideoViewController: UIViewController {
                     }
                 }
             default:
-                print("HomeListViewController tablView numberOfRow Error")
+                print("HomeVideoViewController error")
             }
         }
         

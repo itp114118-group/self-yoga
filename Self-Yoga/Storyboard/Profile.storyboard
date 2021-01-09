@@ -17,20 +17,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Pa-mx-TDR">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Pa-mx-TDR">
                                 <rect key="frame" x="0.0" y="44" width="414" height="111"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="6Kf-dl-Eqt"/>
-                                    <constraint firstAttribute="height" constant="111" id="y6O-Zg-TFq"/>
+                                    <constraint firstAttribute="width" constant="414" id="5YB-Kp-7Vf"/>
+                                    <constraint firstAttribute="height" constant="111" id="V6M-AA-wyh"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Log Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Tl-Rc-3t2">
-                                <rect key="frame" x="41" y="772" width="332" height="38"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Tl-Rc-3t2">
+                                <rect key="frame" x="41" y="730" width="332" height="38"/>
                                 <color key="backgroundColor" name="Color-1"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="332" id="ceB-as-Kgm"/>
-                                    <constraint firstAttribute="height" constant="38" id="ktU-Td-Jf0"/>
+                                    <constraint firstAttribute="height" constant="38" id="51P-Bl-H5R"/>
+                                    <constraint firstAttribute="width" constant="332" id="v9b-Mt-Qu8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" name="FFFFFF"/>
@@ -41,9 +41,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QvX-Pv-76c">
-                                <rect key="frame" x="0.0" y="163" width="414" height="525"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QvX-Pv-76c">
+                                <rect key="frame" x="0.0" y="155" width="414" height="525"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="BBN-5w-aDN"/>
+                                    <constraint firstAttribute="height" constant="525" id="PgW-cx-Zol"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="90A-QQ-eaM" imageView="TWX-kq-Jno" style="IBUITableViewCellStyleDefault" id="mhk-Xy-uwH">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -124,8 +127,12 @@
                         <viewLayoutGuide key="safeArea" id="bC2-Al-mwG"/>
                         <color key="backgroundColor" name="F4F4F4"/>
                         <constraints>
-                            <constraint firstItem="8Tl-Rc-3t2" firstAttribute="centerX" secondItem="SiF-No-WV6" secondAttribute="centerX" id="LZI-47-2eq"/>
-                            <constraint firstItem="8Tl-Rc-3t2" firstAttribute="centerX" secondItem="SiF-No-WV6" secondAttribute="centerX" id="ywQ-Eo-M47"/>
+                            <constraint firstItem="8Tl-Rc-3t2" firstAttribute="centerX" secondItem="SiF-No-WV6" secondAttribute="centerX" id="Chl-YP-bwm"/>
+                            <constraint firstItem="5Pa-mx-TDR" firstAttribute="centerX" secondItem="SiF-No-WV6" secondAttribute="centerX" id="ER3-En-5fg"/>
+                            <constraint firstItem="5Pa-mx-TDR" firstAttribute="top" secondItem="bC2-Al-mwG" secondAttribute="top" id="EuE-Ai-dkc"/>
+                            <constraint firstItem="QvX-Pv-76c" firstAttribute="centerX" secondItem="SiF-No-WV6" secondAttribute="centerX" id="O64-Fj-RkZ"/>
+                            <constraint firstItem="QvX-Pv-76c" firstAttribute="top" secondItem="5Pa-mx-TDR" secondAttribute="bottom" id="eRO-gE-qlv"/>
+                            <constraint firstItem="8Tl-Rc-3t2" firstAttribute="top" secondItem="QvX-Pv-76c" secondAttribute="bottom" constant="50" id="xhH-SP-PdC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="uQ8-hX-4Lm">

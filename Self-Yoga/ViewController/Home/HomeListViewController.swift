@@ -11,7 +11,7 @@ class HomeListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var dataController = DataController()
+    var dataController = FirestoreController()
     var bool: String?
     
     override func viewDidLoad() {
@@ -44,7 +44,7 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource {
         case "MasterCollection":
             numberOfRow = dataController.masterDataArray.count
         default:
-            print("HomeListViewController tablView numberOfRow Error")
+            print("HomeListViewController tablView numberOfRow error")
         }
         return numberOfRow
     
@@ -63,7 +63,7 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = masterCollections.title
             cell.detailTextLabel?.text = masterCollections.subtitle
         default:
-            print("HomeListViewController tableView Show Data Error")
+            print("HomeListViewController tableView show data error")
         }
         
         return cell
@@ -93,7 +93,7 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource {
                         controller.tempo = dataController.masterCollectionIndex(at: indexPath.row).tempo
                         controller.yogaDescription = dataController.masterCollectionIndex(at: indexPath.row).description
                     default:
-                        print("HomeListViewController prepare Error")
+                        print("HomeListViewController prepare error")
                     }
                 }
             }

@@ -15,7 +15,7 @@ class HomeDetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var dataController = DataController()
+    var dataController = FirestoreController()
     var bool: String?
     var yogaTitle: String?
     var duration: String?
@@ -25,7 +25,6 @@ class HomeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(bool)
         titleLabel.text = yogaTitle
         durationLabel.text = duration
         tempoLabel.text = tempo
@@ -50,7 +49,7 @@ class HomeDetailViewController: UIViewController {
                     case "MasterCollection":
                         controller.bool = "MasterCollection"
                     default:
-                        print("HomeListViewController prepare Error")
+                        print("HomeDetailViewController prepare Error")
                     }
                 }
         }
@@ -73,7 +72,7 @@ extension HomeDetailViewController: UITableViewDelegate, UITableViewDataSource {
         case "MasterCollection":
             numberOfRow = dataController.masterNestedDataArray.count
         default:
-            print("HomeListViewController tablView numberOfRow Error")
+            print("HomeDetailViewController tablView numberOfRow error")
         }
         
         return numberOfRow
@@ -90,7 +89,7 @@ extension HomeDetailViewController: UITableViewDelegate, UITableViewDataSource {
             let masterCollections = dataController.masterNestedDataArray[indexPath.row]
             cell.textLabel?.text = "Please Watch \(masterCollections.videoName!)"
         default:
-            print("HomeListViewController tableView Show Data Error")
+            print("HomeDetailViewController tableView show data error")
         }
         
         return cell
