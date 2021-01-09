@@ -13,7 +13,7 @@ class HomeVideoViewController: UIViewController {
     
     @IBOutlet weak var videoPlayerView: YTPlayerView!
     
-    var dataController = DataController()
+    var dataController = FirestoreController()
     var bool: String?
     var db = Firestore.firestore()
     var healthKit = HealthKit()
@@ -56,7 +56,7 @@ class HomeVideoViewController: UIViewController {
                     }
                 }
             default:
-                print("HomeListViewController tablView numberOfRow Error")
+                print("HomeVideoViewController error")
             }
         }
         

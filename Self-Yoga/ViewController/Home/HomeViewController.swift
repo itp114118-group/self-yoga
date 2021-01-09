@@ -17,7 +17,7 @@
     @IBOutlet weak var masterView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var dataController = DataController()
+    var dataController = FirestoreController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +71,7 @@
         case masterTableView:
             numberOfRow = dataController.masterDataArray.count
         default:
-            print("Error")
+            print("HomeViewController tablView numberOfRow Error")
         }
         return numberOfRow
         
@@ -92,7 +92,7 @@
             cell.textLabel?.text = masterCollections.title
             cell.detailTextLabel?.text = masterCollections.subtitle
         default:
-            print("Error")
+            print("HomeViewController show data Error")
         }
         
         return cell
@@ -112,7 +112,7 @@
             case "showMasterCollection":
                 controller.bool = "MasterCollection"
             default:
-                print("Error")
+                print("HomeViewController prepare error")
             }
         }
         
@@ -134,7 +134,7 @@
                 controller.tempo = dataController.masterCollectionIndex(at: masterIndexPath!.row).tempo
                 controller.yogaDescription = dataController.beginnerCollectionIndex(at: masterIndexPath!.row).description
             default:
-                print("Error")
+                print("HomeViewController prepare error")
             }
         }
         

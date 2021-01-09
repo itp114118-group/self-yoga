@@ -385,7 +385,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="get"/>
                                 <connections>
-                                    <segue destination="UMW-c1-uj4" kind="show" id="PWs-ev-Lyk"/>
+                                    <segue destination="UMW-c1-uj4" kind="show" identifier="showDetails" id="PWs-ev-Lyk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -433,6 +433,7 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pcj-2Y-J2A" customClass="YTPlayerView">
                                 <rect key="frame" x="87" y="357" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="44F-zm-T4k"/>
