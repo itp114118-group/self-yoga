@@ -17,14 +17,14 @@
     @IBOutlet weak var masterView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var dataController = FirestoreController()
+    var firestoreController = FirestoreController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initUI()
         
-        dataController.fetchData() { collectionName, title, subtitle, duration, tempo, description in
+        firestoreController.fetchData() { collectionName, title, subtitle, duration, tempo, description in
             self.begTableView.reloadData()
             self.masterTableView.reloadData()
         }
@@ -67,9 +67,9 @@
         
         switch tableView {
         case begTableView:
-            numberOfRow = dataController.beginnerDataArray.count
+            numberOfRow = firestoreController.beginnerDataArray.count
         case masterTableView:
-            numberOfRow = dataController.masterDataArray.count
+            numberOfRow = firestoreController.masterDataArray.count
         default:
             print("HomeViewController tablView numberOfRow Error")
         }
@@ -83,12 +83,12 @@
         switch tableView {
         case begTableView:
             cell = tableView.dequeueReusableCell(withIdentifier: "BeginnerCell", for: indexPath)
-            let begCollections = dataController.beginnerDataArray[indexPath.row]
+            let begCollections = firestoreController.beginnerDataArray[indexPath.row]
             cell.textLabel?.text = begCollections.title
             cell.detailTextLabel?.text = begCollections.subtitle
         case masterTableView:
             cell = tableView.dequeueReusableCell(withIdentifier: "MasterCell", for: indexPath)
-            let masterCollections = dataController.masterDataArray[indexPath.row]
+            let masterCollections = firestoreController.masterDataArray[indexPath.row]
             cell.textLabel?.text = masterCollections.title
             cell.detailTextLabel?.text = masterCollections.subtitle
         default:
@@ -123,16 +123,16 @@
             switch segue.identifier {
             case "showBeginnerDetail":
                 controller.bool = "BeginnerCollection"
-                controller.yogaTitle = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).title
-                controller.duration = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).duration
-                controller.tempo = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).tempo
-                controller.yogaDescription = dataController.beginnerCollectionIndex(at: beginnerIndexPath!.row).description
+                controller.yogaTitle = firestoreController.beginnerCollectionIndex(at: beginnerIndexPath!.row).title
+                controller.duration = firestoreController.beginnerCollectionIndex(at: beginnerIndexPath!.row).duration
+                controller.tempo = firestoreController.beginnerCollectionIndex(at: beginnerIndexPath!.row).tempo
+                controller.yogaDescription = firestoreController.beginnerCollectionIndex(at: beginnerIndexPath!.row).description
             case "showMasterDetail":
                 controller.bool = "MasterCollection"
-                controller.yogaTitle = dataController.masterCollectionIndex(at: masterIndexPath!.row).title
-                controller.duration = dataController.masterCollectionIndex(at: masterIndexPath!.row).duration
-                controller.tempo = dataController.masterCollectionIndex(at: masterIndexPath!.row).tempo
-                controller.yogaDescription = dataController.beginnerCollectionIndex(at: masterIndexPath!.row).description
+                controller.yogaTitle = firestoreController.masterCollectionIndex(at: masterIndexPath!.row).title
+                controller.duration = firestoreController.masterCollectionIndex(at: masterIndexPath!.row).duration
+                controller.tempo = firestoreController.masterCollectionIndex(at: masterIndexPath!.row).tempo
+                controller.yogaDescription = firestoreController.beginnerCollectionIndex(at: masterIndexPath!.row).description
             default:
                 print("HomeViewController prepare error")
             }

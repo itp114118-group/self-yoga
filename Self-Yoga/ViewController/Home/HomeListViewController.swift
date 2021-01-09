@@ -11,13 +11,13 @@ class HomeListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var dataController = FirestoreController()
+    var firestoreController = FirestoreController()
     var bool: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataController.fetchData() { collectionName, title, subtitle, duration, tempo, description in
+        firestoreController.fetchData() { collectionName, title, subtitle, duration, tempo, description in
             self.tableView.reloadData()
         }
         
@@ -40,9 +40,9 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch bool {
         case "BeginnerCollection":
-            numberOfRow = dataController.beginnerDataArray.count
+            numberOfRow = firestoreController.beginnerDataArray.count
         case "MasterCollection":
-            numberOfRow = dataController.masterDataArray.count
+            numberOfRow = firestoreController.masterDataArray.count
         default:
             print("HomeListViewController tablView numberOfRow error")
         }
@@ -55,11 +55,11 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch bool {
         case "BeginnerCollection":
-            let begCollections = dataController.beginnerDataArray[indexPath.row]
+            let begCollections = firestoreController.beginnerDataArray[indexPath.row]
             cell.textLabel?.text = begCollections.title
             cell.detailTextLabel?.text = begCollections.subtitle
         case "MasterCollection":
-            let masterCollections = dataController.masterDataArray[indexPath.row]
+            let masterCollections = firestoreController.masterDataArray[indexPath.row]
             cell.textLabel?.text = masterCollections.title
             cell.detailTextLabel?.text = masterCollections.subtitle
         default:
@@ -82,16 +82,16 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource {
                     switch bool {
                     case "BeginnerCollection":
                         controller.bool = "BeginnerCollection"
-                        controller.yogaTitle = dataController.beginnerCollectionIndex(at: indexPath.row).title
-                        controller.duration = dataController.beginnerCollectionIndex(at: indexPath.row).duration
-                        controller.tempo = dataController.beginnerCollectionIndex(at: indexPath.row).tempo
-                        controller.yogaDescription = dataController.beginnerCollectionIndex(at: indexPath.row).description
+                        controller.yogaTitle = firestoreController.beginnerCollectionIndex(at: indexPath.row).title
+                        controller.duration = firestoreController.beginnerCollectionIndex(at: indexPath.row).duration
+                        controller.tempo = firestoreController.beginnerCollectionIndex(at: indexPath.row).tempo
+                        controller.yogaDescription = firestoreController.beginnerCollectionIndex(at: indexPath.row).description
                     case "MasterCollection":
                         controller.bool = "MasterCollection"
-                        controller.yogaTitle = dataController.masterCollectionIndex(at: indexPath.row).title
-                        controller.duration = dataController.masterCollectionIndex(at: indexPath.row).duration
-                        controller.tempo = dataController.masterCollectionIndex(at: indexPath.row).tempo
-                        controller.yogaDescription = dataController.masterCollectionIndex(at: indexPath.row).description
+                        controller.yogaTitle = firestoreController.masterCollectionIndex(at: indexPath.row).title
+                        controller.duration = firestoreController.masterCollectionIndex(at: indexPath.row).duration
+                        controller.tempo = firestoreController.masterCollectionIndex(at: indexPath.row).tempo
+                        controller.yogaDescription = firestoreController.masterCollectionIndex(at: indexPath.row).description
                     default:
                         print("HomeListViewController prepare error")
                     }

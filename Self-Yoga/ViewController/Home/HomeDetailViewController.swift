@@ -15,7 +15,7 @@ class HomeDetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var dataController = FirestoreController()
+    var firestoreController = FirestoreController()
     var bool: String?
     var yogaTitle: String?
     var duration: String?
@@ -30,7 +30,7 @@ class HomeDetailViewController: UIViewController {
         tempoLabel.text = tempo
         descriptionLabel.text = yogaDescription
         
-        dataController.fetchNestedData() { collectionName, videoName, video in
+        firestoreController.fetchNestedData() { collectionName, videoName, video in
             self.tableView.reloadData()
         }
         
@@ -68,9 +68,9 @@ extension HomeDetailViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch bool {
         case "BeginnerCollection":
-            numberOfRow = dataController.beginnerNestedDataArray.count
+            numberOfRow = firestoreController.beginnerNestedDataArray.count
         case "MasterCollection":
-            numberOfRow = dataController.masterNestedDataArray.count
+            numberOfRow = firestoreController.masterNestedDataArray.count
         default:
             print("HomeDetailViewController tablView numberOfRow error")
         }
@@ -83,10 +83,10 @@ extension HomeDetailViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch bool {
         case "BeginnerCollection":
-            let begCollections = dataController.beginnerNestedDataArray[indexPath.row]
+            let begCollections = firestoreController.beginnerNestedDataArray[indexPath.row]
             cell.textLabel?.text = "Please Watch \(begCollections.videoName!)"
         case "MasterCollection":
-            let masterCollections = dataController.masterNestedDataArray[indexPath.row]
+            let masterCollections = firestoreController.masterNestedDataArray[indexPath.row]
             cell.textLabel?.text = "Please Watch \(masterCollections.videoName!)"
         default:
             print("HomeDetailViewController tableView show data error")
