@@ -19,12 +19,16 @@ class GoalsViewController: UIViewController {
     var pieChart = PieChartView()
     
     let healthKit = HealthKit.sharedInstance
+    let healthKitController = HealthKitController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pieChart.delegate = self
         barChart.delegate = self
         
+        // add Health Kit data
+        healthKitController.addData(caloriesBurned: 8.0, minutes: 60.0)
+   
         // ask user health app permission
         healthKit.requestHealthKitAuthorization { (result, error) in
             if result {
@@ -53,16 +57,10 @@ extension GoalsViewController: ChartViewDelegate {
         
         barChartView.addSubview(barChart)
         
-        var entries = [BarChartDataEntry]()
-        
-        for i in 0..<10 {
-            entries.append(BarChartDataEntry(x: Double(i), y: Double(i)))
-        }
-        
         let colors = [UIColor(named:"B6E9C1")]
-        let set = BarChartDataSet(entries: entries)
+        let set = BarChartDataSet(entries: healthKitController.coloriesArray)
         set.colors = colors as! [NSUIColor]
-        var data = BarChartData(dataSet: set)
+        let data = BarChartData(dataSet: set)
         data.barWidth = 0.2
         barChart.data = data
         
@@ -108,7 +106,7 @@ extension GoalsViewController: ChartViewDelegate {
         pieChart.animate(xAxisDuration: 2.0)
         
         // UI design
-        pieChartView.backgroundColor = UIColor(named: "003659")
+        pieChartView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         pieChartView.layer.cornerRadius = 20
         pieChartView.layer.masksToBounds = true

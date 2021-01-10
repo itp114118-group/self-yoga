@@ -29,13 +29,19 @@ struct HealthKit {
             return
         }
         
-        guard let stepsCount = HKObjectType.quantityType(forIdentifier: .stepCount) else {
+        guard let caloriesBurnedCount = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned) else {
+            completion(false, HealthkitSetupError.dataTypeNotAvailable)
+            return
+        }
+        
+        guard let mindfulCount = HKObjectType.categoryType(forIdentifier: .mindfulSession) else {
             completion(false, HealthkitSetupError.dataTypeNotAvailable)
             return
         }
         
         var healthKitTypesToWrite = Set<HKSampleType>()
-        healthKitTypesToWrite.insert(stepsCount)
+        healthKitTypesToWrite.insert(caloriesBurnedCount)
+        healthKitTypesToWrite.insert(mindfulCount)
         
         HKHealthStore().requestAuthorization(toShare: healthKitTypesToWrite, read: nil) { (success, error) in
             completion(success, error)
@@ -43,35 +49,59 @@ struct HealthKit {
         
     }
     
-    // save user steps func
-    func saveSteps(stepsCountValue: Int,
-                   date: Date,
-                   completion: @escaping (Error?) -> Swift.Void) {
+    func saveCaloriesBurned(caloriesBurnedValue: Double,
+                            date: Date,
+                            completion: @escaping (Error?) -> Swift.Void) {
         
-        guard let stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
-            fatalError("Step Count Type is no longer available in HealthKit")
+        guard let caloriesBurnedType = HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned) else {
+            fatalError("Calories Burned Type is no longer available in HealthKit")
         }
         
-        let stepsCountUnit:HKUnit = HKUnit.count()
-        let stepsCountQuantity = HKQuantity(unit: stepsCountUnit,
-                                            doubleValue: Double(stepsCountValue))
+        let caloriesBurnedUnit: HKUnit = HKUnit.calorie()
+        let caloriesBurnedQuantity = HKQuantity(unit: caloriesBurnedUnit,
+                                          doubleValue: caloriesBurnedValue * 1000)
         
-        let stepsCountSample = HKQuantitySample(type: stepCountType,
-                                                quantity: stepsCountQuantity,
-                                                start: date,
-                                                end: date)
+        let caloriesBurnedSample = HKQuantitySample(type: caloriesBurnedType,
+                                              quantity: caloriesBurnedQuantity,
+                                              start: date,
+                                              end: date)
         
-        HKHealthStore().save(stepsCountSample) { (success, error) in
+        HKHealthStore().save(caloriesBurnedSample) { (success, error) in
+            
             if let error = error {
                 completion(error)
-                print("Error Saving Steps Count Sample: \(error.localizedDescription)")
+                print("Error Saving Calories Burned Sample: \(error.localizedDescription)")
             } else {
                 completion(nil)
-                print("Successfully saved Steps Count Sample")
+                print("Successfully saved Calories Burned Sample")
             }
         }
         
     }
+
+    func saveMindfullAnalysis(startTime: Date, endTime: Date,
+                              completion: @escaping (Error?) -> Swift.Void) {
+        
+        guard let mindfulType = HKObjectType.categoryType(forIdentifier: .mindfulSession) else {
+            fatalError("Mindful Minutes Type is no longer available in HealthKit")
+        }
+        
+        // Create a mindful session with the given start and end time
+        let mindfullSample = HKCategorySample(type: mindfulType, value: 0, start: startTime, end: endTime)
+
+        // Save it to the health store
+        HKHealthStore().save(mindfullSample, withCompletion: { (success, error) in
+            
+            if let error = error {
+                completion(error)
+                print("Error Saving Mindful Minutes Sample: \(error.localizedDescription)")
+            } else {
+                completion(nil)
+                print("Successfully saved Mindful Minutes Sample")
+            }
+        })
+    }
+    
     
 }
 

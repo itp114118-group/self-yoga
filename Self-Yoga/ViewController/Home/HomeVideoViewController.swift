@@ -13,21 +13,15 @@ class HomeVideoViewController: UIViewController {
     
     @IBOutlet weak var videoPlayerView: YTPlayerView!
     
-    var dataController = FirestoreController()
+    var firestoreController = FirestoreController()
     var bool: String?
     var db = Firestore.firestore()
-    var healthKit = HealthKit()
-    var date = Date()
+    let healthKitController = HealthKitController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // add steps to Health App
-//        healthKit.saveSteps(stepsCountValue: Int(8), date: date) { (error) in
-//            print("added 8 steps to Health App")
-//        }
-        
-        dataController.fetchNestedData() { collection, videoName, video in
+        firestoreController.fetchNestedData() { collection, videoName, video in
             switch self.bool {
             case "BeginnerCollection":
                 self.db.collection("Beginners Collection/vBlOYdSZucieChF6uskr/Details").getDocuments() { (querySnapshot, err) in
