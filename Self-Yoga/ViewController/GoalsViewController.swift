@@ -89,14 +89,8 @@ extension GoalsViewController: ChartViewDelegate {
         
         pieChartView.addSubview(pieChart)
         
-        var entries = [PieChartDataEntry]()
-        
-        for i in 0..<10 {
-            entries.append(PieChartDataEntry(value: Double(i), data: Double(i)))
-        }
-        
         let colors = [UIColor(named:"B6E9C1"), UIColor(named:"003659")]
-        let set = PieChartDataSet(entries: entries)
+        let set = PieChartDataSet(entries: healthKitController.mindfulArray)
         set.colors = colors as! [NSUIColor]
         pieChart.data = PieChartData(dataSet: set)
         
