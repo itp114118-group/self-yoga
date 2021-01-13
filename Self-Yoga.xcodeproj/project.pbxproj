@@ -30,7 +30,6 @@
 		AB02E5D825AD9B620041407E /* PoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E5D625AD9B620041407E /* PoseViewController.swift */; };
 		AB02E5D925AD9B620041407E /* MLKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E5D725AD9B620041407E /* MLKitViewController.swift */; };
 		AB04673E25A9080200C1B885 /* MLStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB04673D25A9080200C1B885 /* MLStoryboard.storyboard */; };
-		AB7135DB25853879003A8C99 /* SettingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7135DA25853879003A8C99 /* SettingTVC.swift */; };
 		AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E3258A776200B1DC52 /* ResigerViewController.swift */; };
 		AB9521E7258A7D8400B1DC52 /* ForgotpwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E6258A7D8400B1DC52 /* ForgotpwViewController.swift */; };
 		AB9521F9258BD13B00B1DC52 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521F8258BD13B00B1DC52 /* HomeViewController.swift */; };
@@ -69,7 +68,6 @@
 		AB02E5D625AD9B620041407E /* PoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseViewController.swift; sourceTree = "<group>"; };
 		AB02E5D725AD9B620041407E /* MLKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLKitViewController.swift; sourceTree = "<group>"; };
 		AB04673D25A9080200C1B885 /* MLStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MLStoryboard.storyboard; sourceTree = "<group>"; };
-		AB7135DA25853879003A8C99 /* SettingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTVC.swift; sourceTree = "<group>"; };
 		AB9521E3258A776200B1DC52 /* ResigerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResigerViewController.swift; sourceTree = "<group>"; };
 		AB9521E6258A7D8400B1DC52 /* ForgotpwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotpwViewController.swift; sourceTree = "<group>"; };
 		AB9521F8258BD13B00B1DC52 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -159,12 +157,11 @@
 		10C664762595F3A400E2D378 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				10E4041B25AEE67C003BF8E4 /* Profile */,
 				10C6647A2595F5AF00E2D378 /* Home */,
 				105F63772591F887008CE3BD /* Auth */,
-				AB7135DA25853879003A8C99 /* SettingTVC.swift */,
 				ABC240D3258CDBA900554848 /* GoalsViewController.swift */,
 				ABD1AC412590061500126FF7 /* CoverTabBarViewController.swift */,
-				ABD80995259024480086DDC4 /* SettingsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -187,6 +184,14 @@
 				10C6AF31259871840022649E /* HealthKit.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		10E4041B25AEE67C003BF8E4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				ABD80995259024480086DDC4 /* SettingsViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		70470032A2A287FC845799B1 /* Frameworks */ = {
@@ -237,7 +242,6 @@
 				100950ED257F970800B26728 /* Frameworks */,
 				100950EE257F970800B26728 /* Resources */,
 				FD3E2BC48558A2C329E4D543 /* [CP] Embed Pods Frameworks */,
-				4B25F72670342363A62E45E7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,23 +303,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4B25F72670342363A62E45E7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4B4C558D94634460428339F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -383,7 +370,6 @@
 				AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */,
 				AB02E5D825AD9B620041407E /* PoseViewController.swift in Sources */,
 				ABC240D4258CDBA900554848 /* GoalsViewController.swift in Sources */,
-				AB7135DB25853879003A8C99 /* SettingTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

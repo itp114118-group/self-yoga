@@ -127,42 +127,42 @@ import MLKitPoseDetection
 import AVFoundation
 
 class PoseViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var resultView: UITextView!
     let imagePicker = UIImagePickerController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
         // Do any additional setup after loading the view.
     }
-    
+
     @IBAction func uploadImage(_ sender: Any) {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
     }
-    
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = pickedImage
-            
+
             //step 1 - single image
             let visionImage = VisionImage(image: pickedImage)
             visionImage.orientation = pickedImage.imageOrientation
-            
+
             //step 1 - stream
 //            let image = VisionImage(buffer: sampleBuffer)
 //            image.orientation = imageOrientation(
 //              deviceOrientation: UIDevice.current.orientation,
 //              cameraPosition: cameraPosition)
-            
+
             //step 2 - create and setup pose detector
             let options = AccuratePoseDetectorOptions()
             options.detectorMode = .singleImage
             let poseDetector = PoseDetector.poseDetector(options: options)
-            
+
             //step 3 - process the image
             // To detect objects synchronously
             var results: [Pose]
@@ -193,11 +193,11 @@ class PoseViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
         dismiss(animated: true, completion: nil)
     }
-    
+
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-    
+
     // To get the image orientation
     func imageOrientation(
       deviceOrientation: UIDeviceOrientation,
@@ -216,9 +216,9 @@ class PoseViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         return .up
       }
     }
-          
-        
+
+
     }
-          
+
 
 
