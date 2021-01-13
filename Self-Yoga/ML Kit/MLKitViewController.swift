@@ -6,83 +6,137 @@
 //
 
 import UIKit
-import MLKit
 import AVFoundation
 
-class MLKitViewController: UIViewController {
+class MLKitViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate  {
     
-    var captureSession = AVCaptureSession()
-    var backCamera: AVCaptureDevice?
-    var frontCemera : AVCaptureDevice?
-    var currnetCamerra : AVCaptureDevice?
-
-    var photoOutput: AVCapturePhotoOutput?
+ 
+    let captureSession = AVCaptureSession()
+    var previewLayer:CALayer!
     
-    var camerPreviewLayer: AVCaptureVideoPreviewLayer?
-
+    var captureDevice:AVCaptureDevice!
+    
+    var takePhoto = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupCaptureSession()
-        setupDrivce()
-        setupInputOutput()
-        startRunningCaptureSession()
-        
-        
-        // Do any additional setup after loading the view.
     }
     
-    // Base pose detector with streaming, when depending on the PoseDetection SDK
-    func setupCaptureSession() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        prepareCamera()
+    }
+    
+    
+    func prepareCamera() {
         captureSession.sessionPreset = AVCaptureSession.Preset.photo
+        
+        if let availableDevices = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back).devices {
+            captureDevice = availableDevices.first
+            beginSession()
+        }
+        
     }
     
-    func setupDrivce() {
-        let deviceeDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
+    func beginSession () {
+        do {
+            let captureDeviceInput = try AVCaptureDeviceInput(device: captureDevice)
+            
+            captureSession.addInput(captureDeviceInput)
+            
+        }catch {
+            print(error.localizedDescription)
+        }
         
-        let devices = deviceeDiscoverySession.devices
         
-        for device in devices {
-            if device.position == AVCaptureDevice.Position.back {
-                backCamera = device
-            }else if device.position == AVCaptureDevice.Position.front {
-                frontCemera = device
+        if let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession) {
+            self.previewLayer = previewLayer
+            self.view.layer.addSublayer(self.previewLayer)
+            self.previewLayer.frame = self.view.layer.frame
+            captureSession.startRunning()
+            
+            let dataOutput = AVCaptureVideoDataOutput()
+            dataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as String):NSNumber(value:kCVPixelFormatType_32BGRA)]
+            
+            dataOutput.alwaysDiscardsLateVideoFrames = true
+            
+            if captureSession.canAddOutput(dataOutput) {
+                captureSession.addOutput(dataOutput)
+            }
+            
+            captureSession.commitConfiguration()
+            
+            
+            let queue = DispatchQueue(label: "com.brianadvent.captureQueue")
+            dataOutput.setSampleBufferDelegate(self, queue: queue)
+            
+            
+        
+        }
+        
+    }
+    
+    @IBAction func takePhoto(_ sender: Any) {
+        takePhoto = true
+        
+    }
+    
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+        
+        if takePhoto {
+            takePhoto = false
+            
+            if let image = self.getImageFromSampleBuffer(buffer: sampleBuffer) {
+                
+                let photoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PhotoVC") as! PoseViewController
+                
+                photoVC.takenPhoto = image
+                
+                DispatchQueue.main.async {
+                    self.present(photoVC, animated: true, completion: {
+                        self.stopCaptureSession()
+                    })
+                    
+                }
+            }
+            
+        
+        }
+    }
+    
+    
+    func getImageFromSampleBuffer (buffer:CMSampleBuffer) -> UIImage? {
+        if let pixelBuffer = CMSampleBufferGetImageBuffer(buffer) {
+            let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
+            let context = CIContext()
+            
+            let imageRect = CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(pixelBuffer), height: CVPixelBufferGetHeight(pixelBuffer))
+            
+            if let image = context.createCGImage(ciImage, from: imageRect) {
+                return UIImage(cgImage: image, scale: UIScreen.main.scale, orientation: .right)
+            }
+            
+        }
+        
+        return nil
+    }
+    
+    func stopCaptureSession () {
+        self.captureSession.stopRunning()
+        
+        if let inputs = captureSession.inputs as? [AVCaptureDeviceInput] {
+            for input in inputs {
+                self.captureSession.removeInput(input)
             }
         }
-        currnetCamerra = backCamera
+        
     }
     
-    func setupInputOutput() {
-        do {
-            let captureDrviceInput = try AVCaptureDeviceInput(device: currnetCamerra!)
-            captureSession.addInput(captureDrviceInput)
-            photoOutput?.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])], completionHandler: nil)
-            
-        } catch {
-            print(error)
-        }
-    }
-    
-    func setupPreviewLayer() {
-        camerPreviewLayer = AVCaptureVideoPreviewLayer(session:  captureSession)
-        camerPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        camerPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-        camerPreviewLayer?.frame = self.view.frame
-        self.view.layer.insertSublayer(camerPreviewLayer!, at: 0
-        )
-    }
-    
-    func startRunningCaptureSession(){
-        captureSession.startRunning()
-    }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    */
+
 
 }
