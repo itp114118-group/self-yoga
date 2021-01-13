@@ -30,7 +30,7 @@ class PoseViewController: UIViewController{
 
         let Uiimage = VisionImage(image: UIImage())
 //        visionImage.orientation = Uiimage.imageOrientation
-
+//
 //        let Bufimage = VisionImage(buffer: sampleBuffer)
 //        image.orientation = imageOrientation(
 //          deviceOrientation: UIDevice.current.orientation,
