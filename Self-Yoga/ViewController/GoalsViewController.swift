@@ -27,7 +27,7 @@ class GoalsViewController: UIViewController {
         barChart.delegate = self
         
         // add Health Kit data
-        healthKitController.addData(caloriesBurned: 8.0, minutes: 60.0)
+//        healthKitController.addData(caloriesBurned: 8.0, minutes: 60.0)
    
         // ask user health app permission
         healthKit.requestHealthKitAuthorization { (result, error) in

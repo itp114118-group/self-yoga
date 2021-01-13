@@ -84,6 +84,7 @@ class FirestoreController {
         }
     }
     
+    // child()
     func fetchNestedData(completionHandler:@escaping(String, String, String)->())  {
         db.collection("Beginners Collection/vBlOYdSZucieChF6uskr/Details").getDocuments() { (querySnapshot, err) in
             if let err = err {

@@ -17,6 +17,7 @@ target 'Self-Yoga' do
   pod 'FirebaseFirestoreSwift', '7.2-beta'
   # pod 'GoogleSignIn'
   pod 'youtube-ios-player-helper'
-  # pod 'GoogleMLKit/PoseDetectionAccurate'
+  pod 'GoogleMLKit/PoseDetection'
+  pod 'GoogleMLKit/PoseDetectionAccurate'
 
 end

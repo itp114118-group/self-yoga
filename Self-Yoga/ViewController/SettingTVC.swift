@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
+class SettingTVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

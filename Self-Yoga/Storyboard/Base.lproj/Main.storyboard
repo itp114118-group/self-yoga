@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lk-JF-xBG" userLabel="BarChartView" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="25" y="141" width="364" height="240"/>
+                                <rect key="frame" x="25" y="138" width="364" height="243"/>
                                 <color key="backgroundColor" name="003659"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMe-ey-Otw" userLabel="PieChartView" customClass="PieChartView" customModule="Charts">
@@ -26,21 +26,14 @@
                                 <color key="backgroundColor" name="003659"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="175" translatesAutoresizingMaskIntoConstraints="NO" id="mJL-mL-ZI7">
-                                <rect key="frame" x="25" y="98" width="364" height="33"/>
+                                <rect key="frame" x="25" y="98" width="364" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fms-xT-Gxz">
-                                        <rect key="frame" x="0.0" y="0.0" width="114" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="868-TK-Yfa">
-                                        <rect key="frame" x="289" y="0.0" width="75" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <state key="normal" title="Show all">
-                                            <color key="titleColor" name="Color"/>
-                                        </state>
-                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -92,11 +85,11 @@
             </objects>
             <point key="canvasLocation" x="-1100" y="-2377"/>
         </scene>
-        <!--Proflie-->
+        <!--Setting-->
         <scene sceneID="Jr3-JJ-eSA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Te0-fL-ixo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Proflie" image="profile" selectedImage="selectedprofile" id="5cc-vd-D0R"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="profile" selectedImage="selectedprofile" id="5cc-vd-D0R"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AGm-UL-jDi">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -116,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="38" y="-3242"/>
         </scene>
-        <!--Profile-->
+        <!--Setting-->
         <scene sceneID="nqd-q7-lh3">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="5m5-lX-hB7" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Setting" id="5m5-lX-hB7" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="uwa-7M-3wR"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQc-pW-kOe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -194,9 +187,6 @@
         <image name="selectedprofile" width="38" height="38"/>
         <namedColor name="003659">
             <color red="0.0" green="0.21199999749660492" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Color">
-            <color red="0.62400001287460327" green="0.62400001287460327" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
