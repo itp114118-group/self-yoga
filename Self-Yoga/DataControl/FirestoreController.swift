@@ -44,6 +44,7 @@ class FirestoreController {
                 print("DataController init Error")
             }
         }
+        
     }
 
     func fetchData(completionHandler:@escaping(String, String, String, String, String, String)->()) {

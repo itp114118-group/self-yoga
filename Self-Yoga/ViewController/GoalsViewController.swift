@@ -3,7 +3,7 @@
 //  Self-Yoga
 //
 //  Created by itst on 18/12/2020.
-// yuki
+
 
 
 import UIKit
@@ -27,8 +27,8 @@ class GoalsViewController: UIViewController {
         barChart.delegate = self
         
         // add Health Kit data
-//        healthKitController.addData(caloriesBurned: 8.0, minutes: 60.0)
-   
+        healthKitController.addData(caloriesBurned: 8.0, minutes: 60.0)
+        
         // ask user health app permission
         healthKit.requestHealthKitAuthorization { (result, error) in
             if result {
@@ -44,7 +44,7 @@ class GoalsViewController: UIViewController {
         super.viewDidLayoutSubviews()
         showBarChartView()
         showPieChartView()
-    
+        
     }
     
 }
@@ -58,7 +58,7 @@ extension GoalsViewController: ChartViewDelegate {
         barChartView.addSubview(barChart)
         
         let colors = [UIColor(named:"B6E9C1")]
-        let set = BarChartDataSet(entries: healthKitController.coloriesArray)
+        let set = BarChartDataSet(entries: healthKitController.coloriesArray, label: "Calories Burned")
         set.colors = colors as! [NSUIColor]
         let data = BarChartData(dataSet: set)
         data.barWidth = 0.2
@@ -74,6 +74,7 @@ extension GoalsViewController: ChartViewDelegate {
         barChartView.backgroundColor = UIColor(named: "003659")
         
         barChart.xAxis.labelPosition = .bottom
+        barChart.legend.textColor = UIColor.white
         barChart.xAxis.labelTextColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         barChart.leftAxis.labelTextColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
@@ -90,7 +91,7 @@ extension GoalsViewController: ChartViewDelegate {
         pieChartView.addSubview(pieChart)
         
         let colors = [UIColor(named:"B6E9C1"), UIColor(named:"003659")]
-        let set = PieChartDataSet(entries: healthKitController.mindfulArray)
+        let set = PieChartDataSet(entries: healthKitController.mindfulArray, label: "Duration (minutes)")
         set.colors = colors as! [NSUIColor]
         pieChart.data = PieChartData(dataSet: set)
         

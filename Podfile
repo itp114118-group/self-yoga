@@ -7,12 +7,7 @@ target 'Self-Yoga' do
 
   # Pods for Self-Yoga
   
-  # pod 'Firebase/Analytics'
-  # pod 'Firebase/Analytics', '> 7.2-M1'
-  
-  #  pod 'Firebase/Auth'
   pod 'Firebase/Auth', '> 7.2.0-M1'
-  
   pod 'Charts'
   pod 'FirebaseFirestoreSwift', '7.2-beta'
   # pod 'GoogleSignIn'

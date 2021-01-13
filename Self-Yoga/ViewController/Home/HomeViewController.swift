@@ -6,10 +6,9 @@
  //
  
  import UIKit
- import CoreData
  import FirebaseFirestore
  
- class HomeViewController: UIViewController, UISearchBarDelegate {
+ class HomeViewController: UIViewController {
     
     @IBOutlet weak var begTableView: UITableView!
     @IBOutlet weak var masterTableView: UITableView!
@@ -46,8 +45,6 @@
         // Do any additional setup after loading the view.
     }
     
-    
-    
     func initUI() {
         
         begView.layer.cornerRadius = 20
@@ -62,6 +59,24 @@
         masterTableView.layer.cornerRadius = 20
         masterTableView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
+    }
+    
+ }
+ 
+ extension HomeViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            isSearching = false
+            view.endEditing(true)
+            begTableView.reloadData()
+            masterTableView.reloadData()
+        } else {
+            isSearching = true
+            data = data.filter({$0.lowercased().contains((searchBar.text?.lowercased())!)})
+            begTableView.reloadData()
+            masterTableView.reloadData()
+        }
     }
     
  }
@@ -118,21 +133,6 @@
         
         return cell
     }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text == nil || searchBar.text == "" {
-            isSearching = false
-            view.endEditing(true)
-            begTableView.reloadData()
-            masterTableView.reloadData()
-        } else {
-            isSearching = true
-            data = data.filter({$0.lowercased().contains((searchBar.text?.lowercased())!)})
-            begTableView.reloadData()
-            masterTableView.reloadData()
-        }
-    }
-    
     
     // MARK: - Navigation
     
