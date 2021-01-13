@@ -124,6 +124,7 @@
 import UIKit
 import MLKit
 import MLKitPoseDetection
+import AVFoundation
 
 class PoseViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -147,14 +148,23 @@ class PoseViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = pickedImage
             
-            //step 1 - create vision image
+            //step 1 - single image
             let visionImage = VisionImage(image: pickedImage)
             visionImage.orientation = pickedImage.imageOrientation
-            //step 2 - create and setup face detector
+            
+            //step 1 - stream
+//            let image = VisionImage(buffer: sampleBuffer)
+//            image.orientation = imageOrientation(
+//              deviceOrientation: UIDevice.current.orientation,
+//              cameraPosition: cameraPosition)
+            
+            //step 2 - create and setup pose detector
             let options = AccuratePoseDetectorOptions()
             options.detectorMode = .singleImage
             let poseDetector = PoseDetector.poseDetector(options: options)
+            
             //step 3 - process the image
+            // To detect objects synchronously
             var results: [Pose]
             do {
               results = try poseDetector.results(in: visionImage)
@@ -166,8 +176,20 @@ class PoseViewController: UIViewController, UIImagePickerControllerDelegate, UIN
               print("Pose detector returned no results.")
               return
             }
+            // To detect objects asynchronously
+//            poseDetector.process(visionImage) { detectedPoses, error in
+//              guard error == nil else {
+//                // Error.
+//                return
+//              }
+//              guard !detectedPoses!.isEmpty else {
+//                // No pose detected.
+//                return
+//              }
+//
+//              // Success. Get pose landmarks here.
+//            }
 
-            // Success. Get pose landmarks here.
         }
         dismiss(animated: true, completion: nil)
     }
@@ -175,6 +197,26 @@ class PoseViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+    
+    // To get the image orientation
+    func imageOrientation(
+      deviceOrientation: UIDeviceOrientation,
+      cameraPosition: AVCaptureDevice.Position
+    ) -> UIImage.Orientation {
+      switch deviceOrientation {
+      case .portrait:
+        return cameraPosition == .front ? .leftMirrored : .right
+      case .landscapeLeft:
+        return cameraPosition == .front ? .downMirrored : .up
+      case .portraitUpsideDown:
+        return cameraPosition == .front ? .rightMirrored : .left
+      case .landscapeRight:
+        return cameraPosition == .front ? .upMirrored : .down
+      case .faceDown, .faceUp, .unknown:
+        return .up
+      }
+    }
+          
         
     }
           
