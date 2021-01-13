@@ -10,7 +10,7 @@ import FirebaseAuth
 
 class SettingViewController: UIViewController {
     
-    @IBOutlet weak var ProfilrTableView: UITableView!
+    @IBOutlet weak var profileTableView: UITableView!
     @IBOutlet weak var btnlogout: UILabel!
     
     let firebaseAuth = Auth.auth()
@@ -19,6 +19,8 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        profileTableView.dataSource = self
+        profileTableView.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -47,7 +49,7 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ProfilrTableView.dequeueReusableCell(withIdentifier: "settingcell")
+        let cell = profileTableView.dequeueReusableCell(withIdentifier: "settingcell")
         cell?.textLabel?.text = setting[indexPath.row]
         return cell!
     }

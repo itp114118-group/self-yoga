@@ -29,7 +29,6 @@
 		42E15DDFA4C36667E8A6488F /* Pods_Self_Yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */; };
 		AB02E5D825AD9B620041407E /* PoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E5D625AD9B620041407E /* PoseViewController.swift */; };
 		AB02E5D925AD9B620041407E /* MLKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E5D725AD9B620041407E /* MLKitViewController.swift */; };
-		AB04673E25A9080200C1B885 /* MLStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB04673D25A9080200C1B885 /* MLStoryboard.storyboard */; };
 		AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E3258A776200B1DC52 /* ResigerViewController.swift */; };
 		AB9521E7258A7D8400B1DC52 /* ForgotpwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E6258A7D8400B1DC52 /* ForgotpwViewController.swift */; };
 		AB9521F9258BD13B00B1DC52 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521F8258BD13B00B1DC52 /* HomeViewController.swift */; };
@@ -67,7 +66,6 @@
 		A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Self_Yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB02E5D625AD9B620041407E /* PoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseViewController.swift; sourceTree = "<group>"; };
 		AB02E5D725AD9B620041407E /* MLKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLKitViewController.swift; sourceTree = "<group>"; };
-		AB04673D25A9080200C1B885 /* MLStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MLStoryboard.storyboard; sourceTree = "<group>"; };
 		AB9521E3258A776200B1DC52 /* ResigerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResigerViewController.swift; sourceTree = "<group>"; };
 		AB9521E6258A7D8400B1DC52 /* ForgotpwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotpwViewController.swift; sourceTree = "<group>"; };
 		AB9521F8258BD13B00B1DC52 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 				10822900259476C000F9104C /* Auth.storyboard */,
 				1082290E2594774400F9104C /* Setting.storyboard */,
 				10822911259477E100F9104C /* Home.storyboard */,
-				AB04673D25A9080200C1B885 /* MLStoryboard.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -289,7 +286,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB04673E25A9080200C1B885 /* MLStoryboard.storyboard in Resources */,
 				10822912259477E100F9104C /* Home.storyboard in Resources */,
 				1082290F2594774400F9104C /* Setting.storyboard in Resources */,
 				10095103257F970800B26728 /* LaunchScreen.storyboard in Resources */,

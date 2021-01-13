@@ -30,7 +30,6 @@ class HomeVideoViewController: UIViewController {
         lbltitle.text = titles
         lbldocu.text = desc
       
-        
         firestoreController.fetchNestedData() { collection, videoName, video in
             switch self.bool {
             case "BeginnerCollection":
