@@ -493,10 +493,10 @@
             </objects>
             <point key="canvasLocation" x="3608.6956521739135" y="-2377.2321428571427"/>
         </scene>
-        <!--Camera View Controller-->
+        <!--Kit View Controller-->
         <scene sceneID="EEJ-ub-NSE">
             <objects>
-                <viewController id="o0p-Ka-2jG" customClass="CameraViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="o0p-Ka-2jG" customClass="MLKitViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RiM-km-l6Z"/>
                         <viewControllerLayoutGuide type="bottom" id="vLk-9G-YkV"/>
@@ -540,7 +540,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPC-O5-Ya2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5550.7246376811599" y="-2377.2321428571427"/>
+            <point key="canvasLocation" x="5238" y="-2377"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GCV-SO-XEV">
@@ -559,7 +559,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGF-7p-9HD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4640.579710144928" y="-2377.2321428571427"/>
+            <point key="canvasLocation" x="4406" y="-2377"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

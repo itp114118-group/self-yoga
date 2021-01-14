@@ -8,8 +8,7 @@ import AVFoundation
 import CoreVideo
 import MLKit
 
-@objc(CameraViewController)
-class CameraViewController: UIViewController {
+class MLKitViewController: UIViewController {
   private let detectors: [Detector] = [
     .pose,
     .poseAccurate,
@@ -385,7 +384,7 @@ class CameraViewController: UIViewController {
 
 // MARK: AVCaptureVideoDataOutputSampleBufferDelegate
 
-extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+extension MLKitViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 
   func captureOutput(
     _ output: AVCaptureOutput,

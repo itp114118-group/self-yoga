@@ -27,7 +27,6 @@
 		10C6AF32259871840022649E /* HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6AF31259871840022649E /* HealthKit.swift */; };
 		10E401AF25A957BA003BF8E4 /* HealthKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E401AE25A957BA003BF8E4 /* HealthKitController.swift */; };
 		42E15DDFA4C36667E8A6488F /* Pods_Self_Yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */; };
-		AB80164825B0386E00B3F966 /* PoseViewController-2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80164725B0386D00B3F966 /* PoseViewController-2.swift */; };
 		AB80169325B0508F00B3F966 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80169225B0508F00B3F966 /* UIUtilities.swift */; };
 		AB80169725B050A800B3F966 /* MLKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80169625B050A800B3F966 /* MLKitViewController.swift */; };
 		AB80169A25B050BE00B3F966 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80169925B050BE00B3F966 /* EmailViewController.swift */; };
@@ -66,7 +65,6 @@
 		10E401AE25A957BA003BF8E4 /* HealthKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitController.swift; sourceTree = "<group>"; };
 		18AE7A0D05B319B7827DC4A0 /* Pods-Self-Yoga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self-Yoga.release.xcconfig"; path = "Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga.release.xcconfig"; sourceTree = "<group>"; };
 		A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Self_Yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB80164725B0386D00B3F966 /* PoseViewController-2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PoseViewController-2.swift"; sourceTree = "<group>"; };
 		AB80169225B0508F00B3F966 /* UIUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
 		AB80169625B050A800B3F966 /* MLKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLKitViewController.swift; sourceTree = "<group>"; };
 		AB80169925B050BE00B3F966 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
@@ -210,7 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				AB80169625B050A800B3F966 /* MLKitViewController.swift */,
-				AB80164725B0386D00B3F966 /* PoseViewController-2.swift */,
 			);
 			path = "ML Kit";
 			sourceTree = "<group>";
@@ -373,7 +370,6 @@
 				1056BA6A25A9516A00F6E08A /* HomeVideoViewController.swift in Sources */,
 				ABDE65BD25857F8200B7696C /* LoginViewController.swift in Sources */,
 				ABD80996259024480086DDC4 /* SettingsViewController.swift in Sources */,
-				AB80164825B0386E00B3F966 /* PoseViewController-2.swift in Sources */,
 				ABD1AC422590061500126FF7 /* CoverTabBarViewController.swift in Sources */,
 				100950F8257F970800B26728 /* ViewController.swift in Sources */,
 				100950F4257F970800B26728 /* AppDelegate.swift in Sources */,
