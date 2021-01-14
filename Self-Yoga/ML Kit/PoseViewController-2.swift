@@ -34,9 +34,32 @@ class PoseViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         present(imagePicker, animated: true, completion: nil)
     }
     
+    override func didReceiveMemoryWarning() {
+        super .didReceiveMemoryWarning()
+    }
+    
     @IBAction func goback(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func imageOrientation(
+      deviceOrientation: UIDeviceOrientation,
+      cameraPosition: AVCaptureDevice.Position
+    ) -> UIImage.Orientation {
+      switch deviceOrientation {
+      case .portrait:
+        return cameraPosition == .front ? .leftMirrored : .right
+      case .landscapeLeft:
+        return cameraPosition == .front ? .downMirrored : .up
+      case .portraitUpsideDown:
+        return cameraPosition == .front ? .rightMirrored : .left
+      case .landscapeRight:
+        return cameraPosition == .front ? .upMirrored : .down
+      case .faceDown, .faceUp, .unknown:
+        return .up
+      }
+    }
+          
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
@@ -45,12 +68,6 @@ class PoseViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             //step 1 - single image
             let visionImage = VisionImage(image: pickedImage)
             visionImage.orientation = pickedImage.imageOrientation
-            
-            //step 1 - stream
-            //            let image = VisionImage(buffer: sampleBuffer)
-            //            image.orientation = imageOrientation(
-            //              deviceOrientation: UIDevice.current.orientation,
-            //              cameraPosition: cameraPosition)
             
             //step 2 - create and setup pose detector
             let options = AccuratePoseDetectorOptions()
@@ -86,26 +103,6 @@ class PoseViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             dismiss(animated: true, completion: nil)
         }
-        
-        // If use CMSampleBufferRef
-        func imageOrientation(
-            deviceOrientation: UIDeviceOrientation,
-            cameraPosition: AVCaptureDevice.Position
-        ) -> UIImage.Orientation {
-            switch deviceOrientation {
-            case .portrait:
-                return cameraPosition == .front ? .leftMirrored : .right
-            case .landscapeLeft:
-                return cameraPosition == .front ? .downMirrored : .up
-            case .portraitUpsideDown:
-                return cameraPosition == .front ? .rightMirrored : .left
-            case .landscapeRight:
-                return cameraPosition == .front ? .upMirrored : .down
-            case .faceDown, .faceUp, .unknown:
-                return .up
-            }
-        }
-        
         
     }
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Glz-FN-4Po">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d8D-tZ-KAn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -446,7 +446,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="pose"/>
                                 <connections>
-                                    <segue destination="79o-bB-j7T" kind="show" id="w06-L3-3yV"/>
+                                    <segue destination="I8b-1s-WOJ" kind="show" id="99l-WD-8I7"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkl-lZ-qBK">
@@ -493,97 +493,73 @@
             </objects>
             <point key="canvasLocation" x="3608.6956521739135" y="-2377.2321428571427"/>
         </scene>
-        <!--Pose View Controller-->
-        <scene sceneID="HHU-vB-hvz">
+        <!--Camera View Controller-->
+        <scene sceneID="EEJ-ub-NSE">
             <objects>
-                <viewController id="Glz-FN-4Po" customClass="PoseViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GiN-4X-5wr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ynU-ld-7zC">
-                                <rect key="frame" x="87" y="176" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ztc-NO-TeY">
-                                <rect key="frame" x="87" y="366" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdT-Nf-czV">
-                                <rect key="frame" x="184" y="581" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="uploadImage:" destination="Glz-FN-4Po" eventType="touchUpInside" id="CEI-Ui-Qye"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FN-GA-Gi9">
-                                <rect key="frame" x="54" y="64" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="goback:" destination="Glz-FN-4Po" eventType="touchUpInside" id="dzU-pY-PEb"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Er3-5D-y8M"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ius-d2-FbL"/>
-                    <connections>
-                        <outlet property="imageView" destination="ynU-ld-7zC" id="sc4-Pi-cc2"/>
-                        <outlet property="resultView" destination="ztc-NO-TeY" id="iKc-li-dAt"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3pb-0d-Iz5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6231.884057971015" y="-2377.2321428571427"/>
-        </scene>
-        <!--Kit View Controller-->
-        <scene sceneID="HbZ-f0-NXN">
-            <objects>
-                <viewController storyboardIdentifier="PhotoVC" modalPresentationStyle="fullScreen" id="6Vz-GH-ePY" customClass="MLKitViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wRt-eQ-TQ2">
+                <viewController id="o0p-Ka-2jG" customClass="CameraViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RiM-km-l6Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="vLk-9G-YkV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pFK-kj-fId">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="dW6-MM-KTI"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCJ-iR-yxC" userLabel="Camera View">
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eUX-mB-Owg"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uCJ-iR-yxC" firstAttribute="top" secondItem="pFK-kj-fId" secondAttribute="topMargin" id="I7s-ph-wzB"/>
+                            <constraint firstAttribute="trailing" secondItem="uCJ-iR-yxC" secondAttribute="trailing" id="XF7-vW-gsy"/>
+                            <constraint firstItem="uCJ-iR-yxC" firstAttribute="bottom" secondItem="vLk-9G-YkV" secondAttribute="top" id="j1D-a0-czC"/>
+                            <constraint firstItem="uCJ-iR-yxC" firstAttribute="leading" secondItem="pFK-kj-fId" secondAttribute="leading" id="pJh-ju-nBy"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KaA-kX-9NF">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="0Wx-i9-Svn">
-                            <connections>
-                                <action selector="takePhoto:" destination="6Vz-GH-ePY" id="9FC-St-ZJh"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" id="CTa-WP-pbK">
+                        <nil key="title"/>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="cky-kM-Fm9" userLabel="Switch Camera Button">
+                                <connections>
+                                    <action selector="switchCamera:" destination="o0p-Ka-2jG" id="YJ1-mc-zJq"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Detectors" id="FDV-6h-7h6" userLabel="Detectors Button">
+                                <connections>
+                                    <action selector="selectDetector:" destination="o0p-Ka-2jG" id="YvH-kX-SnJ"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cameraView" destination="uCJ-iR-yxC" id="hy2-IL-Nfw"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Wu-CH-klh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NPC-O5-Ya2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5381.1594202898559" y="-2377.2321428571427"/>
+            <point key="canvasLocation" x="5550.7246376811599" y="-2377.2321428571427"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Dde-QD-ax7">
+        <scene sceneID="GCV-SO-XEV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="79o-bB-j7T" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I8b-1s-WOJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Ohi-eX-PVe"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lh2-h7-2ag">
+                    <navigationItem key="navigationItem" id="Hfq-KU-1Rf"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HhE-DN-a4m">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="6Vz-GH-ePY" kind="relationship" relationship="rootViewController" id="TRp-4N-5Tb"/>
+                        <segue destination="o0p-Ka-2jG" kind="relationship" relationship="rootViewController" id="no0-E8-n4W"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RBp-kO-Rgw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FGF-7p-9HD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4471.0144927536239" y="-2377.2321428571427"/>
+            <point key="canvasLocation" x="4640.579710144928" y="-2377.2321428571427"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -609,9 +585,6 @@
         <namedColor name="FFFFFF">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

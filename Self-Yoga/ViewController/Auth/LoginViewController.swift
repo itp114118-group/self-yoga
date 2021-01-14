@@ -9,6 +9,7 @@
 // pod install -> GoogleSignIn and Chart, if fail
 
 import UIKit
+import SwiftUI
 import Firebase
 
 class LoginViewController: UIViewController {

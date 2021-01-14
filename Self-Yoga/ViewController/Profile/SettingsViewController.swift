@@ -11,7 +11,7 @@ import FirebaseAuth
 class SettingViewController: UIViewController {
     
     @IBOutlet weak var profileTableView: UITableView!
-    @IBOutlet weak var btnlogout: UILabel!
+    @IBOutlet weak var btnlogout: UIButton!
     
     let firebaseAuth = Auth.auth()
     var setting = ["FAQ", "Contact Us"]
@@ -27,17 +27,16 @@ class SettingViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
     @IBAction func logout(_ sender: Any) {
+        
         do {
             try firebaseAuth.signOut()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
     }
-    
-    
-}
+        
+    }
 
 extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
     
