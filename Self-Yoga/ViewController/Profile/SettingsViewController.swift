@@ -28,13 +28,14 @@ class SettingViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func logout() {
+    @IBAction func logout(_ sender: Any) {
         do {
             try firebaseAuth.signOut()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
     }
+    
     
 }
 

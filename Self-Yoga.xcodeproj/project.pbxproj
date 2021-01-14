@@ -239,7 +239,6 @@
 				100950ED257F970800B26728 /* Frameworks */,
 				100950EE257F970800B26728 /* Resources */,
 				FD3E2BC48558A2C329E4D543 /* [CP] Embed Pods Frameworks */,
-				1ACF41DD007C7F19A9DF0FC3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -300,23 +299,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1ACF41DD007C7F19A9DF0FC3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4B4C558D94634460428339F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
