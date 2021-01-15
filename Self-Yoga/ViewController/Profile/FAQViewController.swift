@@ -8,14 +8,17 @@
 import UIKit
 import CoreData
 
-class FAQViewController: UIViewController {
+class FAQViewController: UIViewController, UITableViewDelegate {
     var dataController = FAQDataController()
     
     @IBOutlet weak var FAQTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        FAQTableView.dataSource = self
+        FAQTableView.delegate = self
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
