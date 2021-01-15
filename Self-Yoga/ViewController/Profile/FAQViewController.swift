@@ -10,6 +10,7 @@ import CoreData
 
 class FAQViewController: UIViewController {
     var dataController = FAQDataController()
+    
     @IBOutlet weak var FAQTableView: UITableView!
     
     override func viewDidLoad() {
@@ -38,10 +39,10 @@ extension FAQViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = FAQTableView.dequeueReusableCell(withIdentifier: "FAQcell")
+        let cell = FAQTableView.dequeueReusableCell(withIdentifier: "FAQcell", for: indexPath)
         let f = dataController.faq(at: indexPath.row)
-        cell?.textLabel?.text = "\(f.question)"
-        return cell!
+        cell.textLabel?.text = "\(f.question)"
+        return cell
     }
 }
 

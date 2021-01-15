@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import FirebaseAuth
+
 
 class ForgotpwViewController: UIViewController {
 
     @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var btnreset: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +35,16 @@ class ForgotpwViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func resetPasswordDidTapped(_ sender: Any) {
+        Auth.auth().sendPasswordReset(withEmail: emailTF.text!) { (error) in
+            if error == nil {
+                print("SENT...!")
+            } else {
+                print("FAILED - \(String(describing: error?.localizedDescription))")
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

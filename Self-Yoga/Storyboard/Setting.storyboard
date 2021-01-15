@@ -38,6 +38,9 @@
                                             <constraint firstAttribute="height" constant="50" id="SZV-Ws-nM3"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="FAQ"/>
+                                        <connections>
+                                            <segue destination="mzp-Pi-sMN" kind="show" id="xfp-LW-a23"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wg-bO-Kxs">
                                         <rect key="frame" x="20" y="110" width="200" height="35"/>
@@ -104,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="999" y="-2515"/>
         </scene>
-        <!--Email View Controller-->
+        <!--Answer View Controller-->
         <scene sceneID="bN8-6G-8kf">
             <objects>
-                <viewController id="gKb-Yg-K88" customClass="EmailViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gKb-Yg-K88" customClass="AnswerViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9lK-sW-23n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,6 +173,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AmF-Ol-4pT"/>
+                    <connections>
+                        <outlet property="answer" destination="Cx1-Jx-QsU" id="eFY-Ne-OlZ"/>
+                        <outlet property="question" destination="sdM-6x-ruq" id="rxL-EI-rg7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N65-RB-o7a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,7 +185,7 @@
         <!--FQA Page-->
         <scene sceneID="U5G-4X-goZ">
             <objects>
-                <viewController title="FQA Page" modalPresentationStyle="fullScreen" id="mzp-Pi-sMN" sceneMemberID="viewController">
+                <viewController title="FQA Page" modalPresentationStyle="fullScreen" id="mzp-Pi-sMN" customClass="FAQViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LxG-O0-wZO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -280,21 +287,6 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGo-zX-W4q">
-                                <rect key="frame" x="382" y="434" width="20" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="blue arrow"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKY-Nn-poZ">
-                                <rect key="frame" x="382" y="476" width="20" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="blue arrow"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05L-4f-REN">
-                                <rect key="frame" x="382" y="519" width="20" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="blue arrow"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dear Yogi, our FAQ section can help you find the answer you want faster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdh-JN-2vx">
                                 <rect key="frame" x="20" y="59" width="374" height="34"/>
                                 <constraints>
@@ -319,7 +311,7 @@
                         <barButtonItem key="backBarButtonItem" title="FAQ" id="2KB-z9-6Hh"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="FAQTABLEVIEW" destination="UJf-WI-6Zc" id="4Gd-Og-flg"/>
+                        <outlet property="FAQTableView" destination="UJf-WI-6Zc" id="ieH-wr-2aV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1Z-SO-fVx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -328,13 +320,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gkY-iB-b62"/>
+        <segue reference="oQO-iZ-LDY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FAQ" width="88" height="35"/>
         <image name="Group 79" width="321" height="68"/>
         <image name="Logo" width="433" height="343"/>
-        <image name="blue arrow" width="15" height="15"/>
         <image name="cantact" width="146" height="35"/>
         <image name="logout" width="280" height="39"/>
         <image name="question" width="25" height="25"/>
