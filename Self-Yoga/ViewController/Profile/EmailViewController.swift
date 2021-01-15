@@ -13,7 +13,9 @@ class EmailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // please make sure your phone installed Mail app
         showEmail()
+        
         // Do any additional setup after loading the view.
     }
     
