@@ -48,6 +48,9 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="jtz-hy-yiu"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="cantact"/>
+                                        <connections>
+                                            <segue destination="Qiu-vJ-M6W" kind="show" id="gkY-iB-b62"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -324,6 +327,9 @@
             <point key="canvasLocation" x="1998.5507246376812" y="-3242.4107142857142"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="gkY-iB-b62"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="FAQ" width="88" height="35"/>
         <image name="Group 79" width="321" height="68"/>
