@@ -372,7 +372,7 @@
         <!--ComfirmPage-->
         <scene sceneID="SZv-SZ-0uZ">
             <objects>
-                <viewController storyboardIdentifier="AutVC" title="ComfirmPage" modalPresentationStyle="fullScreen" id="71B-NZ-axg" customClass="ViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AutVC" title="ComfirmPage" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="71B-NZ-axg" customClass="ViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFill" id="1j7-4i-aPM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -468,7 +468,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2XG-OS-KJi"/>
+        <segue reference="sK3-Ek-kiT"/>
         <segue reference="A6p-Qa-jVT"/>
         <segue reference="TCc-0P-Un4"/>
     </inferredMetricsTieBreakers>

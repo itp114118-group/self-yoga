@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 class FAQViewController: UIViewController, UITableViewDelegate {
     var dataController = FAQDataController()
