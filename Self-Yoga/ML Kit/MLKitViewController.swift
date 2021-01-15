@@ -20,9 +20,8 @@ class MLKitViewController: UIViewController {
   private lazy var captureSession = AVCaptureSession()
   private lazy var sessionQueue = DispatchQueue(label: Constant.sessionQueueLabel)
   private var lastFrame: CMSampleBuffer?
+    @IBOutlet weak var lblresult: UILabel!
     
-
-
   private lazy var previewOverlayView: UIImageView = {
 
     precondition(isViewLoaded)
@@ -39,19 +38,10 @@ class MLKitViewController: UIViewController {
     return annotationOverlayView
   }()
 
-  /// Initialized when one of the pose detector rows are chosen. Reset to `nil` when neither are.
   private var poseDetector: PoseDetector? = nil
-
-  /// The detector mode with which detection was most recently run. Only used on the video output
-  /// queue. Useful for inferring when to reset detector instances which use a conventional
-  /// lifecyle paradigm.
   private var lastDetector: Detector?
 
-  // MARK: - IBOutlets
-
   @IBOutlet private weak var cameraView: UIView!
-
-  // MARK: - UIViewController
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -81,8 +71,6 @@ class MLKitViewController: UIViewController {
     previewLayer.frame = cameraView.frame
   }
 
-  // MARK: - IBActions
-
   @IBAction func selectDetector(_ sender: Any) {
     presentDetectorsAlertController()
   }
@@ -93,7 +81,6 @@ class MLKitViewController: UIViewController {
     setUpCaptureSessionInput()
   }
 
-  // MARK: On-Device Detections
 
   private func detectPose(in image: VisionImage, width: CGFloat, height: CGFloat) {
     if let poseDetector = self.poseDetector {
@@ -150,19 +137,90 @@ class MLKitViewController: UIViewController {
               color: UIColor.blue,
               radius: Constant.smallDotRadius
             )
-            let rightHipAngle = UIUtilities.angle(
-                  firstLandmark: pose.landmark(ofType: .rightShoulder),
-                  midLandmark: pose.landmark(ofType: .rightHip),
-                  lastLandmark: pose.landmark(ofType: .rightKnee)
-            )
-            print(rightHipAngle)
           }
+            
+            let rightShoulder = pose.landmark(ofType: .rightShoulder) // 12
+            let rightElbow = pose.landmark(ofType: .rightElbow) // 14
+            let rightWrist = pose.landmark(ofType: .rightWrist) // 16
+            let rightHip = pose.landmark(ofType: .rightHip) // 24
+            let rightKnee = pose.landmark(ofType: .rightKnee) // 26
+            
+            let leftShoulder = pose.landmark(ofType: .leftShoulder)
+            let leftElbow = pose.landmark(ofType: .leftElbow)
+            let leftWrist = pose.landmark(ofType: .leftWrist)
+            let leftHip = pose.landmark(ofType: .leftHip)
+            let leftKnee = pose.landmark(ofType: .leftKnee)
+
+            let rightArmAngle = UIUtilities.angle(
+                firstLandmark: rightShoulder,
+                midLandmark: rightElbow,
+                lastLandmark: rightWrist
+            )
+            let leftArmAngle = UIUtilities.angle(
+                firstLandmark: leftShoulder,
+                midLandmark: leftElbow,
+                lastLandmark: leftWrist
+            )
+            
+            let rightHipAngle = UIUtilities.angle(
+                firstLandmark: rightShoulder,
+                midLandmark: rightHip,
+                lastLandmark: rightKnee
+            )
+            let leftHipAngle = UIUtilities.angle(
+                firstLandmark: leftShoulder,
+                midLandmark: leftHip,
+                lastLandmark: leftKnee
+            )
+            
+            func checkPoses(rightHipAngle: CGFloat, leftHipAngle: CGFloat, currentPose: String) -> String {
+                // Warrier poes
+                if currentPose == "Warrier pose" &&
+                    rightArmAngle > 153 && rightArmAngle < 193 && leftArmAngle > 151 && leftArmAngle < 191 &&
+                    rightHipAngle > 95 && rightHipAngle < 135 && leftHipAngle > 120 && leftHipAngle < 160 ||
+                    currentPose == "Warrier pose" &&
+                    rightArmAngle > 153 && rightArmAngle < 193 && leftArmAngle > 151 && leftArmAngle < 191 &&
+                    leftHipAngle > 90 && leftHipAngle < 135 && rightHipAngle > 120 && rightHipAngle < 160 {
+                    return "You are doing Warrier pose"
+                }
+                // Tree pose
+                if currentPose == "Tree pose" &&
+                    rightArmAngle > 132 && rightArmAngle < 172 && leftArmAngle > 147 && leftArmAngle < 187 &&
+                    rightHipAngle > 145 && rightHipAngle < 185 && leftHipAngle > 129 && leftHipAngle < 169 ||
+                    currentPose == "Tree pose" &&
+                    rightArmAngle > 132 && rightArmAngle < 172 && leftArmAngle > 147 && leftArmAngle < 187 &&
+                    leftHipAngle > 145 && leftHipAngle < 185 && rightHipAngle > 129 && rightHipAngle < 169 {
+                    return "You are doing Tree pose"
+                }
+                // Dance pose (need variable)
+                if currentPose == "Dance pose" &&
+                    rightArmAngle > 134 && rightArmAngle < 174 && leftArmAngle > 155 && leftArmAngle < 195 &&
+                    rightHipAngle > 97 && rightHipAngle < 137 && leftHipAngle > 111 && leftHipAngle < 151 ||
+                    currentPose == "Dance pose" &&
+                    rightArmAngle > 134 && rightArmAngle < 174 && leftArmAngle > 155 && leftArmAngle < 195 &&
+                    leftHipAngle > 97 && leftHipAngle < 137 && rightHipAngle > 111 && rightHipAngle < 151 {
+                    return "You are doing Dance pose"
+                }
+                // Peacock Pose (need variable)
+                if currentPose == "Peacock pose" &&
+                    rightArmAngle > 93 && rightArmAngle < 133 && leftArmAngle > 102 && leftArmAngle < 142 &&
+                    rightHipAngle > 112 && rightHipAngle < 152 && leftHipAngle > 133 && leftHipAngle < 173 ||
+                    currentPose == "Peacock pose" &&
+                    rightArmAngle > 93 && rightArmAngle < 133 && leftArmAngle > 102 && leftArmAngle < 142 &&
+                    leftHipAngle > 112 && leftHipAngle < 152 && rightHipAngle > 133 && rightHipAngle < 173 {
+                    return "You are doing Peacock pose"
+                }
+                return "Try to make a Yoga pose"
+            }
+            
+            let results = checkPoses(rightHipAngle: rightHipAngle, leftHipAngle: leftHipAngle, currentPose: "Warrier pose")
+            lblresult.text = ("\(results), rightArmAngle: \(rightArmAngle), leftArmAngle: \(leftArmAngle), rightHipAngle: \(rightHipAngle), leftHipAngle: \(leftHipAngle)")
+            
         }
       }
     }
   }
 
-  // MARK: - Private
 
   private func setUpCaptureSessionOutput() {
     weak var weakSelf = self
@@ -172,8 +230,6 @@ class MLKitViewController: UIViewController {
         return
       }
       strongSelf.captureSession.beginConfiguration()
-      // When performing latency tests to determine ideal capture settings,
-      // run the app in 'release' mode to get accurate performance metrics
       strongSelf.captureSession.sessionPreset = AVCaptureSession.Preset.medium
 
       let output = AVCaptureVideoDataOutput()
@@ -360,15 +416,11 @@ class MLKitViewController: UIViewController {
     return normalizedPoint
   }
 
-  /// Resets any detector instances which use a conventional lifecycle paradigm. This method is
-  /// expected to be invoked on the AVCaptureOutput queue - the same queue on which detection is
-  /// run.
   private func resetManagedLifecycleDetectors(activeDetector: Detector) {
     if activeDetector == self.lastDetector {
-      // Same row as before, no need to reset any detectors.
       return
     }
-    // Clear the old detector, if applicable.
+ 
     switch self.lastDetector {
     case .pose, .poseAccurate:
       self.poseDetector = nil
@@ -376,7 +428,7 @@ class MLKitViewController: UIViewController {
     default:
       break
     }
-    // Initialize the new detector, if applicable.
+
     switch activeDetector {
     case .pose, .poseAccurate:
       let options = activeDetector == .pose ? PoseDetectorOptions() : AccuratePoseDetectorOptions()
@@ -390,8 +442,6 @@ class MLKitViewController: UIViewController {
   }
 }
 
-// MARK: AVCaptureVideoDataOutputSampleBufferDelegate
-
 extension MLKitViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 
   func captureOutput(
@@ -403,8 +453,7 @@ extension MLKitViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
       print("Failed to get image buffer from sample buffer.")
       return
     }
-    // Evaluate `self.currentDetector` once to ensure consistency throughout this method since it
-    // can be concurrently modified from the main thread.
+
     let activeDetector = self.currentDetector
     resetManagedLifecycleDetectors(activeDetector: activeDetector)
 
@@ -426,8 +475,6 @@ extension MLKitViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     }
   }
 }
-
-// MARK: - Constants
 
 public enum Detector: String {
   case pose = "Pose Detection"

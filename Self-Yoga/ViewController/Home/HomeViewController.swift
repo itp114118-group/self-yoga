@@ -15,6 +15,7 @@
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var begView: UIView!
     @IBOutlet weak var masterView: UIView!
+    
 
     var firestoreController = FirestoreController()
     var healthKitController = HealthKitController()

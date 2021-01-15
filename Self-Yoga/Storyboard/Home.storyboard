@@ -507,7 +507,23 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCJ-iR-yxC" userLabel="Camera View">
                                 <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAu-Z8-jrg">
+                                        <rect key="frame" x="8" y="25" width="398" height="63"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="398" id="K3j-B5-wJ0"/>
+                                            <constraint firstAttribute="height" constant="63" id="VaH-Zb-dRd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="aAu-Z8-jrg" firstAttribute="centerX" secondItem="uCJ-iR-yxC" secondAttribute="centerX" id="bjY-wt-EKQ"/>
+                                    <constraint firstItem="aAu-Z8-jrg" firstAttribute="top" secondItem="uCJ-iR-yxC" secondAttribute="top" constant="25" id="cJn-uh-ylX"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eUX-mB-Owg"/>
@@ -536,6 +552,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cameraView" destination="uCJ-iR-yxC" id="hy2-IL-Nfw"/>
+                        <outlet property="lblresult" destination="aAu-Z8-jrg" id="cu7-ck-kiZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPC-O5-Ya2" userLabel="First Responder" sceneMemberID="firstResponder"/>
