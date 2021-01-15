@@ -17,6 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BE-ra-BSm">
+                                <rect key="frame" x="63.5" y="431" width="287" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="5UA-8t-q2f"/>
+                                    <constraint firstAttribute="width" constant="287" id="F3J-NX-sat"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="C7y-A9-efp" eventType="touchUpInside" id="qMU-GK-5Db"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAd-Dg-qDI">
                                 <rect key="frame" x="0.0" y="222" width="414" height="189"/>
                                 <subviews>
@@ -27,43 +38,26 @@
                                             <constraint firstAttribute="height" constant="50" id="SZV-Ws-nM3"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="FAQ"/>
-                                        <connections>
-                                            <segue destination="mzp-Pi-sMN" kind="show" id="cog-eE-bH1"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wg-bO-Kxs">
                                         <rect key="frame" x="20" y="110" width="200" height="35"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="OwC-J8-vZ6"/>
                                             <constraint firstAttribute="height" constant="35" id="PdP-vU-34h"/>
                                             <constraint firstAttribute="width" constant="200" id="aKg-He-i3J"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="jtz-hy-yiu"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="cantact"/>
-                                        <connections>
-                                            <segue destination="Qiu-vJ-M6W" kind="show" id="3QW-XY-UJc"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BE-ra-BSm">
-                                        <rect key="frame" x="73" y="225" width="287" height="39"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="39" id="5UA-8t-q2f"/>
-                                            <constraint firstAttribute="width" constant="287" id="F3J-NX-sat"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="logout"/>
-                                        <connections>
-                                            <action selector="logout:" destination="C7y-A9-efp" eventType="touchUpInside" id="oIn-Vj-hyG"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="rmD-3W-vOU" firstAttribute="top" secondItem="DAd-Dg-qDI" secondAttribute="top" constant="30" id="2XC-fq-zXy"/>
-                                    <constraint firstItem="7BE-ra-BSm" firstAttribute="top" secondItem="7Wg-bO-Kxs" secondAttribute="bottom" constant="80" id="Efn-Iy-T6m"/>
-                                    <constraint firstItem="7Wg-bO-Kxs" firstAttribute="leading" secondItem="DAd-Dg-qDI" secondAttribute="leading" constant="20" id="Fqs-XZ-yGa"/>
-                                    <constraint firstItem="7Wg-bO-Kxs" firstAttribute="top" secondItem="rmD-3W-vOU" secondAttribute="bottom" constant="30" id="cRT-Ou-5pL"/>
-                                    <constraint firstItem="7BE-ra-BSm" firstAttribute="centerX" secondItem="DAd-Dg-qDI" secondAttribute="centerX" constant="9.5" id="jqt-Ds-GPy"/>
+                                    <constraint firstItem="7Wg-bO-Kxs" firstAttribute="top" secondItem="rmD-3W-vOU" secondAttribute="bottom" constant="30" id="BGi-Ox-gdi"/>
+                                    <constraint firstItem="rmD-3W-vOU" firstAttribute="leading" secondItem="DAd-Dg-qDI" secondAttribute="leading" constant="20" id="UgR-JL-w8k"/>
+                                    <constraint firstItem="rmD-3W-vOU" firstAttribute="top" secondItem="DAd-Dg-qDI" secondAttribute="top" constant="30" id="ifh-m6-opZ"/>
+                                    <constraint firstItem="7Wg-bO-Kxs" firstAttribute="leading" secondItem="DAd-Dg-qDI" secondAttribute="leading" constant="20" id="qo1-QB-BJs"/>
                                     <constraint firstAttribute="height" constant="189" id="uoy-FD-cQg"/>
                                     <constraint firstAttribute="width" constant="414" id="wrd-ca-MJq"/>
-                                    <constraint firstItem="rmD-3W-vOU" firstAttribute="leading" secondItem="DAd-Dg-qDI" secondAttribute="leading" constant="20" id="zZO-Ya-MWW"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="8zo-5P-yos">
@@ -77,16 +71,15 @@
                         <viewLayoutGuide key="safeArea" id="bC2-Al-mwG"/>
                         <color key="backgroundColor" name="F4F4F4"/>
                         <constraints>
-                            <constraint firstItem="DAd-Dg-qDI" firstAttribute="top" secondItem="8zo-5P-yos" secondAttribute="bottom" constant="20" id="TbU-bY-9fW"/>
-                            <constraint firstItem="8zo-5P-yos" firstAttribute="top" secondItem="bC2-Al-mwG" secondAttribute="top" constant="30" id="Yqu-OC-au2"/>
-                            <constraint firstItem="DAd-Dg-qDI" firstAttribute="centerX" secondItem="SiF-No-WV6" secondAttribute="centerX" id="dRr-BW-MJC"/>
-                            <constraint firstItem="8zo-5P-yos" firstAttribute="centerX" secondItem="SiF-No-WV6" secondAttribute="centerX" id="e5v-Bm-OaD"/>
+                            <constraint firstItem="7BE-ra-BSm" firstAttribute="top" secondItem="DAd-Dg-qDI" secondAttribute="bottom" constant="20" id="3hT-Fb-YOR"/>
+                            <constraint firstItem="7BE-ra-BSm" firstAttribute="centerX" secondItem="SiF-No-WV6" secondAttribute="centerX" id="6mU-1E-AM2"/>
+                            <constraint firstItem="DAd-Dg-qDI" firstAttribute="top" secondItem="8zo-5P-yos" secondAttribute="bottom" constant="20" id="8mm-e6-PIf"/>
+                            <constraint firstItem="8zo-5P-yos" firstAttribute="top" secondItem="bC2-Al-mwG" secondAttribute="top" constant="30" id="eap-Aq-2dc"/>
+                            <constraint firstItem="DAd-Dg-qDI" firstAttribute="centerX" secondItem="SiF-No-WV6" secondAttribute="centerX" id="iuh-br-AhS"/>
+                            <constraint firstItem="8zo-5P-yos" firstAttribute="centerX" secondItem="SiF-No-WV6" secondAttribute="centerX" id="nsa-Ib-vCb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="uQ8-hX-4Lm"/>
-                    <connections>
-                        <outlet property="btnlogout" destination="7BE-ra-BSm" id="DeJ-HG-8Iz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S6w-dn-8E9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -331,9 +324,6 @@
             <point key="canvasLocation" x="1998.5507246376812" y="-3242.4107142857142"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="3QW-XY-UJc"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="FAQ" width="88" height="35"/>
         <image name="Group 79" width="321" height="68"/>
