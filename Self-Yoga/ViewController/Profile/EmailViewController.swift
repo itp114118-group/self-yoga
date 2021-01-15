@@ -26,9 +26,9 @@ class EmailViewController: UIViewController {
         
         let composer = MFMailComposeViewController()
         composer.mailComposeDelegate = self
-        composer.setToRecipients(["support@seanallen.co"])
-        composer.setSubject("HELP")
-        composer.setMessageBody("I need help!", isHTML: false)
+        composer.setToRecipients(["l.chakkei.jack@xxx.com"])
+        composer.setSubject("HELP!")
+        composer.setMessageBody("I need somebody...", isHTML: false)
         
         present(composer, animated: true)
     }
