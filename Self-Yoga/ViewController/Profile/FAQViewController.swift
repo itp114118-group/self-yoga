@@ -22,10 +22,12 @@ class FAQViewController: UIViewController, UITableViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AnsSeque" {
         if let FAQVC = segue.destination as? AnswerViewController {
         if let indexPath = self.FAQTableView.indexPathForSelectedRow {
             let i = dataController.faq(at: indexPath.row)
             FAQVC.faq = i
+        }
         }
         }
     }
