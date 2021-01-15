@@ -17,7 +17,7 @@
 		1009510C257F976C00B26728 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1009510B257F976C00B26728 /* GoogleService-Info.plist */; };
 		1056BA6A25A9516A00F6E08A /* HomeVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1056BA6925A9516A00F6E08A /* HomeVideoViewController.swift */; };
 		10822901259476C000F9104C /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10822900259476C000F9104C /* Auth.storyboard */; };
-		1082290F2594774400F9104C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1082290E2594774400F9104C /* Profile.storyboard */; };
+		1082290F2594774400F9104C /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1082290E2594774400F9104C /* Setting.storyboard */; };
 		10822912259477E100F9104C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10822911259477E100F9104C /* Home.storyboard */; };
 		1082291A2594805E00F9104C /* FirestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108229192594805E00F9104C /* FirestoreController.swift */; };
 		10C664712595CB4500E2D378 /* YogaSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C664702595CB4500E2D378 /* YogaSet.swift */; };
@@ -27,10 +27,11 @@
 		10C6AF32259871840022649E /* HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6AF31259871840022649E /* HealthKit.swift */; };
 		10E401AF25A957BA003BF8E4 /* HealthKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E401AE25A957BA003BF8E4 /* HealthKitController.swift */; };
 		42E15DDFA4C36667E8A6488F /* Pods_Self_Yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */; };
-		AB02E51C25AD2DBD0041407E /* MLKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E51A25AD2DBC0041407E /* MLKitViewController.swift */; };
-		AB02E51D25AD2DBD0041407E /* PoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E51B25AD2DBD0041407E /* PoseViewController.swift */; };
-		AB04673E25A9080200C1B885 /* MLStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB04673D25A9080200C1B885 /* MLStoryboard.storyboard */; };
-		AB7135DB25853879003A8C99 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7135DA25853879003A8C99 /* SplashViewController.swift */; };
+		AB80169A25B050BE00B3F966 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80169925B050BE00B3F966 /* EmailViewController.swift */; };
+		AB80169E25B0520100B3F966 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80169D25B0520100B3F966 /* Utilities.swift */; };
+		AB80170E25B0639300B3F966 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80170D25B0639200B3F966 /* UIUtilities.swift */; };
+		AB80171125B063A200B3F966 /* MLKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80171025B063A200B3F966 /* MLKitViewController.swift */; };
+		AB80174125B09EAF00B3F966 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80174025B09EAF00B3F966 /* FAQViewController.swift */; };
 		AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E3258A776200B1DC52 /* ResigerViewController.swift */; };
 		AB9521E7258A7D8400B1DC52 /* ForgotpwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E6258A7D8400B1DC52 /* ForgotpwViewController.swift */; };
 		AB9521F9258BD13B00B1DC52 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521F8258BD13B00B1DC52 /* HomeViewController.swift */; };
@@ -38,7 +39,6 @@
 		ABD1AC422590061500126FF7 /* CoverTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD1AC412590061500126FF7 /* CoverTabBarViewController.swift */; };
 		ABD80996259024480086DDC4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD80995259024480086DDC4 /* SettingsViewController.swift */; };
 		ABDE65BD25857F8200B7696C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE65BC25857F8200B7696C /* LoginViewController.swift */; };
-		ABEEDFA4258FD759008AC092 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEEDFA3258FD759008AC092 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +54,7 @@
 		1009510B257F976C00B26728 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1056BA6925A9516A00F6E08A /* HomeVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoViewController.swift; sourceTree = "<group>"; };
 		10822900259476C000F9104C /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
-		1082290E2594774400F9104C /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		1082290E2594774400F9104C /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		10822911259477E100F9104C /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		108229192594805E00F9104C /* FirestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreController.swift; sourceTree = "<group>"; };
 		10C664702595CB4500E2D378 /* YogaSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaSet.swift; sourceTree = "<group>"; };
@@ -66,10 +66,11 @@
 		10E401AE25A957BA003BF8E4 /* HealthKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitController.swift; sourceTree = "<group>"; };
 		18AE7A0D05B319B7827DC4A0 /* Pods-Self-Yoga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self-Yoga.release.xcconfig"; path = "Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga.release.xcconfig"; sourceTree = "<group>"; };
 		A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Self_Yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB02E51A25AD2DBC0041407E /* MLKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLKitViewController.swift; sourceTree = "<group>"; };
-		AB02E51B25AD2DBD0041407E /* PoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseViewController.swift; sourceTree = "<group>"; };
-		AB04673D25A9080200C1B885 /* MLStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MLStoryboard.storyboard; sourceTree = "<group>"; };
-		AB7135DA25853879003A8C99 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		AB80169925B050BE00B3F966 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		AB80169D25B0520100B3F966 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		AB80170D25B0639200B3F966 /* UIUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
+		AB80171025B063A200B3F966 /* MLKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLKitViewController.swift; sourceTree = "<group>"; };
+		AB80174025B09EAF00B3F966 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		AB9521E3258A776200B1DC52 /* ResigerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResigerViewController.swift; sourceTree = "<group>"; };
 		AB9521E6258A7D8400B1DC52 /* ForgotpwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotpwViewController.swift; sourceTree = "<group>"; };
 		AB9521F8258BD13B00B1DC52 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		ABD1AC412590061500126FF7 /* CoverTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverTabBarViewController.swift; sourceTree = "<group>"; };
 		ABD80995259024480086DDC4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ABDE65BC25857F8200B7696C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		ABEEDFA3258FD759008AC092 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		B43C52DA1B3C387C834BEF2D /* Pods-Self-Yoga.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self-Yoga.debug.xcconfig"; path = "Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,9 +125,10 @@
 				100950F5257F970800B26728 /* SceneDelegate.swift */,
 				100950FF257F970800B26728 /* Assets.xcassets */,
 				10095104257F970800B26728 /* Info.plist */,
+				AB80169D25B0520100B3F966 /* Utilities.swift */,
+				AB80170D25B0639200B3F966 /* UIUtilities.swift */,
 				1009510B257F976C00B26728 /* GoogleService-Info.plist */,
 				100950FC257F970800B26728 /* Self_Yoga.xcdatamodeld */,
-				ABEEDFA3258FD759008AC092 /* Utilities.swift */,
 			);
 			path = "Self-Yoga";
 			sourceTree = "<group>";
@@ -149,9 +150,8 @@
 				100950F9257F970800B26728 /* Main.storyboard */,
 				10095101257F970800B26728 /* LaunchScreen.storyboard */,
 				10822900259476C000F9104C /* Auth.storyboard */,
-				1082290E2594774400F9104C /* Profile.storyboard */,
+				1082290E2594774400F9104C /* Setting.storyboard */,
 				10822911259477E100F9104C /* Home.storyboard */,
-				AB04673D25A9080200C1B885 /* MLStoryboard.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -159,12 +159,11 @@
 		10C664762595F3A400E2D378 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				10E4041B25AEE67C003BF8E4 /* Profile */,
 				10C6647A2595F5AF00E2D378 /* Home */,
 				105F63772591F887008CE3BD /* Auth */,
-				AB7135DA25853879003A8C99 /* SplashViewController.swift */,
 				ABC240D3258CDBA900554848 /* GoalsViewController.swift */,
 				ABD1AC412590061500126FF7 /* CoverTabBarViewController.swift */,
-				ABD80995259024480086DDC4 /* SettingsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -189,6 +188,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		10E4041B25AEE67C003BF8E4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				AB80169925B050BE00B3F966 /* EmailViewController.swift */,
+				ABD80995259024480086DDC4 /* SettingsViewController.swift */,
+				AB80174025B09EAF00B3F966 /* FAQViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		70470032A2A287FC845799B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,8 +210,7 @@
 		AB04673825A9018800C1B885 /* ML Kit */ = {
 			isa = PBXGroup;
 			children = (
-				AB02E51A25AD2DBC0041407E /* MLKitViewController.swift */,
-				AB02E51B25AD2DBD0041407E /* PoseViewController.swift */,
+				AB80171025B063A200B3F966 /* MLKitViewController.swift */,
 			);
 			path = "ML Kit";
 			sourceTree = "<group>";
@@ -237,7 +245,7 @@
 				100950ED257F970800B26728 /* Frameworks */,
 				100950EE257F970800B26728 /* Resources */,
 				FD3E2BC48558A2C329E4D543 /* [CP] Embed Pods Frameworks */,
-				BF4243CD3D8F64F73D01D76F /* [CP] Copy Pods Resources */,
+				1ACF41DD007C7F19A9DF0FC3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,9 +293,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB04673E25A9080200C1B885 /* MLStoryboard.storyboard in Resources */,
 				10822912259477E100F9104C /* Home.storyboard in Resources */,
-				1082290F2594774400F9104C /* Profile.storyboard in Resources */,
+				1082290F2594774400F9104C /* Setting.storyboard in Resources */,
 				10095103257F970800B26728 /* LaunchScreen.storyboard in Resources */,
 				1009510C257F976C00B26728 /* GoogleService-Info.plist in Resources */,
 				10822901259476C000F9104C /* Auth.storyboard in Resources */,
@@ -299,6 +306,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1ACF41DD007C7F19A9DF0FC3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4B4C558D94634460428339F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,23 +343,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BF4243CD3D8F64F73D01D76F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD3E2BC48558A2C329E4D543 /* [CP] Embed Pods Frameworks */ = {
@@ -365,25 +372,26 @@
 				AB9521E7258A7D8400B1DC52 /* ForgotpwViewController.swift in Sources */,
 				1056BA6A25A9516A00F6E08A /* HomeVideoViewController.swift in Sources */,
 				ABDE65BD25857F8200B7696C /* LoginViewController.swift in Sources */,
-				ABEEDFA4258FD759008AC092 /* Utilities.swift in Sources */,
 				ABD80996259024480086DDC4 /* SettingsViewController.swift in Sources */,
 				ABD1AC422590061500126FF7 /* CoverTabBarViewController.swift in Sources */,
+				AB80170E25B0639300B3F966 /* UIUtilities.swift in Sources */,
 				100950F8257F970800B26728 /* ViewController.swift in Sources */,
 				100950F4257F970800B26728 /* AppDelegate.swift in Sources */,
 				100950F6257F970800B26728 /* SceneDelegate.swift in Sources */,
+				AB80169A25B050BE00B3F966 /* EmailViewController.swift in Sources */,
 				10C664712595CB4500E2D378 /* YogaSet.swift in Sources */,
 				100950FE257F970800B26728 /* Self_Yoga.xcdatamodeld in Sources */,
+				AB80169E25B0520100B3F966 /* Utilities.swift in Sources */,
 				10E401AF25A957BA003BF8E4 /* HealthKitController.swift in Sources */,
 				1082291A2594805E00F9104C /* FirestoreController.swift in Sources */,
 				10C664842595F6D600E2D378 /* HomeListViewController.swift in Sources */,
 				10C6AF32259871840022649E /* HealthKit.swift in Sources */,
 				10C664872595F75A00E2D378 /* HomeDetailViewController.swift in Sources */,
+				AB80174125B09EAF00B3F966 /* FAQViewController.swift in Sources */,
+				AB80171125B063A200B3F966 /* MLKitViewController.swift in Sources */,
 				AB9521F9258BD13B00B1DC52 /* HomeViewController.swift in Sources */,
 				AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */,
 				ABC240D4258CDBA900554848 /* GoalsViewController.swift in Sources */,
-				AB02E51D25AD2DBD0041407E /* PoseViewController.swift in Sources */,
-				AB02E51C25AD2DBD0041407E /* MLKitViewController.swift in Sources */,
-				AB7135DB25853879003A8C99 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,13 +541,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Self-Yoga/Self-Yoga.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5JS8HUQALB;
+				DEVELOPMENT_TEAM = F8Z3P22K4A;
 				INFOPLIST_FILE = "Self-Yoga/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.example.Self-Yoga";
+				PRODUCT_BUNDLE_IDENTIFIER = "google.com-yuki";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -554,13 +562,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Self-Yoga/Self-Yoga.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5JS8HUQALB;
+				DEVELOPMENT_TEAM = F8Z3P22K4A;
 				INFOPLIST_FILE = "Self-Yoga/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.example.Self-Yoga";
+				PRODUCT_BUNDLE_IDENTIFIER = "google.com-yuki";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

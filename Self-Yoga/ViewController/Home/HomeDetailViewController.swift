@@ -46,8 +46,12 @@ class HomeDetailViewController: UIViewController {
                     switch bool {
                     case "BeginnerCollection":
                         controller.bool = "BeginnerCollection"
+                        controller.titles = yogaTitle
+                        controller.desc = yogaDescription
                     case "MasterCollection":
                         controller.bool = "MasterCollection"
+                        controller.titles = yogaTitle
+                        controller.desc = yogaDescription
                     default:
                         print("HomeDetailViewController prepare Error")
                     }

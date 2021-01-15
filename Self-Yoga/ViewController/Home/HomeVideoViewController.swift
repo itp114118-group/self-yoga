@@ -12,21 +12,24 @@ import FirebaseFirestore
 class HomeVideoViewController: UIViewController {
     
     @IBOutlet weak var videoPlayerView: YTPlayerView!
+    @IBOutlet weak var lbltitle: UILabel!
+    @IBOutlet weak var lbldocu: UILabel!
+    @IBOutlet weak var btnPose: UIButton!
     
     var firestoreController = FirestoreController()
     var bool: String?
     var db = Firestore.firestore()
-    var healthKit = HealthKit.sharedInstance
-    var date = Date()
+    var titles : String?
+    var desc : String?
+    
+    var healthKitController = HealthKitController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // add steps to Health App
-//        healthKit.saveSteps(stepsCountValue: Int(8), date: date) { (error) in
-//            print("add data")
-//        }
-        
+        lbltitle.text = titles
+        lbldocu.text = desc
+      
         firestoreController.fetchNestedData() { collection, videoName, video in
             switch self.bool {
             case "BeginnerCollection":
