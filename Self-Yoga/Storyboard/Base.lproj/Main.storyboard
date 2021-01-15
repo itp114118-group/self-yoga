@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,7 +37,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g4S-wJ-xqE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="FFFFFF"/>
                         <constraints>
                             <constraint firstItem="4lk-JF-xBG" firstAttribute="top" secondItem="mJL-mL-ZI7" secondAttribute="bottom" constant="10" id="2li-6T-WOT"/>
                             <constraint firstItem="4lk-JF-xBG" firstAttribute="leading" secondItem="g4S-wJ-xqE" secondAttribute="leading" constant="25" id="7UC-VJ-VeY"/>
@@ -72,7 +71,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" insetsLayoutMarginsFromSafeArea="NO" id="p1Q-9D-iGY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="FFFFFF"/>
                         <color key="selectedImageTintColor" name="003659"/>
                     </tabBar>
                     <connections>
@@ -94,6 +93,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AGm-UL-jDi">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="FFFFFF"/>
+                        <color key="barTintColor" name="FFFFFF"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                             <color key="textColor" name="003659"/>
@@ -188,8 +189,8 @@
         <namedColor name="003659">
             <color red="0.0" green="0.21199999749660492" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="FFFFFF">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

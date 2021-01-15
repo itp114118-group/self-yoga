@@ -10,8 +10,8 @@ import FirebaseAuth
 
 class SettingViewController: UIViewController {
     
-    @IBOutlet weak var profileTableView: UITableView!
     @IBOutlet weak var btnlogout: UIButton!
+    @IBOutlet weak var btnContact: UIButton!
     
     let firebaseAuth = Auth.auth()
     var setting = ["FAQ", "Contact Us"]
@@ -19,14 +19,13 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profileTableView.dataSource = self
-        profileTableView.delegate = self
         // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     @IBAction func logout(_ sender: Any) {
         
         do {
@@ -37,20 +36,3 @@ class SettingViewController: UIViewController {
     }
         
     }
-
-extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return setting.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = profileTableView.dequeueReusableCell(withIdentifier: "settingcell")
-        cell?.textLabel?.text = setting[indexPath.row]
-        return cell!
-    }
-}

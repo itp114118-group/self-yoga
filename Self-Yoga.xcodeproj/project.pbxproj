@@ -27,10 +27,11 @@
 		10C6AF32259871840022649E /* HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6AF31259871840022649E /* HealthKit.swift */; };
 		10E401AF25A957BA003BF8E4 /* HealthKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E401AE25A957BA003BF8E4 /* HealthKitController.swift */; };
 		42E15DDFA4C36667E8A6488F /* Pods_Self_Yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */; };
-		AB80169325B0508F00B3F966 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80169225B0508F00B3F966 /* UIUtilities.swift */; };
-		AB80169725B050A800B3F966 /* MLKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80169625B050A800B3F966 /* MLKitViewController.swift */; };
 		AB80169A25B050BE00B3F966 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80169925B050BE00B3F966 /* EmailViewController.swift */; };
 		AB80169E25B0520100B3F966 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80169D25B0520100B3F966 /* Utilities.swift */; };
+		AB80170E25B0639300B3F966 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80170D25B0639200B3F966 /* UIUtilities.swift */; };
+		AB80171125B063A200B3F966 /* MLKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80171025B063A200B3F966 /* MLKitViewController.swift */; };
+		AB80174125B09EAF00B3F966 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80174025B09EAF00B3F966 /* FAQViewController.swift */; };
 		AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E3258A776200B1DC52 /* ResigerViewController.swift */; };
 		AB9521E7258A7D8400B1DC52 /* ForgotpwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521E6258A7D8400B1DC52 /* ForgotpwViewController.swift */; };
 		AB9521F9258BD13B00B1DC52 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9521F8258BD13B00B1DC52 /* HomeViewController.swift */; };
@@ -65,10 +66,11 @@
 		10E401AE25A957BA003BF8E4 /* HealthKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitController.swift; sourceTree = "<group>"; };
 		18AE7A0D05B319B7827DC4A0 /* Pods-Self-Yoga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self-Yoga.release.xcconfig"; path = "Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga.release.xcconfig"; sourceTree = "<group>"; };
 		A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Self_Yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB80169225B0508F00B3F966 /* UIUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
-		AB80169625B050A800B3F966 /* MLKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLKitViewController.swift; sourceTree = "<group>"; };
 		AB80169925B050BE00B3F966 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		AB80169D25B0520100B3F966 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		AB80170D25B0639200B3F966 /* UIUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
+		AB80171025B063A200B3F966 /* MLKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLKitViewController.swift; sourceTree = "<group>"; };
+		AB80174025B09EAF00B3F966 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		AB9521E3258A776200B1DC52 /* ResigerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResigerViewController.swift; sourceTree = "<group>"; };
 		AB9521E6258A7D8400B1DC52 /* ForgotpwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotpwViewController.swift; sourceTree = "<group>"; };
 		AB9521F8258BD13B00B1DC52 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -124,7 +126,7 @@
 				100950FF257F970800B26728 /* Assets.xcassets */,
 				10095104257F970800B26728 /* Info.plist */,
 				AB80169D25B0520100B3F966 /* Utilities.swift */,
-				AB80169225B0508F00B3F966 /* UIUtilities.swift */,
+				AB80170D25B0639200B3F966 /* UIUtilities.swift */,
 				1009510B257F976C00B26728 /* GoogleService-Info.plist */,
 				100950FC257F970800B26728 /* Self_Yoga.xcdatamodeld */,
 			);
@@ -191,6 +193,7 @@
 			children = (
 				AB80169925B050BE00B3F966 /* EmailViewController.swift */,
 				ABD80995259024480086DDC4 /* SettingsViewController.swift */,
+				AB80174025B09EAF00B3F966 /* FAQViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -207,7 +210,7 @@
 		AB04673825A9018800C1B885 /* ML Kit */ = {
 			isa = PBXGroup;
 			children = (
-				AB80169625B050A800B3F966 /* MLKitViewController.swift */,
+				AB80171025B063A200B3F966 /* MLKitViewController.swift */,
 			);
 			path = "ML Kit";
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				ABDE65BD25857F8200B7696C /* LoginViewController.swift in Sources */,
 				ABD80996259024480086DDC4 /* SettingsViewController.swift in Sources */,
 				ABD1AC422590061500126FF7 /* CoverTabBarViewController.swift in Sources */,
+				AB80170E25B0639300B3F966 /* UIUtilities.swift in Sources */,
 				100950F8257F970800B26728 /* ViewController.swift in Sources */,
 				100950F4257F970800B26728 /* AppDelegate.swift in Sources */,
 				100950F6257F970800B26728 /* SceneDelegate.swift in Sources */,
@@ -383,10 +387,10 @@
 				10C664842595F6D600E2D378 /* HomeListViewController.swift in Sources */,
 				10C6AF32259871840022649E /* HealthKit.swift in Sources */,
 				10C664872595F75A00E2D378 /* HomeDetailViewController.swift in Sources */,
+				AB80174125B09EAF00B3F966 /* FAQViewController.swift in Sources */,
+				AB80171125B063A200B3F966 /* MLKitViewController.swift in Sources */,
 				AB9521F9258BD13B00B1DC52 /* HomeViewController.swift in Sources */,
 				AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */,
-				AB80169325B0508F00B3F966 /* UIUtilities.swift in Sources */,
-				AB80169725B050A800B3F966 /* MLKitViewController.swift in Sources */,
 				ABC240D4258CDBA900554848 /* GoalsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

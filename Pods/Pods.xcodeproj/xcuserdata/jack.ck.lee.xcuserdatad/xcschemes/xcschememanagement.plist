@@ -74,77 +74,12 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
-		<key>GoogleMLKit.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>27</integer>
-		</dict>
-		<key>GoogleToolboxForMac.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>28</integer>
-		</dict>
 		<key>GoogleUtilities.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>10</integer>
-		</dict>
-		<key>GoogleUtilitiesComponents.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>31</integer>
-		</dict>
-		<key>MLKitCommon.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>30</integer>
-		</dict>
-		<key>MLKitPoseDetection-MLKitPoseDetectionFastResources.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>34</integer>
-		</dict>
-		<key>MLKitPoseDetection.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>29</integer>
-		</dict>
-		<key>MLKitPoseDetectionAccurate-MLKitPoseDetectionAccurateResources.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>21</integer>
-		</dict>
-		<key>MLKitPoseDetectionAccurate.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>26</integer>
-		</dict>
-		<key>MLKitPoseDetectionCommon-MLKitPoseDetectionCommonResources.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>22</integer>
-		</dict>
-		<key>MLKitPoseDetectionCommon.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>20</integer>
-		</dict>
-		<key>MLKitVision.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>32</integer>
-		</dict>
-		<key>MLKitXenoCommon-MLKitXenoResources.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>33</integer>
-		</dict>
-		<key>MLKitXenoCommon.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>24</integer>
 		</dict>
 		<key>Pods-Self-Yoga.xcscheme</key>
 		<dict>
@@ -159,11 +94,6 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>18</integer>
-		</dict>
-		<key>Protobuf.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>25</integer>
 		</dict>
 		<key>abseil.xcscheme</key>
 		<dict>

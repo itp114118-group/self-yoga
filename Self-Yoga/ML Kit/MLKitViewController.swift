@@ -20,6 +20,8 @@ class MLKitViewController: UIViewController {
   private lazy var captureSession = AVCaptureSession()
   private lazy var sessionQueue = DispatchQueue(label: Constant.sessionQueueLabel)
   private var lastFrame: CMSampleBuffer?
+    
+
 
   private lazy var previewOverlayView: UIImageView = {
 
@@ -53,7 +55,7 @@ class MLKitViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
     setUpPreviewOverlayView()
     setUpAnnotationOverlayView()
@@ -148,6 +150,12 @@ class MLKitViewController: UIViewController {
               color: UIColor.blue,
               radius: Constant.smallDotRadius
             )
+            let rightHipAngle = UIUtilities.angle(
+                  firstLandmark: pose.landmark(ofType: .rightShoulder),
+                  midLandmark: pose.landmark(ofType: .rightHip),
+                  lastLandmark: pose.landmark(ofType: .rightKnee)
+            )
+            print(rightHipAngle)
           }
         }
       }
