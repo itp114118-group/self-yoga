@@ -95,7 +95,7 @@ extension GoalsViewController: ChartViewDelegate {
         set.colors = colors as! [NSUIColor]
         pieChart.data = PieChartData(dataSet: set)
         
-        //        pieChart.data?.setDrawValues(false)
+        pieChart.data?.setDrawValues(false)
         
         // Animation
         pieChart.animate(xAxisDuration: 2.0)

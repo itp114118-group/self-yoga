@@ -158,6 +158,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIf-Uo-eXj">
                                         <rect key="frame" x="0.0" y="119.5" width="371.5" height="30"/>
                                         <state key="normal" title="Not really, contect us"/>
+                                        <connections>
+                                            <segue destination="Qiu-vJ-M6W" kind="show" id="oQO-iZ-LDY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -330,6 +333,9 @@
             <point key="canvasLocation" x="1998.5507246376812" y="-3242.4107142857142"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="oQO-iZ-LDY"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="FAQ" width="88" height="35"/>
         <image name="Group 79" width="321" height="68"/>
@@ -340,7 +346,7 @@
         <image name="question" width="25" height="25"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="747474">
-            <color red="0.45490196078431372" green="0.45490196078431372" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.45500001311302185" green="0.45500001311302185" blue="0.45500001311302185" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="F4F4F4">
             <color red="0.9570000171661377" green="0.9570000171661377" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

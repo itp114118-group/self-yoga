@@ -20,6 +20,7 @@ class MLKitViewController: UIViewController {
   private lazy var captureSession = AVCaptureSession()
   private lazy var sessionQueue = DispatchQueue(label: Constant.sessionQueueLabel)
   private var lastFrame: CMSampleBuffer?
+    @IBOutlet weak var lblresult: UILabel!
     
 
 
@@ -92,7 +93,7 @@ class MLKitViewController: UIViewController {
     removeDetectionAnnotations()
     setUpCaptureSessionInput()
   }
-
+    
   // MARK: On-Device Detections
 
   private func detectPose(in image: VisionImage, width: CGFloat, height: CGFloat) {
@@ -150,13 +151,88 @@ class MLKitViewController: UIViewController {
               color: UIColor.blue,
               radius: Constant.smallDotRadius
             )
-            let rightHipAngle = UIUtilities.angle(
-                  firstLandmark: pose.landmark(ofType: .rightShoulder),
-                  midLandmark: pose.landmark(ofType: .rightHip),
-                  lastLandmark: pose.landmark(ofType: .rightKnee)
-            )
-            print(rightHipAngle)
           }
+            
+            // check poses
+            let rightShoulder = pose.landmark(ofType: .rightShoulder) // 12
+            let rightElbow = pose.landmark(ofType: .rightElbow) // 14
+            let rightWrist = pose.landmark(ofType: .rightWrist) // 16
+            let rightHip = pose.landmark(ofType: .rightHip) // 24
+            let rightKnee = pose.landmark(ofType: .rightKnee) // 26
+            
+            let leftShoulder = pose.landmark(ofType: .leftShoulder)
+            let leftElbow = pose.landmark(ofType: .leftElbow)
+            let leftWrist = pose.landmark(ofType: .leftWrist)
+            let leftHip = pose.landmark(ofType: .leftHip)
+            let leftKnee = pose.landmark(ofType: .leftKnee)
+            
+            // Arm
+            let rightArmAngle = UIUtilities.angle(
+                firstLandmark: rightShoulder,
+                midLandmark: rightElbow,
+                lastLandmark: rightWrist
+            )
+            let leftArmAngle = UIUtilities.angle(
+                firstLandmark: leftShoulder,
+                midLandmark: leftElbow,
+                lastLandmark: leftWrist
+            )
+            
+            // Hip
+            let rightHipAngle = UIUtilities.angle(
+                firstLandmark: rightShoulder,
+                midLandmark: rightHip,
+                lastLandmark: rightKnee
+            )
+            let leftHipAngle = UIUtilities.angle(
+                firstLandmark: leftShoulder,
+                midLandmark: leftHip,
+                lastLandmark: leftKnee
+            )
+            
+            func checkPoses(rightHipAngle: CGFloat, leftHipAngle: CGFloat, currentPose: String) -> String {
+                // Warrier poes
+                if currentPose == "Warrier pose" &&
+                    rightArmAngle > 153 && rightArmAngle < 193 && leftArmAngle > 151 && leftArmAngle < 191 &&
+                    rightHipAngle > 95 && rightHipAngle < 135 && leftHipAngle > 120 && leftHipAngle < 160 ||
+                    currentPose == "Warrier pose" &&
+                    rightArmAngle > 153 && rightArmAngle < 193 && leftArmAngle > 151 && leftArmAngle < 191 &&
+                    leftHipAngle > 90 && leftHipAngle < 135 && rightHipAngle > 120 && rightHipAngle < 160 {
+                    return "You are doing Warrier pose"
+                }
+                // Tree pose
+                if currentPose == "Tree pose" &&
+                    rightArmAngle > 132 && rightArmAngle < 172 && leftArmAngle > 147 && leftArmAngle < 187 &&
+                    rightHipAngle > 145 && rightHipAngle < 185 && leftHipAngle > 129 && leftHipAngle < 169 ||
+                    currentPose == "Tree pose" &&
+                    rightArmAngle > 132 && rightArmAngle < 172 && leftArmAngle > 147 && leftArmAngle < 187 &&
+                    leftHipAngle > 145 && leftHipAngle < 185 && rightHipAngle > 129 && rightHipAngle < 169 {
+                    return "You are doing Tree pose"
+                }
+                // Dance pose (need variable)
+                if currentPose == "Dance pose" &&
+                    rightArmAngle > 134 && rightArmAngle < 174 && leftArmAngle > 155 && leftArmAngle < 195 &&
+                    rightHipAngle > 97 && rightHipAngle < 137 && leftHipAngle > 111 && leftHipAngle < 151 ||
+                    currentPose == "Dance pose" &&
+                    rightArmAngle > 134 && rightArmAngle < 174 && leftArmAngle > 155 && leftArmAngle < 195 &&
+                    leftHipAngle > 97 && leftHipAngle < 137 && rightHipAngle > 111 && rightHipAngle < 151 {
+                    return "You are doing Dance pose"
+                }
+                // Peacock Pose (need variable)
+                if currentPose == "Peacock pose" &&
+                    rightArmAngle > 93 && rightArmAngle < 133 && leftArmAngle > 102 && leftArmAngle < 142 &&
+                    rightHipAngle > 112 && rightHipAngle < 152 && leftHipAngle > 133 && leftHipAngle < 173 ||
+                    currentPose == "Peacock pose" &&
+                    rightArmAngle > 93 && rightArmAngle < 133 && leftArmAngle > 102 && leftArmAngle < 142 &&
+                    leftHipAngle > 112 && leftHipAngle < 152 && rightHipAngle > 133 && rightHipAngle < 173 {
+                    return "You are doing Peacock pose"
+                }
+                return "Try to make a Yoga pose"
+            }
+            
+            let results = checkPoses(rightHipAngle: rightHipAngle, leftHipAngle: leftHipAngle, currentPose: "Warrier pose")
+            print("\(results), rightArmAngle: \(rightArmAngle), leftArmAngle: \(leftArmAngle), rightHipAngle: \(rightHipAngle), leftHipAngle: \(leftHipAngle)")
+            //
         }
       }
     }
