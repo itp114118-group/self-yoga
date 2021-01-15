@@ -231,7 +231,7 @@ class MLKitViewController: UIViewController {
             }
             
             let results = checkPoses(rightHipAngle: rightHipAngle, leftHipAngle: leftHipAngle, currentPose: "Warrier pose")
-            print("\(results), rightArmAngle: \(rightArmAngle), leftArmAngle: \(leftArmAngle), rightHipAngle: \(rightHipAngle), leftHipAngle: \(leftHipAngle)")
+            lblresult.text = ("\(results), rightArmAngle: \(rightArmAngle), leftArmAngle: \(leftArmAngle), rightHipAngle: \(rightHipAngle), leftHipAngle: \(leftHipAngle)")
             //
         }
       }

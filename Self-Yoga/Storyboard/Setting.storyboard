@@ -28,7 +28,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="FAQ"/>
                                         <connections>
-                                            <segue destination="mzp-Pi-sMN" kind="show" id="7WZ-xk-QKF"/>
+                                            <segue destination="mzp-Pi-sMN" kind="show" id="cog-eE-bH1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wg-bO-Kxs">
@@ -39,8 +39,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="cantact"/>
                                         <connections>
-                                            <action selector="Contactstart:" destination="C7y-A9-efp" eventType="touchUpInside" id="zpe-YE-y0z"/>
-                                            <segue destination="Qiu-vJ-M6W" kind="show" id="KMk-hf-wLK"/>
+                                            <segue destination="Qiu-vJ-M6W" kind="show" id="3QW-XY-UJc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BE-ra-BSm">
@@ -86,7 +85,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="uQ8-hX-4Lm"/>
                     <connections>
-                        <outlet property="btnContact" destination="7Wg-bO-Kxs" id="res-ns-BUs"/>
                         <outlet property="btnlogout" destination="7BE-ra-BSm" id="DeJ-HG-8Iz"/>
                     </connections>
                 </viewController>
@@ -334,7 +332,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oQO-iZ-LDY"/>
+        <segue reference="3QW-XY-UJc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FAQ" width="88" height="35"/>

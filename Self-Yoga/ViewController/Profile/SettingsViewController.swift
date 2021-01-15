@@ -10,11 +10,7 @@ import FirebaseAuth
 
 class SettingViewController: UIViewController {
     
-    @IBOutlet weak var btnlogout: UIButton!
-    @IBOutlet weak var btnContact: UIButton!
-    
     let firebaseAuth = Auth.auth()
-    var setting = ["FAQ", "Contact Us"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +23,16 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func logout(_ sender: Any) {
-        
         do {
             try firebaseAuth.signOut()
+            
+            let AutViewController = self.storyboard?.instantiateViewController(identifier: "AutVC") as? ViewController
+            
+            self.view.window?.rootViewController = AutViewController
+            self.view.window?.makeKeyAndVisible()
+            
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
-    }
-        
-    }
+     }
+}
