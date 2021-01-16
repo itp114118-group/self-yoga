@@ -27,7 +27,6 @@
 		10C6AF32259871840022649E /* HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6AF31259871840022649E /* HealthKit.swift */; };
 		10E401AF25A957BA003BF8E4 /* HealthKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E401AE25A957BA003BF8E4 /* HealthKitController.swift */; };
 		42E15DDFA4C36667E8A6488F /* Pods_Self_Yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */; };
-		AB80169A25B050BE00B3F966 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80169925B050BE00B3F966 /* EmailViewController.swift */; };
 		AB80169E25B0520100B3F966 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80169D25B0520100B3F966 /* Utilities.swift */; };
 		AB80170E25B0639300B3F966 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80170D25B0639200B3F966 /* UIUtilities.swift */; };
 		AB80171125B063A200B3F966 /* PoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80171025B063A200B3F966 /* PoseViewController.swift */; };
@@ -69,7 +68,6 @@
 		10E401AE25A957BA003BF8E4 /* HealthKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitController.swift; sourceTree = "<group>"; };
 		18AE7A0D05B319B7827DC4A0 /* Pods-Self-Yoga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self-Yoga.release.xcconfig"; path = "Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga.release.xcconfig"; sourceTree = "<group>"; };
 		A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Self_Yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB80169925B050BE00B3F966 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		AB80169D25B0520100B3F966 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		AB80170D25B0639200B3F966 /* UIUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
 		AB80171025B063A200B3F966 /* PoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseViewController.swift; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 		10E4041B25AEE67C003BF8E4 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				AB80169925B050BE00B3F966 /* EmailViewController.swift */,
 				ABD80995259024480086DDC4 /* SettingsViewController.swift */,
 				AB80174025B09EAF00B3F966 /* FAQViewController.swift */,
 				AB80194D25B1B0B200B3F966 /* AnswerViewController.swift */,
@@ -361,7 +358,6 @@
 				100950F8257F970800B26728 /* ViewController.swift in Sources */,
 				100950F4257F970800B26728 /* AppDelegate.swift in Sources */,
 				100950F6257F970800B26728 /* SceneDelegate.swift in Sources */,
-				AB80169A25B050BE00B3F966 /* EmailViewController.swift in Sources */,
 				AB80194E25B1B0B200B3F966 /* AnswerViewController.swift in Sources */,
 				10C664712595CB4500E2D378 /* YogaSet.swift in Sources */,
 				100950FE257F970800B26728 /* Self_Yoga.xcdatamodeld in Sources */,

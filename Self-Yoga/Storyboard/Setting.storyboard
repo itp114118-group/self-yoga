@@ -12,7 +12,7 @@
         <!--Profile Page-->
         <scene sceneID="6Kh-70-sIy">
             <objects>
-                <viewController title="Profile Page" id="C7y-A9-efp" customClass="SettingViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Setting" title="Profile Page" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C7y-A9-efp" customClass="SettingViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SiF-No-WV6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,7 +52,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="cantact"/>
                                         <connections>
-                                            <segue destination="Qiu-vJ-M6W" kind="presentation" id="gkY-iB-b62"/>
+                                            <action selector="showEmail:" destination="C7y-A9-efp" eventType="touchUpInside" id="5KD-hx-FHe"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -90,22 +90,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S6w-dn-8E9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="998.55072463768124" y="-3242.4107142857142"/>
-        </scene>
-        <!--Email View Controller-->
-        <scene sceneID="Y9L-Lq-aGc">
-            <objects>
-                <viewController id="Qiu-vJ-M6W" customClass="EmailViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kkp-rM-w1B">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="zgG-6V-d1d"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="vHv-Iv-jhg"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ag7-yy-J5h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="999" y="-2515"/>
         </scene>
         <!--Answer View Controller-->
         <scene sceneID="bN8-6G-8kf">
@@ -160,7 +144,7 @@
                                         <rect key="frame" x="0.0" y="119.5" width="371.5" height="30"/>
                                         <state key="normal" title="Not really, contect us"/>
                                         <connections>
-                                            <segue destination="Qiu-vJ-M6W" kind="show" id="oQO-iZ-LDY"/>
+                                            <action selector="showEmail:" destination="gKb-Yg-K88" eventType="touchUpInside" id="dmd-Ek-xfC"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -341,9 +325,6 @@
             <point key="canvasLocation" x="1998.5507246376812" y="-3242.4107142857142"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="oQO-iZ-LDY"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="FAQ" width="87" height="35"/>
         <image name="Group 79" width="321" height="68"/>

@@ -25,8 +25,14 @@ class AnswerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func showEmail(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Setting", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Setting") as! SettingViewController
+        vc.showEmail()
+        
     }
 }

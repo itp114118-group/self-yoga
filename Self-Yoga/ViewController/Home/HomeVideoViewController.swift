@@ -21,6 +21,7 @@ class HomeVideoViewController: UIViewController {
     var db = Firestore.firestore()
     var titles : String?
     var desc : String?
+    var currentPose: String?
     
     var healthKitController = HealthKitController()
     
@@ -29,6 +30,7 @@ class HomeVideoViewController: UIViewController {
         
         lbltitle.text = titles
         lbldocu.text = desc
+        print("Current Pose: \(currentPose)")
       
         // Me don't know how to use child()
         firestoreController.fetchNestedData() { collection, currentPose, videoName, video in
