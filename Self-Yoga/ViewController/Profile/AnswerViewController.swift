@@ -20,6 +20,7 @@ class AnswerViewController: UIViewController {
             question.text = faq.question
             answer.text = faq.answer
         }
+        
     }
     
     override func viewDidLoad() {

@@ -8,6 +8,7 @@
 import Foundation
 
 struct FAQ {
+    
     var question : String
     var answer : String
 }

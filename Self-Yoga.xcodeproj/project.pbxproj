@@ -30,7 +30,7 @@
 		AB80169A25B050BE00B3F966 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80169925B050BE00B3F966 /* EmailViewController.swift */; };
 		AB80169E25B0520100B3F966 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80169D25B0520100B3F966 /* Utilities.swift */; };
 		AB80170E25B0639300B3F966 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80170D25B0639200B3F966 /* UIUtilities.swift */; };
-		AB80171125B063A200B3F966 /* MLKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80171025B063A200B3F966 /* MLKitViewController.swift */; };
+		AB80171125B063A200B3F966 /* PoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80171025B063A200B3F966 /* PoseViewController.swift */; };
 		AB80174125B09EAF00B3F966 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80174025B09EAF00B3F966 /* FAQViewController.swift */; };
 		AB80194825B1B08500B3F966 /* FAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80194725B1B08500B3F966 /* FAQ.swift */; };
 		AB80194B25B1B09C00B3F966 /* FAQDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80194A25B1B09C00B3F966 /* FAQDataController.swift */; };
@@ -72,7 +72,7 @@
 		AB80169925B050BE00B3F966 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		AB80169D25B0520100B3F966 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		AB80170D25B0639200B3F966 /* UIUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
-		AB80171025B063A200B3F966 /* MLKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLKitViewController.swift; sourceTree = "<group>"; };
+		AB80171025B063A200B3F966 /* PoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseViewController.swift; sourceTree = "<group>"; };
 		AB80174025B09EAF00B3F966 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		AB80194725B1B08500B3F966 /* FAQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
 		AB80194A25B1B09C00B3F966 /* FAQDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQDataController.swift; sourceTree = "<group>"; };
@@ -124,7 +124,6 @@
 				10C6AF2D259864FC0022649E /* Self-Yoga.entitlements */,
 				105F63792591F8B9008CE3BD /* Storyboard */,
 				10C664762595F3A400E2D378 /* ViewController */,
-				AB04673825A9018800C1B885 /* ML Kit */,
 				10E401B125A95807003BF8E4 /* Model */,
 				ABEEDFA1258FD6EE008AC092 /* DataControl */,
 				100950F3257F970800B26728 /* AppDelegate.swift */,
@@ -181,6 +180,7 @@
 				10C664832595F6D600E2D378 /* HomeListViewController.swift */,
 				10C664862595F75A00E2D378 /* HomeDetailViewController.swift */,
 				1056BA6925A9516A00F6E08A /* HomeVideoViewController.swift */,
+				AB80171025B063A200B3F966 /* PoseViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -215,14 +215,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AB04673825A9018800C1B885 /* ML Kit */ = {
-			isa = PBXGroup;
-			children = (
-				AB80171025B063A200B3F966 /* MLKitViewController.swift */,
-			);
-			path = "ML Kit";
-			sourceTree = "<group>";
-		};
 		ABEEDFA1258FD6EE008AC092 /* DataControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,7 +246,6 @@
 				100950ED257F970800B26728 /* Frameworks */,
 				100950EE257F970800B26728 /* Resources */,
 				FD3E2BC48558A2C329E4D543 /* [CP] Embed Pods Frameworks */,
-				1ACF41DD007C7F19A9DF0FC3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -315,23 +306,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1ACF41DD007C7F19A9DF0FC3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4B4C558D94634460428339F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -399,7 +373,7 @@
 				10C6AF32259871840022649E /* HealthKit.swift in Sources */,
 				10C664872595F75A00E2D378 /* HomeDetailViewController.swift in Sources */,
 				AB80174125B09EAF00B3F966 /* FAQViewController.swift in Sources */,
-				AB80171125B063A200B3F966 /* MLKitViewController.swift in Sources */,
+				AB80171125B063A200B3F966 /* PoseViewController.swift in Sources */,
 				AB80194825B1B08500B3F966 /* FAQ.swift in Sources */,
 				AB9521F9258BD13B00B1DC52 /* HomeViewController.swift in Sources */,
 				AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */,

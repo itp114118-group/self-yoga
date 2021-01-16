@@ -16,12 +16,10 @@
     @IBOutlet weak var begView: UIView!
     @IBOutlet weak var masterView: UIView!
     
-
     var firestoreController = FirestoreController()
     var healthKitController = HealthKitController()
     
     var data = [String]()
-    
     var isSearching = false
     
     override func viewDidLoad() {

@@ -36,5 +36,5 @@ class FAQDataController {
     func  add(faq : FAQ)  {
         self.dataArray.append(faq)
     }
-    }
+}
 

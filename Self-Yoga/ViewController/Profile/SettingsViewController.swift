@@ -18,18 +18,18 @@ class SettingViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//    }
-    
     @IBAction func logout(_ sender: Any) {
         do {
             try firebaseAuth.signOut()
 
-            let AutViewController = self.storyboard?.instantiateViewController(identifier: "AutVC") as? ViewController
-
-            self.view.window?.rootViewController = AutViewController
-            self.view.window?.makeKeyAndVisible()
+//            let AutViewController = self.storyboard?.instantiateViewController(identifier: "AutVC") as? ViewController
+//
+//            self.view.window?.rootViewController = AutViewController
+//            self.view.window?.makeKeyAndVisible()
+            
+            let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "AutVC") as UIViewController
+            present(vc, animated: true, completion: nil)
 
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)

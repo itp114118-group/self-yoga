@@ -30,7 +30,7 @@ class HomeDetailViewController: UIViewController {
         tempoLabel.text = tempo
         descriptionLabel.text = yogaDescription
         
-        firestoreController.fetchNestedData() { collectionName, videoName, video in
+        firestoreController.fetchNestedData() { collectionName, currentPose, videoName, video in
             self.tableView.reloadData()
         }
         

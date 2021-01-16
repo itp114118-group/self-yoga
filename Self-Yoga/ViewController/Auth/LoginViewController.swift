@@ -13,11 +13,13 @@ import SwiftUI
 import Firebase
 
 class LoginViewController: UIViewController {
+    
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var pwTF: UITextField!
     @IBOutlet weak var btnlogin: UIButton!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         let emailView = UIImageView()
         let lockView = UIImageView()

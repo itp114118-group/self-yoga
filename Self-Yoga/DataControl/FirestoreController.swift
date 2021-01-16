@@ -32,7 +32,7 @@ class FirestoreController {
             }
         }
 
-        fetchNestedData() { collectionName, videoName, video in
+        fetchNestedData() { collectionName, currentPose, videoName, video in
             let yogaSet = YogaSet(videoName: videoName, video: video)
             
             switch collectionName {
@@ -86,7 +86,7 @@ class FirestoreController {
     }
     
     // child()
-    func fetchNestedData(completionHandler:@escaping(String, String, String)->())  {
+    func fetchNestedData(completionHandler:@escaping(String, String, String, String)->())  {
         db.collection("Beginners Collection/vBlOYdSZucieChF6uskr/Details").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -94,10 +94,11 @@ class FirestoreController {
                 for document in querySnapshot!.documents {
                     let data = document.data()
                     let collectionName = "Beginner Collection"
+                    let currentPose = data["current pose"] as? String ?? "Empty"
                     let videoName = data["video name"] as? String ?? "Empty"
                     let video = data["video id"] as? String ?? "Empty"
                     
-                    completionHandler (collectionName, videoName, video)
+                    completionHandler (collectionName, currentPose, videoName, video)
                 }
             }
         }
@@ -109,10 +110,11 @@ class FirestoreController {
                 for document in querySnapshot!.documents {
                     let data = document.data()
                     let collectionName = "Masters' Collection"
+                    let currentPose = data["current pose"] as? String ?? "Empty"
                     let videoName = data["video name"] as? String ?? "Empty"
                     let video = data["video id"] as? String ?? "Empty"
                     
-                    completionHandler (collectionName, videoName, video)
+                    completionHandler (collectionName, currentPose, videoName, video)
                 }
             }
         }

@@ -30,7 +30,8 @@ class HomeVideoViewController: UIViewController {
         lbltitle.text = titles
         lbldocu.text = desc
       
-        firestoreController.fetchNestedData() { collection, videoName, video in
+        // Me don't know how to use child()
+        firestoreController.fetchNestedData() { collection, currentPose, videoName, video in
             switch self.bool {
             case "BeginnerCollection":
                 self.db.collection("Beginners Collection/vBlOYdSZucieChF6uskr/Details").getDocuments() { (querySnapshot, err) in
@@ -65,16 +66,6 @@ class HomeVideoViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     
 }
