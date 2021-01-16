@@ -21,13 +21,15 @@ class GoalsViewController: UIViewController {
     let healthKit = HealthKit.sharedInstance
     let healthKitController = HealthKitController()
     
+    var test: Double?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pieChart.delegate = self
         barChart.delegate = self
         
         // add Health Kit data
-        healthKitController.addData(caloriesBurned: 8.0, minutes: 60.0)
+        healthKitController.addData(caloriesBurned: 8.0, minutes: test ?? 60.0)
         
         // ask user health app permission
         healthKit.requestHealthKitAuthorization { (result, error) in

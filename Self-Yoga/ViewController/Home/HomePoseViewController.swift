@@ -219,6 +219,10 @@ class HomePoseViewController: UIViewController {
                     let results = checkPoses(rightHipAngle: rightHipAngle, leftHipAngle: leftHipAngle, currentPose: currentPose ?? "Warrior pose")
                     lblresult.text = ("\(results)")
                     
+                    if let vc = presentingViewController as? GoalsViewController {
+                        vc.test = 60.0
+                    }
+                    
                 }
             }
         }
