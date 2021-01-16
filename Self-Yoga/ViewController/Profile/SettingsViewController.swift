@@ -42,7 +42,7 @@ class SettingViewController: UIViewController {
         showEmail()
     }
     
-    public func showEmail() {
+    func showEmail() {
         
         guard MFMailComposeViewController.canSendMail() else {
             // Show alert informing the user

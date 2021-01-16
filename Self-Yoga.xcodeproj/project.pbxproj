@@ -29,7 +29,7 @@
 		42E15DDFA4C36667E8A6488F /* Pods_Self_Yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */; };
 		AB80169E25B0520100B3F966 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80169D25B0520100B3F966 /* Utilities.swift */; };
 		AB80170E25B0639300B3F966 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80170D25B0639200B3F966 /* UIUtilities.swift */; };
-		AB80171125B063A200B3F966 /* PoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80171025B063A200B3F966 /* PoseViewController.swift */; };
+		AB80171125B063A200B3F966 /* HomePoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80171025B063A200B3F966 /* HomePoseViewController.swift */; };
 		AB80174125B09EAF00B3F966 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80174025B09EAF00B3F966 /* FAQViewController.swift */; };
 		AB80194825B1B08500B3F966 /* FAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80194725B1B08500B3F966 /* FAQ.swift */; };
 		AB80194B25B1B09C00B3F966 /* FAQDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80194A25B1B09C00B3F966 /* FAQDataController.swift */; };
@@ -70,7 +70,7 @@
 		A2EE727B9B81A4D6172E2197 /* Pods_Self_Yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Self_Yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB80169D25B0520100B3F966 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		AB80170D25B0639200B3F966 /* UIUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
-		AB80171025B063A200B3F966 /* PoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseViewController.swift; sourceTree = "<group>"; };
+		AB80171025B063A200B3F966 /* HomePoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePoseViewController.swift; sourceTree = "<group>"; };
 		AB80174025B09EAF00B3F966 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		AB80194725B1B08500B3F966 /* FAQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
 		AB80194A25B1B09C00B3F966 /* FAQDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQDataController.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 				10C664832595F6D600E2D378 /* HomeListViewController.swift */,
 				10C664862595F75A00E2D378 /* HomeDetailViewController.swift */,
 				1056BA6925A9516A00F6E08A /* HomeVideoViewController.swift */,
-				AB80171025B063A200B3F966 /* PoseViewController.swift */,
+				AB80171025B063A200B3F966 /* HomePoseViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -243,6 +243,7 @@
 				100950ED257F970800B26728 /* Frameworks */,
 				100950EE257F970800B26728 /* Resources */,
 				FD3E2BC48558A2C329E4D543 /* [CP] Embed Pods Frameworks */,
+				0227A195CE08C8542223D2A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -303,6 +304,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0227A195CE08C8542223D2A1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Self-Yoga/Pods-Self-Yoga-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4B4C558D94634460428339F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,7 +387,7 @@
 				10C6AF32259871840022649E /* HealthKit.swift in Sources */,
 				10C664872595F75A00E2D378 /* HomeDetailViewController.swift in Sources */,
 				AB80174125B09EAF00B3F966 /* FAQViewController.swift in Sources */,
-				AB80171125B063A200B3F966 /* PoseViewController.swift in Sources */,
+				AB80171125B063A200B3F966 /* HomePoseViewController.swift in Sources */,
 				AB80194825B1B08500B3F966 /* FAQ.swift in Sources */,
 				AB9521F9258BD13B00B1DC52 /* HomeViewController.swift in Sources */,
 				AB9521E4258A776200B1DC52 /* ResigerViewController.swift in Sources */,

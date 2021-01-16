@@ -10,9 +10,9 @@ target 'Self-Yoga' do
   pod 'Firebase/Auth', '> 7.2.0-M1'
   pod 'Charts'
   pod 'FirebaseFirestoreSwift', '7.2-beta'
-  # pod 'GoogleSignIn'
+  pod 'GoogleSignIn'
   pod 'youtube-ios-player-helper'
-  # pod 'GoogleMLKit/PoseDetection'
-  # pod 'GoogleMLKit/PoseDetectionAccurate'
+  pod 'GoogleMLKit/PoseDetection'
+  pod 'GoogleMLKit/PoseDetectionAccurate'
 
 end

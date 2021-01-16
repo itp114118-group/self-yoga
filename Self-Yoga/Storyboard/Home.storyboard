@@ -493,10 +493,10 @@
             </objects>
             <point key="canvasLocation" x="3608.6956521739135" y="-2377.2321428571427"/>
         </scene>
-        <!--Pose View Controller-->
+        <!--Home Pose View Controller-->
         <scene sceneID="EEJ-ub-NSE">
             <objects>
-                <viewController id="o0p-Ka-2jG" customClass="PoseViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="o0p-Ka-2jG" customClass="HomePoseViewController" customModule="Self_Yoga" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RiM-km-l6Z"/>
                         <viewControllerLayoutGuide type="bottom" id="vLk-9G-YkV"/>

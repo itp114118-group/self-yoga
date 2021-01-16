@@ -21,7 +21,7 @@ class HomeDetailViewController: UIViewController {
     var duration: String?
     var tempo: String?
     var yogaDescription: String?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,22 +42,21 @@ class HomeDetailViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? HomeVideoViewController {
-            firestoreController.fetchNestedData() { [self] collectionName, currentPose, videoName, video in
             if segue.identifier == "showDetails" {
                 controller.titles = yogaTitle
                 controller.desc = yogaDescription
                 switch bool {
                 case "BeginnerCollection":
                     controller.bool = "BeginnerCollection"
-                    controller.currentPose = currentPose
+                    controller.currentPose = "Warrior pose"
                 case "MasterCollection":
                     controller.bool = "MasterCollection"
-                    controller.currentPose = currentPose
+                    controller.currentPose = "Dance pose"
                 default:
                     print("HomeDetailViewController prepare Error")
                 }
             }
-            }
+            
         }
     }
     

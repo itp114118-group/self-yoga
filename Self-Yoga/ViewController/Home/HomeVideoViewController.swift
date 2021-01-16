@@ -31,7 +31,7 @@ class HomeVideoViewController: UIViewController {
         lbltitle.text = titles
         lbldocu.text = desc
         print("Current Pose: \(currentPose)")
-      
+        
         // Me don't know how to use child()
         firestoreController.fetchNestedData() { collection, currentPose, videoName, video in
             switch self.bool {
@@ -68,6 +68,14 @@ class HomeVideoViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let navVC = segue.destination as? UINavigationController
+        let tableVC = navVC?.viewControllers.first as! HomePoseViewController
+        tableVC.currentPose = currentPose
+        
+    }
+    
     
 }
