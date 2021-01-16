@@ -43,19 +43,17 @@ class HomeDetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? HomeVideoViewController {
             if segue.identifier == "showDetails" {
-                    switch bool {
-                    case "BeginnerCollection":
-                        controller.bool = "BeginnerCollection"
-                        controller.titles = yogaTitle
-                        controller.desc = yogaDescription
-                    case "MasterCollection":
-                        controller.bool = "MasterCollection"
-                        controller.titles = yogaTitle
-                        controller.desc = yogaDescription
-                    default:
-                        print("HomeDetailViewController prepare Error")
-                    }
+                controller.titles = yogaTitle
+                controller.desc = yogaDescription
+                switch bool {
+                case "BeginnerCollection":
+                    controller.bool = "BeginnerCollection"
+                case "MasterCollection":
+                    controller.bool = "MasterCollection"
+                default:
+                    print("HomeDetailViewController prepare Error")
                 }
+            }
         }
     }
     

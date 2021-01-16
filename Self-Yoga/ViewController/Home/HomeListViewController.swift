@@ -79,19 +79,15 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource {
         if let controller = segue.destination as? HomeDetailViewController {
             if segue.identifier == "showYogaSetDetail" {
                 if let indexPath = tableView.indexPathForSelectedRow {
+                    controller.yogaTitle = firestoreController.beginnerCollectionIndex(at: indexPath.row).title
+                    controller.duration = firestoreController.beginnerCollectionIndex(at: indexPath.row).duration
+                    controller.tempo = firestoreController.beginnerCollectionIndex(at: indexPath.row).tempo
+                    controller.yogaDescription = firestoreController.beginnerCollectionIndex(at: indexPath.row).description
                     switch bool {
                     case "BeginnerCollection":
                         controller.bool = "BeginnerCollection"
-                        controller.yogaTitle = firestoreController.beginnerCollectionIndex(at: indexPath.row).title
-                        controller.duration = firestoreController.beginnerCollectionIndex(at: indexPath.row).duration
-                        controller.tempo = firestoreController.beginnerCollectionIndex(at: indexPath.row).tempo
-                        controller.yogaDescription = firestoreController.beginnerCollectionIndex(at: indexPath.row).description
                     case "MasterCollection":
                         controller.bool = "MasterCollection"
-                        controller.yogaTitle = firestoreController.masterCollectionIndex(at: indexPath.row).title
-                        controller.duration = firestoreController.masterCollectionIndex(at: indexPath.row).duration
-                        controller.tempo = firestoreController.masterCollectionIndex(at: indexPath.row).tempo
-                        controller.yogaDescription = firestoreController.masterCollectionIndex(at: indexPath.row).description
                     default:
                         print("HomeListViewController prepare error")
                     }
